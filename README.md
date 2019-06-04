@@ -1,5 +1,7 @@
 # coding_homework_exercise 项目使用说明
 
+[![Fork me on Gitee](https://gitee.com/GP11/coding_homework_exercise/widgets/widget_2.svg)](https://gitee.com/GP11/coding_homework_exercise)
+
 **本文为教程，不允许更改**
 
 #### 介绍
