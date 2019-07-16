@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闰年判断</title>
+</head>
+<body>
+    <h3>请输入年份：</h3>
+    <input type="number" id="nian">
+    <button id="jisuan">计算</button>
+    <p id="jieguo"></p>
+    <script>
+    var nian = document.getElementById("nian");
+    var jisuan = document.getElementById("jisuan");
+    var jieguo = document.getElementById("jieguo");
+    jisuan.onclick = function () {
+        var n2 = nian.value * 1;
+        console.log(n2);
+        if ((n2 % 400 == 0) || ((n2 % 4 ==0) && (n2 % 100 != 0))){
+            jieguo.innerHTML = '您输入的年份是闰年';
+        }else{
+            jieguo.innerHTML = '您输入的年份不是闰年';
+        }
+    }
+    </script>
+</body>
+</html>
