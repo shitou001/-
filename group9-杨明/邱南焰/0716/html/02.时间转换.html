@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>时间转换</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /*
+        为抵抗洪水，战士连续作战89小时，编程计算共多少天零多少小时？
+
+        需求：给你89小时=转成  xx天xx小时
+    */
+    var hours = 89;
+    var day = parseInt(hours / 24); //天数
+    var hour = hours % 24;
+    console.log(day, hour);
+    console.log('89小时：' + day + '天' + hour + '小时');
+</script>
+
+</html>
