@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* span {
+            display: inline-block;
+            width: 200px;
+            height: 20px;
+            border: 1px solid black;
+        } */
+    </style>
+</head>
+
+<body>
+    <h1>究极计算机</h1>
+    <input type="text" id="one">
+    <select name="" id="xuanze">
+        <option value="jia">+</option>
+        <option value="jian">-</option>
+        <option value="chen">*</option>
+        <option value="chu">/</option>
+    </select>
+    <input type="text" id="two">
+    <input type="button" value="=" id="btn">
+    <input type="text" id="output">
+</body>
+<script>
+    var one = document.getElementById('one');
+    var two = document.getElementById('two');
+    var xuanze = document.getElementById('xuanze');
+    var btn = document.getElementById('btn');
+
+
+    btn.onclick = function () {
+        var nan = xuanze.value;
+        var ones = one.value;
+        var twos = two.value;
+
+        if (nan == 'jia') {
+            output.value = (ones - 0) + (twos - 0);
+
+        } else if (nan == 'jian') {
+            output.value = (ones) - (twos);
+
+        } else if (nan == 'chen') {
+            output.value = (ones) * (twos);
+
+        } else if (nan == 'chu') {
+            output.value = (ones) / (twos);
+
+        }
+    }
+</script>
+
+</html>
