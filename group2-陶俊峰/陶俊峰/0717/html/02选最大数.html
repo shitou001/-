@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        布局：
+        两个输入框取输入数；
+        一个按钮；
+        一个结果输入框。
+     -->
+     <h1>compare</h1>
+    <input type="text" id="input1">
+    <input type="text" id="input2">
+    <input type="button" value="COMPAER" id="btn">
+    <input type="text" id="output">
+
+</body>
+<script>
+    // get elements
+    var num1 = document.getElementById(input1);
+    var num2 = document.getElementById(input2);
+    var num3 = document.getElementById(output);
+    //  link some actions
+    btn.onclick = function () {
+       num1 = input1.value;
+       num2 = input2.value;
+    //    comparing 
+    if(num1 > num2){
+      output.value = num1 ;
+    } 
+    else if(num2 > num1){
+        output.value = num2 ;
+    }
+    else{
+        output.value = ' the number equals';
+
+    }
+    }
+
+</script>
+
+</html>
