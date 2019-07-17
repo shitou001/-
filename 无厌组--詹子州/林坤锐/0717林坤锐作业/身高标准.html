@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 开发一款软件，根据公式（身高-108）*2=体重，可以有10斤左右的浮动。来观察测试者体重是否合适 -->
+    <!-- 1.创建一个表单用来放身高，另一个放体重，点击一个按钮，测试是否合适 -->
+    身高：<input type="text" id="te1">
+    体重：<input type="text" id="te2">
+    <input type="button" value="结果" id="btn">
+    体型：<input type="text" id="low">
+</body>
+<script>
+    //绑定节点
+    var te1 = document.getElementById('te1');
+    var te2 = document.getElementById('te2');
+    var btn = document.getElementById('btn');
+    var low = document.getElementById('low');
+    //绑定点击事件
+    btn.onclick = function () {
+        //写出计算公式
+        var val1 = te1.value;
+        var val2 = te2.value;
+        var val3 = (te1.value - 108) * 2;
+        var val4 = (te1.value - 108) * 2 + 10;
+        var val5 = (te1.value - 108) * 2 - 10;
+        if (te2.value == val3) { low.value = '复合' }
+        else if (te2.value <= val4 && te2.value >= val5) { low.value = '复合1' }
+        else if (te2.value > val4 && te2.value < 200) { low.value = '胖' }
+        else if (te2.value < val5 && te2.value > 0) { low.value = '瘦' }
+        else { low.value = '' }
+        // else if (te2.value > val5) { low.value = '瘦' }
+        // else{ low.value = '复合'}
+        // else{ low.value = '不复合' }
+
+        // if (te2.value == (te1.value - 108) * 2) {
+        //     low.value = '复合'
+
+        // }
+        // if(te2.value >= val3*1 + 10){ low.value = '复合'}
+        // else if(te2.value == val3 * 1 + 10){ low.value = '复合1';}
+        // else if (te2.value != val3 * 1 - 10) { low.value = '复合2'; }
+        //  else if (te2.value !=(te1.value - 108) * 2 +11) { 
+        //     low.value = '复合1'
+        //     // console.log (low);
+        // }
+
+        // var val2 = te2.value = (te1.value - 108) * 2;
+        // if ( val2 = te2.value = (te1.value - 108) * 2) { low.value = '复合'  }
+        // else if(val2 != te2.value != (te1.value - 108) * 2){ low.value = '复合1' }
+        // if (val2 = te2.value = (te1.value - 108) * 2 ) { 
+        //     low.value = '复合' 
+        // }
+        // else if(val2 = te2.value != (te1.value - 108) * 2) {
+        //     low.value = '不复合'
+        // }
+    }
+</script>
+
+</html>
