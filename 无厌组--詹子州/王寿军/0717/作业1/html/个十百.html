@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+<body>
+    <h2>百位、十位、个位</h2>
+    <input type="text" class="input-in" id="day"/>
+    <input type="button" id="run" value="转换">
+    <span class="show"></span>
+</body>
+<script>
+    // 找节点
+    let inputIn = document.getElementsByClassName('input-in');
+    let day = document.getElementById('day');
+    var run = document.getElementById('run');
+    var dox = document.getElementsByClassName('show');
+
+    // 绑定点击事件
+    run.onclick = function() {
+
+        const value = parseInt(inputIn[0].value,10);
+        if(value>=100 && value<1000){
+            const bai = parseInt(value/100,10);
+            const shi = parseInt(value%100/10);
+            const ge = value%10;
+            dox[0].innerText = '百位：'+ bai + '  十位：'+ shi + '  个位：'+ ge;
+        }else{
+            dox[0].innerText = '请输入100~999之间的数字';
+        }
+    }
+</script>
+</html>
