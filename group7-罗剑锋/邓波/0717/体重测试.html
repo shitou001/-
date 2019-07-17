@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>体重测试</title>
+</head>
+
+<body>
+    <p>请输入您的身高（m）：</p>
+    <input type="number" id="cm">
+    <p>请输入您的体重（kg）:</p>
+    <input type="number" id="kg">
+    <button id="jisuan">计算</button>
+    <p id="mbi1">您的BMI指数为：</p>
+    <p id="shuchu"></p>
+    <script>
+        var cm = document.getElementById("cm");
+        var kg = document.getElementById("kg");
+        var jieguo = document.getElementById("jieguo");
+        var mbi1 = document.getElementById("mbi1");
+        var shuchu = document.getElementById("shuchu");
+        jisuan.onclick = function () {
+            var shengao = cm.value * 1;
+            var tizhong = kg.value *1;
+            var mbi = tizhong / (shengao * shengao);
+            mbi1.innerHTML = '您的BMI指数为：' + mbi;
+            switch (true){
+                case mbi < 18.5:
+                shuchu.innerHTML = '您的体重为过轻';
+                break;
+                case mbi >= 18.5 && mbi <= 24.99:
+                shuchu.innerHTML = '您的体重为正常';
+                break;
+                case mbi >= 25 && mbi <= 28:
+                shuchu.innerHTML = '您的体重为过重';
+                break;
+                case mbi >= 28 && mbi <= 32:
+                shuchu.innerHTML = '您的体重为肥胖';
+                break;
+                case mbi > 32:
+                shuchu.innerHTML = '您的体重为非常肥胖';
+                break;
+            }
+        }
+    </script>
+</body>
+
+</html>
