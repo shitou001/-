@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03猜数字</title>
+</head>
+
+<body>
+    <div id="num">
+        <input type="text" id="text1">
+        <input type="button" value="=" id="bnt">
+        <input type="text" id="text2"><span>百位</span>
+        <input type="text" id="text3"><span>十位</span>
+        <input type="text" id="text4"><span>个位</span>
+    </div>
+</body>
+<script>
+    // 给定一个三位数， 分别把这个数字的百位、十位、个位算出来并显示。
+    var text1 = document.getElementById("text1")
+    var text2 = document.getElementById("text2")
+    var text3 = document.getElementById("text3")
+    var text4 = document.getElementById("text4")
+    var button = document.getElementById("bnt")
+    
+    // var text1 = parseInt(text1.value)
+
+    bnt.onclick = function () {
+        if (text1.value >= 100) {
+            text2.value = preseInt(text1.value / 100);
+            console.log(text1)
+            console.log(text2)
+            if (text2.value < 10) {
+                text3.value = preseInt((text1.value % 100) / 10);
+                text4.value = text1.value - text2.value * 100 - text3.value * 10;
+            }else {
+                alert("这个数不是三位数");
+            }
+            
+        }else{
+            alert("这个数不是三位数");
+        }
+    }
+
+
+</script>
+
+</html>
