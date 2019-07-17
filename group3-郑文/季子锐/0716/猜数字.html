@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>06猜数字游戏</h1>
+    <input type="text" id="num">
+    <input type="button" value="猜数字" id="btn">
+    <div id="box"></div>
+</body>
+<script>
+    var shuzi = document.getElementById('shuzi');
+    var btn = document.getElementById('btn');
+    var rannum = parseInt(Math.random() * 100) + 1;
+    btn.onclick = function () {
+        var n = num.value;
+        console.log(n);
+        if (n == rannum) {
+            alert('猜对了');
+        } else if (n > rannum) {
+            alert('你猜大了');
+        } else {
+            alert('猜小了');
+        }
+    }
+</script>
+
+</html>

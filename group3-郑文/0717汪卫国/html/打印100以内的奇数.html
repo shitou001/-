@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <title>打印100以内的奇数</title>
+    <style>
+        body{font-family:"Microsoft yahei";}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;display: block;}
+        a{text-decoration: none; color: inherit;}
+        input{outline: none; border: none;}
+        .clearfix::after{display: block; content: ""; clear: both;}
+        
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+
+        var box = document.getElementById("box");
+
+        // 初始值
+        var num = 1;
+
+        // 记录奇数的个数
+        var count = 0;
+
+        while(num <= 100){ // 条件
+
+            if(num % 2 != 0){
+                count++;
+                box.innerHTML += num + ", ";
+
+                // 每行输出10个数
+                if(count % 10 == 0 ){
+                    box.innerHTML += "<br>";
+                }
+                
+            }
+            num++;
+        }
+        // 打印奇数的总数
+        box.innerHTML += "<br><br>" + 100 + "以内共有" + count + "个奇数";
+        
+    </script>
+</body>
+</html>

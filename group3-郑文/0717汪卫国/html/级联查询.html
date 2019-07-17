@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <title>二级联动</title>
+    <style>
+        body{font-family:"Microsoft yahei";}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;display: block;}
+        a{text-decoration: none; color: inherit;}
+        input{outline: none; border: none;}
+        .clearfix::after{display: block; content: ""; clear: both;}
+        
+    </style>
+</head>
+<body>
+    <select name="" id="province">
+        <option value="">-省份-</option>
+        <option value="gd">广东</option>
+        <option value="gs">甘肃</option>
+    </select>
+
+    <select name="" id="city">
+        <option value="city">城市</option>
+    </select>
+    <script>
+        // 选择省份以后
+        var prov = document.getElementById("province");
+        var city = document.getElementById("city");
+
+        prov.onchange = function (){
+            city.innerHTML = "";
+            if (prov.value == "gd") {
+                city.innerHTML += `<option value="">广州</option><option value="">深圳</option><option value="">东莞</option>`;
+            } else if(prov.value == "gs"){
+                city.innerHTML += `<option value="">兰州</option><option value="">天水</option><option value="">定西</option>`;
+            }
+        }
+    
+    </script>
+</body>
+</html>

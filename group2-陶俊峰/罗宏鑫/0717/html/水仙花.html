@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>999以内的水仙花数有：</h3>
+</body>
+<script>
+    //一个999数字
+    //得到数字，先求出百位、十位、个位，然后判断它们是否为水仙花,不是就用循环找下去
+    var a = 999;
+    while (a >= 100) {
+        var b = parseInt(a / 100);
+        var s = parseInt(a % 100 / 10);
+        var g = a % 10;
+        if (a == (Math.pow(b, 3) + Math.pow(s, 3) + Math.pow(g, 3))) {
+            document.write(a + "<br>");
+        }
+        a--;
+    }
+
+</script>
+
+</html>
