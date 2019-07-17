@@ -26,11 +26,11 @@
         console.log(num);
         //2.绑定事件
         btn.onclick = function () {
-            var num1 = parseInt(num.value / 100);
+            var num1 = parseInt(num.value / 100);//百位 ： 456 / 100 = 4.56
             result1.innerHTML = num1;
-            var num2 = parseInt((num.value - num1 * 100) / 10);
+            var num2 = parseInt((num.value - num1 * 100) / 10);//十位 456 - 400 = 56 / 10 = 5.6
             result2.innerHTML = num2;
-            var num3 = parseInt(num.value % 10);
+            var num3 = parseInt(num.value % 10);//个数  456 % 10 = 
             result3.innerHTML = num3;
 
         }

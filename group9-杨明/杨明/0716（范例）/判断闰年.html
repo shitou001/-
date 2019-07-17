@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>判断闰年</h1>
+    请输入年份：<input type="text" value="" id="tex1">
+    <input type="button" value="判断" id="btn">
+    <input type="text" value="" id="tex2">
+
+</body>
+<script>
+    /*
+        实现功能的思路：
+            1.我要什么效果？借助导图
+                * 判断一个年份是不是闰年？
+                * 需要一个表单接收年份、需要一个按钮点击的时候做判断、判断的结果输出到一个表单(布局)
+            2.具体的需求：
+                * 给按钮绑定事件 btn.onclick = function() {}
+                * 在点击的功能里面：获取年份 var num = tex1.value;
+                * 判断该年份是不是闰年：能被4整除但不能被100整除，或者能被400整除的才叫闰年  if else && ||
+                * 判断结果显示到一个表单里面 tex2.value = '结果';
+            3.编写代码
+                * 注意变量规范：不用数字开头，不要用关键字和保留字作为变量名；
+                * 边做边去控制台检测代码
+    */
+
+    //找节点
+    var text1 = document.getElementById('tex1');
+    var text2 = document.getElementById('tex2');
+
+    //绑定事件
+    btn.onclick = function () {
+        var num1 = text1.value;
+        // console.log(num1);
+        // 能被4整除但不能被100整除
+        //杨明版
+        // if (num1 % 4 == 0 && num1 % 100 != 0) {
+        //     text2.value = ('闰年')
+        //     //或者能被400整除 
+        // } else if (num1 % 400 == 0) {
+        //     text2.value = ('闰年')
+        // } else {
+        //     text2.value = ('不是闰年')
+        // }
+
+        //琳姐
+        if (num1 % 4 == 0 && num1 % 100 != 0 || num1 % 400 == 0) {
+            text2.value = ('闰年')
+            //或者能被400整除 
+        }else {
+            text2.value = ('不是闰年')
+        }
+    }
+</script>
+
+
+
+</html>
