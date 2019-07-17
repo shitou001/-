@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="text1">
+    <select id="s">
+        <option value="e">+</option>
+        <option value="b">-</option>
+        <option value="c">*</option>
+        <option value="d">/</option>
+        <option value="f">%</option>
+        
+    </select>
+    <input type="text" id="text2">
+    <input type="button" value="=" id="btn">
+    <input type="text" id="text3">
+</body>
+</html>
+<script>
+    var text1 = document.getElementById('text1');
+    var s = document.getElementById('s');
+    var text2 = document.getElementById('text2');
+    var btn = document.getElementById('btn');
+    var text3 = document.getElementById('text3');
+    // console.log();
+
+    btn.onclick = function () {
+        var sum1 = text1.value - 0;
+        var sum2 = text2.value - 0;
+       
+        var val = s.value;
+
+        if(val == 'e'){
+             var sum = sum1 + sum2;
+             text3.value = sum;
+        }else if(val == 'b'){
+             var sum = sum1 - sum2;
+             text3.value = sum;
+        }else if(val == 'c'){
+             var sum = sum1 * sum2;
+             text3.value = sum;
+        }else if(val == 'd'){
+             var sum = sum1 / sum2;
+             text3.value = sum;
+        }else{
+            var sum = sum1 % sum2;
+            text3.value = sum;
+        }
+    }
+
+
+
+</script>

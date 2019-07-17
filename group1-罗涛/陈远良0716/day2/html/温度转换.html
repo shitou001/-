@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="hua">华氏度
+    <input type="button" value="转换" id="btn">
+    <input type="text" id="she">摄氏度
+</body>
+</html>
+<script>
+    var hua = document.getElementById('hua');
+    var btn = document.getElementById('btn');
+    var she = document.getElementById('she');
+
+    btn.onclick = function () {
+        var sum1 = hua.value - 0;
+        
+        var sum = 5 / 9.0 * (sum1 - 32);
+        
+        she.value = sum;
+    }
+</script>

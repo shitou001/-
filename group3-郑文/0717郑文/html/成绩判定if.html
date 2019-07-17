@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="">输入你的成绩:</label>
+    <input type="text" name="" id="txt1"><br />
+    <input type="button" name="" id="btn" value="计算成绩">
+    <label for="">你的成绩结果是:</label>
+    <input type="text" name="" id="txt2">
+</body>
+<script>
+    var txt1 = document.getElementById('txt1');
+    var txt2 = document.getElementById('txt2');
+    var oBtn = document.getElementById('btn');
+    oBtn.onclick = function () {
+        var t1 = txt1.value - 0;
+        if (t1 < 60) {
+            // console.log('留级吧兄嘚');
+            txt2.value = '留级吧兄嘚';
+        } else if (t1 >= 60 && t1 < 70) {
+            // console.log('不错，及格啦');
+            txt2.value = '不错，及格啦';
+        } else if (t1 >= 70 && t1 <= 90) {
+            // console.log('继续加油，良好');
+            txt2.value = '继续加油，良好';
+        } else if (t1 > 90 && t1 <= 100) {
+            // console.log('优秀啊');
+            txt2.value = '优秀啊';
+        } else {
+            // console.log('你输的什么玩意儿');
+            txt2.value = '你输的什么玩意儿';
+        }
+    }
+</script>
+
+</html>

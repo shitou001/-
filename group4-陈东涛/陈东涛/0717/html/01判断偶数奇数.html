@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>判断偶数奇数</title>
+</head>
+
+<body>
+    <h2>请输入您想输入的数字</h2>
+    <input type="text" id="text1">
+    <input type="button" value="判断偶数奇数" id="btn">
+    <div id="output"></div>
+</body>
+
+</html>
+<script>
+    var text1 = document.getElementById('text1');
+    var btn = document.getElementById('btn');
+    var output = document.getElementById('output');
+    btn.onclick = function () {
+        var sum = text1.value;
+        // console.log(num);
+        if (sum % 2 == 1) {
+            // console.log('奇数');
+            output.innerHTML = '奇数';
+        } else if (sum % 2 == 0) {
+            // console.log('偶数');
+            output.innerHTML = '偶数';
+        }
+    }
+</script>
