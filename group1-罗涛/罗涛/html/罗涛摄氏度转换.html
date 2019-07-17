@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    摄氏度：<input type="text" id="text1" value="">
+    <input type="button" id="btn" onclick="get()" value="转换">
+    华氏度：<input type="text" id="res" value="">
+</body>
+   
+<script>
+    var text1 = document.getElementById('text1');
+    var btn = document.getElementById('btn');
+    var res = document.getElementById('res');
+
+    function get() {
+        res.value = 5 / 9.0 * (res.value - 32);
+        console.log(res);
+    }
+
+</script>
+</html>
