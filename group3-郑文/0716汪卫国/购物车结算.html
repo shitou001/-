@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车结算</title>
+    <style>
+        body {
+            font-family: "Microsoft yahei";
+        }
+    
+        body,
+        dl,
+        dd,
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+        }
+    
+        ol,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    
+        img {
+            border: none;
+            display: block;
+        }
+    
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    
+        .clearfix::after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+
+        .fruit-wrap{
+            display: flex;
+            justify-content: space-between;
+            width: 650px;
+            height: 300px;
+            margin: 50px auto;
+            background-color: #f5f1f1;
+        }
+
+        .fruit-img{
+            width: 300px;
+            height: 300px;
+        }
+
+        .fruit-info{
+            width: 300px;
+            font-size: 16px;;
+        }
+
+        .fruit-info .price{
+            margin-top: 50px;
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .fruit-info .count-wrap{
+            height: 100px;
+            display: flex; 
+            align-items: center;
+            line-height: 100px;
+            border-radius: 5px;
+        }
+
+        .count-wrap .btn{
+            width: 30px;
+            height: 30px;
+            background-color: #dddddd;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            font-size: 20px;
+            user-select: none;
+        }
+        .count-wrap .count{
+            width: 60px;
+            height: 30px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 30px;
+            user-select: none;
+        }
+
+        .fruit-total{
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .stock-wrap{
+            height: 50px;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="fruit-wrap">
+        <div class="fruit-img">
+            <img src="img/shuiguo.jpg" alt="" width="300" height="300">
+        </div>
+        <div class="fruit-info">
+            <div class="price">
+                <span>单价：</span>￥
+                <span id="price" style="font-size: 24px; color: #f00;">26.8</span>
+            </div>
+            <div class="stock-wrap">
+                <span>库存：</span>
+                <span id="stock">5</span>
+            </div>
+            <div class="count-wrap">
+                <span>数量：</span>
+                <p class="reduce btn" id="reduce">-</p>
+                <p class="count" id="count">0</p>
+                <p class="add btn" id="add">+</p>
+            </div>
+            <div class="fruit-total">
+                <span>结算：￥</span>
+                <span id="total" class="total" style="font-size: 24px; color: pink;">26.8</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        let price = document.getElementById("price");
+        let stock = document.getElementById("stock");
+
+        let toStock = parseInt(stock.innerHTML)*1;// 获取总库存
+        // console.log(toStock);
+        
+        let count = document.getElementById("count");
+        let reduce = document.getElementById("reduce");
+        let add = document.getElementById("add");
+        let total = document.getElementById("total");
+        
+        add.onclick = function () {
+
+            if(count.innerText * 1 < toStock){
+                
+                count.innerText = count.innerText * 1 + 1;
+                
+                stock.innerText = stock.innerText*1 - 1;
+                
+                total.innerText = (count.innerText) * 1 * (price.innerText) * 1;
+            }           
+                     
+        }
+
+        reduce.onclick = function () {
+            if(parseInt(count.innerText) > 0){
+
+                count.innerText = parseInt(count.innerText) - 1;
+                stock.innerText = stock.innerText * 1 + 1;
+                total.innerText = (count.innerText) * 1 * (price.innerText) * 1;
+            }           
+                     
+        }
+    </script>
+
+</body>
+</html>
