@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>成绩</title>
+</head>
+
+<body>
+    <div>
+        <h2>请输入你的成绩吧</h2>
+        <form action="">
+            <input type="text" id="tex1">
+            <input type="button" value="看看你优不优秀" id="btn">
+            <div id="res"></div>
+        </form>
+    </div>
+</body>
+<script>
+
+
+    /*
+        首先，在tex1输入一个成绩
+        然后，给btn设置点击事件，在事件触发的时候
+        先获取tex1的值，然后用if.. else if..的结构
+        从而判断出tex1里的值属于哪一类结果
+        最后再把得到的结果渲染到res里面
+    */
+
+    //获取节点
+    var tex1 = document.getElementById('tex1');
+    var btn = document.getElementById('btn');
+    var res = document.getElementById('res');
+
+    //用else if的做法
+    //点击事件
+    // btn.onclick = function() {
+    //     var num = tex1.value;
+    //     console.log(num);
+    //     if (num >= 0 && num < 60) {
+    //         res.innerHTML = '好的你没了，挂科仔';
+    //     }else if (num >=60 && num < 75) {
+    //         res.innerHTML = '恭喜你，是个及格仔';
+    //     }else if (num >=75 && num <= 85) {
+    //         res.innerHTML = '有点东西哦，良好兄弟';
+    //     }else if (num > 85 && num <= 100) {
+    //         res.innerHTML = '兄弟你是真滴牛批，优秀';
+    //     }
+    // } 
+
+    //用switch的做法
+    //点击事件
+    btn.onclick = function () {
+        var num = tex1.value;
+        console.log(num);
+        switch(true){
+            case num >= 0 && num < 60:
+            res.innerHTML = '好的你没了，挂科仔';
+            break;
+            case num >= 60 && num < 75:
+            res.innerHTML = '恭喜你，是个及格仔';
+            break;
+            case num >= 75 && num <= 85:
+            res.innerHTML = '有点东西哦，良好兄弟';
+            break;
+            case num > 85 && num <= 100:
+            res.innerHTML = '兄弟你是真滴牛批，优秀';
+            break;
+        }
+    }          
+</script>
+</html>

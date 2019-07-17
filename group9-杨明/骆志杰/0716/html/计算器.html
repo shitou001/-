@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+    <div>
+        <input type="text" id="aa"><b>+</b>
+        <input type="text" id="bb">
+        <input type="button" value="等于" id="add">
+        <input type="text" id="to1">
+    </div>
+    <div>
+        <input type="text" id="aa1"><b> -</b>
+        <input type="text" id="bb1">
+        <input type="button" value="等于" id="add1">
+        <input type="text" id="to2">
+    </div>
+    <div>
+        <input type="text" id="aa2"><b> *</b>
+        <input type="text" id="bb2">
+        <input type="button" value="等于" id="add2">
+        <input type="text" id="to3">
+    </div>
+    <div>
+        <input type="text" id="aa3"><b> /</b>
+        <input type="text" id="bb3">
+        <input type="button" value="等于" id="add3">
+        <input type="text" id="to4">
+    </div>
+
+
+    <!-- <div id="to1"></div> -->
+</body>
+<script>
+    var aa = document.getElementById('aa'); //找到id名为aa的节点 
+    var bb = document.getElementById('bb');
+    var add = document.getElementById('add'); //按钮名称为 add 
+    var to1 = document.getElementById('to1');
+
+    var aa = document.getElementById('aa1');
+    var bb = document.getElementById('bb1');
+    var add = document.getElementById('add1');
+    var to2 = document.getElementById('to2');
+
+    var aa = document.getElementById('aa2');
+    var bb = document.getElementById('bb2');
+    var add = document.getElementById('add2');
+    var to2 = document.getElementById('to3');
+
+    var aa = document.getElementById('aa3');
+    var bb = document.getElementById('bb3');
+    var add = document.getElementById('add3');
+    var to2 = document.getElementById('to4');
+    add.onclick = function () {
+        var mun1 = aa.value - 0;
+        var mun2 = bb.value * 1;
+        if (mun1 && mun2) {
+            var sm = mun1 + mun2
+            to1.value = sm;
+            //表单的话用.value
+            //文本的内容的话 就用  innerHTML
+        } else {
+            confirm('请正确填写数字!');
+        }
+    }
+    add.onclick = function () {
+        var mun1 = aa1.value * 1;
+        var mun2 = bb1.value * 1;
+        if (mun1 && mun2) {
+            var sm = mun1 - mun2;
+            to2.value = sm;
+        } else {
+            confirm('请正确填写数字!');
+        }
+    }
+    add.onclick = function () {
+        var mun1 = aa2.value * 1;
+        var mun2 = bb2.value * 1;
+        if (mun1 && mun2) {
+            var sm = mun1 * mun2;
+            to3.value = sm;
+        } else {
+            confirm('请正确填写数字!');
+        }
+    }
+    add.onclick = function () {
+        var mun1 = aa3.value * 1;
+        var mun2 = bb3.value * 1;
+        if (mun1 && mun2) {
+            var sm = mun1 / mun2;
+            to4.value = sm;
+        } else {
+            confirm('请正确填写数字!');
+        }
+    }
+</script>
+
+</html>

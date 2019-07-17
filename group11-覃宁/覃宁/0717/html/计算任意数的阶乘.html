@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 需求：计算任意数的阶乘n! 1*2*3*4*5...*n
+        // 5！=1 * 2 * 3 * 4 * 5 == 120
+            // 方案：
+            // 1.循环递减这个数，
+            // 2.准备一个容器，在每次循环中乘以这个递减数
+            //3.返回这个容器里的数
+    </script>
+</head>
+
+<body>
+    <input type="text" id="number">
+    <input type="button" id="zhuanhuan" value="转换">
+    <span id="tishi"></span>
+    <p id="jieguo"></p>
+
+</body>
+<script>
+    // 绑定ID
+    var number = document.getElementById("number");
+    var zhuanhuan = document.getElementById("zhuanhuan");
+    var tishi = document.getElementById("tishi");
+    var jieguo = document.getElementById("jieguo");
+    zhuanhuan.onclick = function () {
+        var num = parseInt(number.value) + 1;
+        var num2 = num - 1;
+        var num1 = 1;
+        console.log(num);
+        while (num > 1) {
+            num--;
+            num1 = num1 * num;
+            console.log(num1);
+        }
+        jieguo.innerHTML = num2 + "的阶乘是" + num1;
+    }
+</script>
+
+</html>

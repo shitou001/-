@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    输入一个数字：<input type="text" id="num">
+    点这：<input type="button" id="btn" value="摸我">
+    0到该数字的奇数结果有：<div id="contribute"></div>
+</body>
+<script>
+    //输入一个数字，可以求得该数字里面所有的奇数
+    //需要一个框，一个事件触发按钮，结果显示框一个
+    //do it
+    var num = document.getElementById("num");
+    var btn = document.getElementById("btn");
+    var con = document.getElementById("contribute");
+
+    btn.onclick = function () {
+        while (num.value > 0) {
+            if (num.value % 2 != 0) {
+                con.innerHTML += num.value + " ";
+            }
+            num.value--;
+        }
+        num.value = "别写太大的数，我卡给你看"
+    }
+    num.onclick = function () {
+        num.value = null;
+    }
+</script>
+
+</html>

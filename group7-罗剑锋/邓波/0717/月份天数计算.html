@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>月份天数计算</title>
+</head>
+
+<body>
+    <h2>请输入要查询的月份：</h2>
+    <input type="number" id="yue">
+    <h2 id="jieguo">这个月的天数为：</h2>
+    <script>
+        var yue = document.getElementById("yue");
+        yue.oninput = function () {
+            num = yue.value * 1;
+            if (num >= 1 && num <= 12) {
+                var d = new Date(2019, num, 0);
+                jieguo.innerHTML = "这个月的天数为：" + d.getDate() + "天";
+            }else{
+                jieguo.innerHTML = "您输入的月份不对（1~12）"
+            }
+        }
+    </script>
+</body>
+
+</html>

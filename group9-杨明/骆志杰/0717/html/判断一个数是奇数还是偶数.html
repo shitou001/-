@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>判断一个数是奇数还是偶数</title>
+</head>
+
+<body>
+    <input type="text" id="aa">
+    <input type="button" value="判断" id="btn">
+    <input type="text" id="bb">
+</body>
+<script>
+    var aa = document.getElementById('aa');
+    var bb = document.getElementById('bb');
+    var btn = document.getElementById('btn');
+    btn.onclick = function () {
+        var aa1 = aa.value - 0;
+        // var bb1 = bb.value - 0;
+        // console.log(aa1);
+        if (aa1 % 2 == 0) {
+            var aa2 = aa1 + '这个数是偶数!';
+            bb.value = aa2;
+        } else {
+            var aa2 = aa1 + '这个数奇数!';
+            bb1.value = aa2;
+        }
+    }
+    /*
+    作业思路:
+     * 逻辑转换 利用 被2整除无余数 >为偶数 否则就为奇数 
+      * 找到页面中所需要的节点 
+      * 结构为 表单 + 按钮（给按钮绑定点击事件） + 表单
+         */
+</script>
+
+</html>

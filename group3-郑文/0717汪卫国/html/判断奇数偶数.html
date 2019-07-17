@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <title>判断奇数偶数</title>
+    <style>
+        body{font-family:"Microsoft yahei";}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;display: block;}
+        a{text-decoration: none; color: inherit;}
+        .clearfix::after{display: block; content: ""; clear: both;}
+        
+    </style>
+</head>
+<body>
+    请输入要判断的数：<input type="text" name="" id="inp">
+
+    <script>
+        var inp = document.getElementById("inp");
+
+        inp.onchange = function () {
+            if(inp.value % 2 === 0){
+                alert(`${inp.value}是偶数！`);
+            }else{
+                alert(`${inp.value}是奇数！`);
+            }
+        }
+    
+    </script>
+</body>
+</html>

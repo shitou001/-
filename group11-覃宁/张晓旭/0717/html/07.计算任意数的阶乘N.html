@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>计算任意数的阶乘N</h1>
+    <input type="text" id="text1" placeholder="请输入要计算的数字">
+    <input type="button" id="button" value="计算">
+    <input type="text" id="text2">
+</body>
+<script>
+    var one = document.getElementById('text1');
+    var btn = document.getElementById('button');
+    var two = document.getElementById('text2');
+    btn.onclick = function () {
+        var ones = one.value;
+        var n = 1;
+        while (ones > 0) {
+            n = n * ones;
+            ones--;
+        }
+        two.value = n
+    }
+</script>
+
+</html>

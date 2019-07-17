@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- frame construction:
+      weight and height respectivly owns a framework;
+      the botton for  testing;
+      the span  for outcome;
+    -->
+    weight(kg):<input type="text" id="weight">
+    height(m):<input type="text" id="height">
+    <input type="button" value="testing" id="btn">
+    <br>
+    <span id="outcome"></span>
+</body>
+<script>
+    // get elements
+    var zhuz_h = document.getElementById(weight);
+    var zhuz_w = document.getElementById(height);
+    var zhuz_o = document.getElementById(outcome);
+    // link   actions
+    btn.onclick = function () {
+        var num1 = weight.value;
+        console.log(num1);
+        var num2 = height.value;
+        console.log(num2);
+        var BMI = num1 / (num2 * num2);
+        console.log(BMI);
+        if (BMI < 18.5) {
+            outcome.innerHTML = '体重过轻';
+        } else if (BMI > 18.5 && BMI < 24.99) {
+            outcome.innerHTML = '你是个好人';
+        } else if (BMI > 25 && BMI < 28) {
+            outcome.innerHTML = '你很胖胖哦';
+        } else if (BMI >= 28 && BMI < 32) {
+            outcome.innerHTML = '大胖子';
+        } else if (BMI > 32) {
+            outcome.innerHTML = '非常胖胖';
+        }
+    }
+</script>
+
+</html>
