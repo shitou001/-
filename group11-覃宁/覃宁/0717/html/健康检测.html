@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 需求:
+        // 开发一款软件，根据公式（身高 - 108）* 2=体重，可以有10斤左右的浮动。来观察测试者体重是否合适;
+
+        // BMI指数（即身体质量指数，简称体质指数又称体重，英文为Body Mass Index，简称BMI），
+        // 是用体重公斤数除以身高米数平方得出的数字，是目前国际上常用的衡量人体胖瘦程度以及是否健康
+        // 的一个标准。主要用于统计用途，当我们需要比较及分析一个人的体重对于不同高度的人所带来的健康影响
+        // 时，BMI值是一个中立而可靠的指标。
+
+        // 成人的BMI数值：
+
+        // 过轻：低于18.5
+        // 正常：18.5 - 24.99
+        // 过重：25 - 28
+        // 肥胖：28 - 32
+        // 非常肥胖, 高于32
+        // 体质指数（BMI）= 体重（kg）÷身高 ^ 2（m） 如：70kg÷（1.75×1.75）=22.86
+        // 方案：
+        // html：
+        // 1.添加两个输入文本框（身高，体重）
+        // 2.添加一个判断按钮
+        // 3.添加一个输出容器
+        // 4.添加一个错误提示容器
+        // JS:
+        // 1.绑定ID
+        // 2.设置点击事件{
+        //     （1）获取身高体重；
+        //     （2）判断这个数是不是数字类型，如果是，执行（3），不是就做错误提示；
+        //     （3）求出IBM 指数：  IBM =体重/（身高的平方）
+        //     （4）如果  IBM 低于18.5, 结果为过轻；
+        //          如果 IBM在18.5 - 24.99, 结果为正常；以此类推
+        //     （5）将结果返回页面
+        // }
+
+    </script>
+</head>
+
+<body>
+    身高(m)：
+    <input type="text" id="number1">
+    体重(kg)：
+    <input type="text" id="number2">
+    <input type="button" id="panduan" value="判断">
+    <span id="tishi"></span>
+    <p id="jieguo"></p>
+</body>
+<script>
+    // 身高
+    var number1 = document.getElementById("number1");
+    // 体重
+    var number2 = document.getElementById("number2");
+    var panduan = document.getElementById("panduan");
+    var tishi = document.getElementById("tishi");
+    var jieguo = document.getElementById("jieguo");
+    panduan.onclick = function () {
+        var num1 = number1.value - 0;
+        var num2 = number2.value - 0;
+        if (isNaN(num1) || isNaN(num2)) {
+            tishi.innerHTML = "请输入数字";
+            jieguo.innerHTML = "";
+        } else {
+            var ibm = num2 / (num1 * num1);
+            // var ibm = 23;
+            console.log(num1, num2);
+            console.log(ibm);
+            if (ibm < 18.5) {
+                jieguo.innerHTML = "体重过轻";
+            }
+            if (ibm >= 18.5 && ibm <= 24.99) {
+                jieguo.innerHTML = "体重正常";
+            }
+            if (ibm >= 25 && ibm <= 28) {
+                jieguo.innerHTML = "体重过重";
+            }
+            if (ibm > 28 && ibm <= 32) {
+                jieguo.innerHTML = "体重肥胖";
+            }
+            if (ibm > 32) {
+                jieguo.innerHTML = "体重非常";
+            }
+        }
+    }
+</script>
+
+</html>

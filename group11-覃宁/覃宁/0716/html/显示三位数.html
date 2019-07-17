@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="number" placeholder="请输入一个三位数">
+    <input type="button" id="zhuanhuan" value="转换">
+    <span id="yanzheng"></span> <br>
+
+    百位数：<p id="bai"></p>
+    十位数：<p id="shi"></p>
+    个位数：<p id="ge"></p>
+
+</body>
+<!-- 需求：给定一个三位数，分别把这个数字的百位、十位、个位算出来并显示。
+
+方案：
+HTML:
+1.设置一个输入文本框；
+2.设置三个个输出容器；
+3.设置一个转换按钮；
+JS:
+1.绑定ID；
+2.设置转换按钮为点击事件；{
+（1）获取这个三位数，并且取整
+（2）判断这个数是不是数字而且是三位数，如果不是就提示用户，如果是则进行（3）步骤；
+（3）将这个三位数除以100取整，得到百位数值1；
+（4）将这个三位数减100*值1，除以10取整，得到十位数值2；除以10取余，得到十位数值3；
+（5）将值123渲染到3个HTML的接收容器中；
+} -->
+<script>
+    // 绑定ID
+    var number = document.getElementById("number");
+    var yanzheng = document.getElementById("yanzheng");
+    var bai = document.getElementById("bai");
+    var shi = document.getElementById("shi");
+    var ge = document.getElementById("ge");
+    var zhuanhuan = document.getElementById("zhuanhuan");
+    //设置转换按钮为点击事件
+    zhuanhuan.onclick = function () {
+        // 获取这个三位数,并且取整
+        var num = parseInt(number.value);
+        // console.log(num);
+        // 判断这个数是不是数字而且是三位数，如果不是就提示用户
+        if (isNaN(num)) {
+            yanzheng.innerHTML = "这不是一个数字，请重新输入";
+        } else {
+            if (num >= 100 && num < 1000) {
+                // 将这个三位数除以100取整，得到百位数值1；
+                // 将这个三位数减100*值1，除以10取整，得到十位数值2；除以10取余，得到十位数值3；
+                var bai_x = parseInt(num / 100);
+                console.log(bai);
+                var shi_x = parseInt((num - 100 * bai_x) / 10);
+                console.log(shi);
+                var ge_x = parseInt((num - 100 * bai_x) % 10);
+                console.log(ge);
+                // 将值123渲染到3个HTML的接收容器中；
+                bai.innerHTML = bai_x;
+                shi.innerHTML = shi_x;
+                ge.innerHTML = ge_x;
+
+            } else {
+                yanzheng.innerHTML = "这不是一个三位数，请输入三位数";
+            }
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>假装是个计算器</title>
+    <style>
+        form{
+            width: 600px;
+            height: 200px;
+            border: 1px solid red;
+            margin: 100px auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <input type="text" id="tex1">
+        <select name="" id="do">
+            <option value="jia" id="jia">+</option>
+            <option value="jian" id="jian">-</option>
+            <option value="cheng" id="cheng">*</option>
+            <option value="chu" id="chu">/</option>
+            <option value="yu" id="yu">%</option>
+        </select>
+        <input type="text" id="tex2">
+        <input type="button" value="=" id="btn">
+        <input type="text" id="tex3">
+    </form>
+</body>
+<script>
+    var tex1 = document.getElementById('tex1');
+    var tex2 = document.getElementById("tex2");
+    var tex3 = document.getElementById("tex3");
+    var sel = document.getElementById("do");
+    var btn = document.getElementById("btn");
+    btn.onclick = function () {
+        val = sel.value;
+        var num1 = tex1.value - 0;
+        var num2 = tex2.value - 0;
+        // console.log(val);
+        if (val == 'jia') {
+            sum = num1 + num2;
+            // console.log(sum);
+            tex3.value = sum;
+        } else if (val == 'jian') {
+            sum = num1 - num2;
+            // console.log(sum);
+            tex3.value = sum;
+        } else if (val == 'cheng') {
+            sum = num1 * num2;
+            // console.log(sum);
+            tex3.value = sum;
+        } else if (val == 'chu') {
+            sum = num1 / num2;
+            // console.log(sum);
+            tex3.value = sum;
+        } else {
+            sum = num1 % num2;
+            // console.log(sum);
+            tex3.value = sum;
+        }
+    }
+</script>
+
+</html>

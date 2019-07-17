@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,li{
+				list-style: none;
+			}
+			body{
+				background: #ccc;
+			}
+			#da{
+				width: 600px;
+				height: 600px;
+				background: white;
+				margin: auto;
+				margin-top: 100px;
+			}
+			#da img{
+				margin-left: 200px;
+				margin-top: 30px;
+			}
+			#da ul{
+				margin-top: 50px;
+				margin-left: 20px;
+			}
+			#da ul li{
+				margin-top: 10px;
+			}
+			#price,#TotalPrices{
+				color: red;
+				border: none;
+			}
+			#minus,#add{
+				width: 20px;
+			}
+			#number{
+				width: 50px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="da">
+			<img src="../images/8-3.png">
+			<ul>
+				<li>
+					<span>价格：</span>
+					<input type="text" name="" id="price" value="￥4998" />
+				</li>
+				<li>
+					<span>数量：</span>
+					<input type="button" name="" id="minus" value="-" />
+					<input type="text" name="" id="number" value="1" />
+					<input type="button" name="" id="add" value="+" />
+				</li>
+				<li>
+					<span>总价：</span>
+					<input type="text" name="" id="TotalPrices" value="￥4998" />
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		//找到元素
+		// var price = document.getElementById('price');
+		var minus = document.getElementById('minus');
+		var number = document.getElementById('number');
+		var add = document.getElementById('add');
+		var TotalPrices = document.getElementById('TotalPrices');
+		
+		minus.onclick = function() {//点击minus按钮
+			//判断
+			if(number.value > 1) {
+				number.value--;
+				TotalPrices.value = '￥' + 4998 * number.value;
+			}
+		}
+		add.onclick = function() {//点击add按钮
+			//判断
+			if(number.value < 50) {
+				number.value++;
+				TotalPrices.value = '￥' + 4998 * number.value;
+			}
+		}
+	</script>
+</html>

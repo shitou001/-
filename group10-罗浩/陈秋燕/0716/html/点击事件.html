@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            display: none;
+
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" id="btn" value="点我查看">
+    <img src="../images/12eb0965ab33dc8e05870911b90f3f13.png" alt="" id="img">
+</body>
+<script>
+    //一定要加引号
+    var btn = document.getElementById('btn');
+    var img = document.getElementById("img");
+    btn.onclick = function () {
+        img.style.display = 'inline-block';
+    }
+</script>
+
+</html>

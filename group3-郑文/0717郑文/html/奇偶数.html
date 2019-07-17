@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Document</title>
+</head>
+<body>
+    <label for="">输入数字:</label>
+    <input type="tel" id="txt1" placeholder="请输入一个数：">
+    <input type="button" id="btn" value="我是:">
+    <input type="text" id="txt2">
+</body>
+<script>
+    var txt1 = document.getElementById('txt1');
+    var txt2 = document.getElementById('txt2');
+    var oBtn = document.getElementById('btn');
+    oBtn.onclick = function(){
+        var num = txt1.value - 0;   //隐式转换
+        // console.log(num);
+        if(num % 2 == 0){
+            // console.log('我是偶数么么哒');
+            txt2.value = '偶数';
+        }else{
+            // console.log('我是奇数');
+            txt2.value = '奇数';
+        }
+    }
+</script>
+</html>
