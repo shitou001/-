@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>给你2311秒，你转成：xx时xx分xx秒；</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    var a = 2311;
+    var b = 60;
+    var c = parseInt(2311 / 60);//分
+    var d = a % 60;//秒
+    var e = parseInt(2311 / 3600); //时
+    console.log(e + '时' + c + '分' + d + '秒');
+</script>
