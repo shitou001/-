@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>四则运算</title>
+</head>
+
+<body>
+    <h1>计算器</h1>
+    <input type="text" id="num1">
+    <select id="fuhao">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="text" id="num2">
+    <input type="button" name="" id="btn" value="=">
+    <span id="span">结果：</span>
+
+    <script>
+        var num1 = document.getElementById("num1");
+        var num2 = document.getElementById("num2");
+        var fuhao = document.getElementById("fuhao");
+        var btn = document.getElementById("btn");
+        var span = document.getElementById("span")
+
+
+        btn.onclick = function f() {
+            console.log("第一个输入框的值：" + num1.value);
+            console.log("第二个输入框的值：" + num2.value);
+
+            if (fuhao.value == '+') {
+                var result = Number(num1.value) + Number(num2.value);
+            } else if (fuhao.value == '-') {
+                var result = Number(num1.value) - Number(num2.value);
+            } else if (fuhao.value == '*') {
+                var result = Number(num1.value) * Number(num2.value);
+            } else if (fuhao.value == '/') {
+                var result = Number(num1.value) / Number(num2.value);
+            }
+            span.innerHTML = result;
+            /*
+                1. js中innerHTML的用法：
+                    innerHTML可获取或设置指定元素标签内的 html内容，从该元素标签的起始位置到终止位置的全部内容(包含html标签)。
+                    
+                    获取元素的内容：element.innerHTML;
+
+                    给元素设置内容：element.innerHTML =htmlString;
+
+                2、js中innerText的用法：
+
+                    innerText可获取或设置指定元素标签内的文本值，从该元素标签的起始位置到终止位置的全部文本内容(不包含html标签)。
+
+                    获取元素的内容：element.innerText;给元素设置内容：element.innerText = string;
+
+                3、innerHTML和innerText区别：
+
+                    innerHTML返回的是标签内的 html内容，包含html标签。
+
+                    innerText返回的是标签内的文本值，不包含html标签。
+            */
+            console.log("结果为:" + result)
+        }
+    </script>
+
+</body>
+
+</html>
