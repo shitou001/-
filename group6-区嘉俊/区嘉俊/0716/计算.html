@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个 十 百</title>
+</head>
+<body>
+    <input type="text" id="tex1">
+    <input type="button" value="=" id="deng">
+    <input type="text" id="tex2">
+    <!-- <input type="text" id="shi">十
+    <input type="text" id="ge"> -->
+</body>
+<script>
+    var tex1 = document.getElementById("tex1");
+    var deng = document.getElementById("deng");
+    var tex2 = document.getElementById("tex2");
+    // var shi = document.getElementById("shi");
+    // var ge = document.getElementById("ge");
+
+    deng.onclick = function () {
+        var num  = tex1.value;
+        console.log(num);
+        var numNUM = tex2.value;
+        
+        var bai = parseInt(num / 100);
+        console.log(bai);
+        var shi = parseInt((num % 100) / 10);
+        console.log(shi);
+        var ge = parseInt(num % 10);
+        console.log(ge);
+
+        numNUM = tex2.value = bai + "百" +  shi  + "十"  +ge ; 
+    }
+</script>
+</html>

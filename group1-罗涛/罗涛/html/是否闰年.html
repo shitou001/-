@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="" id="te1" value="" />
+		<input type="button" name="" id="btn" value="判断" />
+		<input type="text" name="" id="res" value="" />
+	</body>
+	<script type="text/javascript">
+		//找到元素
+		var te1 = document.getElementById('te1');
+		var btn = document.getElementById('btn');
+		var res = document.getElementById('res');
+		
+		btn.onclick = function() {
+			
+			var year = te1.value;
+			
+			//判断
+			if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+				res.value = year + '是闰年';
+			}else {
+				res.value = year + '不是闰年';
+			}
+		}
+		//点击te1按钮清空输入框的值
+		te1.onclick = function(){
+			res.value = '';
+		}
+	</script>
+</html>
