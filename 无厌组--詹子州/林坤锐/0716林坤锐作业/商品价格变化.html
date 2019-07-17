@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    img {
+        width: 200px;
+        height: 200px;
+    }
+</style>
+
+<body>
+    <img src="../image/pic5.jpg" alt=""><br>
+    商品数量：<input type="button" value="-" id="jian">
+    <input type="text" value="1" id="shu">
+    <input type="button" value="+" id="jia"><br>
+    商品单价：<span id="dan">24</span><br>
+    商品总价：<span id="zong">￥24</span>
+</body>
+<script>
+    var jian = document.getElementById('jian');
+    var shu = document.getElementById('shu');
+    var jia = document.getElementById('jia');
+    var dan = document.getElementById('dan');
+    var zong = document.getElementById('zong');
+
+
+    jian.onclick = function () {
+
+
+      var jian = --shu.value;
+       if (shu.value <= 1) {
+            shu.value = 1;
+        }
+        var zongjia = shu.value * dan.innerHTML;
+       
+
+        console.log(zongjia);
+
+        zong.innerHTML = '￥' + zongjia;
+        console.log(zong);
+
+
+
+    }
+    jia.onclick = function () {
+        var jian = ++shu.value;
+         if (shu.value >= 6) {
+            shu.value = 6;
+        }
+        var zongjia = shu.value * dan.innerHTML;
+
+        console.log(zongjia);
+
+        zong.innerHTML = '￥' + zongjia;
+        console.log(zong);
+
+
+    }
+
+</script>
+
+</html>
