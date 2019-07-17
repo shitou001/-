@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>个十百</title>
+    <style>
+        form{
+            width: 500px;
+            height: 100px;
+            border: 1px solid gold;
+            margin: 100px auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <label for="tex1">输入3位数</label>
+        <input type="text" id="tex1">
+        <input type="button" id="btn" value="转换">
+        <input type="text" id="tex2">
+    </form>
+</body>
+<script>
+    var tex1 = document.getElementById('tex1');
+    var tex2 = document.getElementById("tex2");
+    var btn = document.getElementById('btn');
+    btn.onclick = function () {
+        var num = tex1.value;
+        if (num.length == 3) {
+            var n1 = parseInt(num / 100);
+            var n2 = parseInt((num - parseInt(num / 100)  * 100) / 10);
+            var n3 = parseInt(num % 10);
+            // console.log(n1,n2,n3);
+            tex2.value = n1 + "百" + n2 + "十" + n3 + "个";
+        } else {
+            alert('请输入三位数');
+        }
+    }
+</script>
+
+</html>
