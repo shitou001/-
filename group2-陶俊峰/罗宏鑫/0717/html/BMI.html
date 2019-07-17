@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>输入你得身高体重，体验绝望吧！</h3>
+    身高（m）：<input type="text" id="height"><br>
+    体重（kg）：<input type="text" id="weight"><br>
+    <input type="button" id="btn" value="BMI"><br>
+    你的BMI指数为：<div id="contribute"></div>
+
+
+</body>
+<script>
+    //i need 算出BMI指数，输入身高和体重，再按一个键就能得到BMI指数，且得到指数分析结果
+    //我要一个身高输入框，还要一个输入框，再来一个按钮得出结果，结果要有BMI指数，还要有BMI指数分析结论
+    //就是这样子！没问题，do it
+    //获取节点
+    var height = document.getElementById("height");
+    var weight = document.getElementById("weight");
+    var btn = document.getElementById("btn");
+    var contribute = document.getElementById("contribute");
+
+    //事件触发
+    btn.onclick = function () {
+        var ctr = parseInt(weight.value / Math.pow(height.value, 2));
+        // var ctr = weight.value / Math.pow(height.value, 2);
+        console.log(ctr);
+        if (ctr < 18.5) {
+            contribute.innerHTML = ctr + "，孩纸多吃点，太轻了！";
+
+        }
+        else if (ctr >= 18.5 && ctr <= 24.99) {
+            contribute.innerHTML = ctr + "，正常范围，保持哦！";
+        }
+        else if (ctr >= 25 && ctr <= 28) {
+            contribute.innerHTML = ctr + ",有点重了，别吃太多！";
+        }
+        else if (ctr > 28 && ctr <= 32) {
+            contribute.innerHTML = ctr + "，哎呦喂！你这个胖子，以后只能喝水，不准吃东西";
+        }
+        else if (ctr > 32) {
+            contribute.innerHTML = ctr + ",看你瘦的！多吃点，人嘛！开心就好，不要在乎别人眼光";
+        }
+    }
+</script>
+
+</html>
