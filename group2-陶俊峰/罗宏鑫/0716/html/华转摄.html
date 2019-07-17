@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="F" placeholder="华氏度">
+    <input type="button" value="=" id="btn">
+    <input type="text" id="C" placeholder="摄氏度">
+
+</body>
+<script>
+    var F = document.getElementById("F");
+    var C = document.getElementById("C");
+    var btn = document.getElementById("btn");
+
+    btn.onclick = function () {
+        var Fnum = F.value;
+        var Cnum = C.value;
+        // console.log(Fnum);
+        if (isNaN(Fnum || Cnum)) {
+            document.write("这不是数字");
+        } else if (Fnum) {
+            Cnum = 5 / 9 * (Fnum - 32);
+            C.value = Cnum + "℃";
+        }
+        else if (Cnum) {
+            Fnum = Cnum * 9 / 5 + 32;
+            F.value = Fnum + "°F"
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>百十个位计算</title>
+</head>
+
+<body>
+    <p>输入一个三位数字，按计算得到各个位置数字</p>
+    <input type="text" id="number">
+    <input type="button" value="计算" id="btn">
+    <p id="baiwei">百位是：</p>
+    <p id="shiwei">十位是：</p>
+    <p id="gewei">个位是：</p>
+</body>
+<script>
+    var number = document.getElementById('number');
+    var btn = document.getElementById('btn');
+    var baiwei = document.getElementById('baiwei');
+    var shiwei = document.getElementById('shiwei');
+    var gewei = document.getElementById('gewei');
+    btn.onclick = function () {
+        var Number = number.value - 0;
+        if (Number >= 1000) {
+            alert("请输入一个3位数！")
+        } else {
+            var m = Number / 100;
+            var M = parseInt(m);
+            baiwei.innerHTML = "百位是：" + M;
+            var n = Number / 10 % 10;
+            var N = parseInt(n);
+            shiwei.innerHTML = "十位是：" + N;
+            var b = Number % 10;
+            var B = parseInt(b);
+            gewei.innerHTML = "个位是：" + B;
+        }
+
+
+    }
+</script>
+
+</html>
