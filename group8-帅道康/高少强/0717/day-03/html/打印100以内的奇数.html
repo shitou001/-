@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <input type="button" value="打印" id="btn">
+    <div id="cont"></div>
+    <!-- 设置存放容器 -->
+</body>
+<script>
+    var btn = document.getElementById("btn");
+
+    btn.onclick = function () {
+        var a = 0;
+        while (a < 100) {
+            a++;
+            // 循环获取100以内的所有数
+            if (a % 2 != 0) {
+                // 挑出奇数打印输出
+                document.write(a + " ");
+            }
+
+
+        }
+    }
+</script>
+
+</html>

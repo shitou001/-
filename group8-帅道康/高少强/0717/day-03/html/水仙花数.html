@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="button" id="btn" value="计算">
+</body>
+<script>
+    var btn = document.getElementById("btn");
+    btn.onclick = function () {
+        var a = 100;
+        var n = 0;
+        var b, c, d;
+        // console.log(b, c, d);
+        while (a < 999) {
+            a++;
+            b = parseInt(a / 100);
+            c = parseInt((a % 100) / 10);
+            d = parseInt(a % 10);
+            var sum = Math.pow(b,3) + Math.pow(c,3) + Math.pow(d,3);
+            console.log(a);
+            if (sum == a) {
+               n = a;
+             document.write(n + "<br>");  
+            }
+            // n = n;
+        }
+        
+    }
+</script>
+
+</html>
