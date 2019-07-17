@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    输入一个三位数：<input type="text" id="sws">
+    <input type="button" value="分解" id="btn">
+    百位数为：<input type="text" id="bfw">
+    十位数为：<input type="text" id="sfw">
+    个位数为：<input type="text" id="gws">
+</body>
+</html>
+<script>
+      var sws = document.getElementById('sws');
+      var btn = document.getElementById('btn');
+      var bfw = document.getElementById('bfw');
+      var sfw = document.getElementById('sfw');
+      var gws = document.getElementById('gws');
+      
+
+      btn.onclick = function () {
+          var sum = sws.value;
+          var sum1 = bfw.value;
+          var sum2 = sfw.value;
+          var sum3 = gws.value;
+
+          sum1 = parseInt(sum / 100);
+          bfw.value = sum1;
+        //   console.log(bfw.value);
+
+          sum2 = parseInt(sum / 10) - (sum1 * 10);
+          sfw.value = sum2;
+
+          sum3 = sum - ((sum1 * 100) + (sum2 * 10));
+          gws.value = sum3;
+
+
+
+      }
+
+</script>
