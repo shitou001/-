@@ -1,0 +1,15 @@
+Uncaught SyntaxError: Unexpected token;
+
+Uncaught TypeError: Cannot read property 'value' of undefined
+    at HTMLInputElement.bnt.onclick (计算器的制作.html:38)
+
+Uncaught TypeError: Cannot read property 'value' of null
+    at HTMLInputElement.bnt.onclick
+
+
+ Uncaught ReferenceError: preseInt is not defined
+    at HTMLInputElement.bnt.onclick    
+
+
+
+Uncaught SyntaxError: Unexpected token ||
