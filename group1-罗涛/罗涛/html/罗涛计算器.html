@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>罗涛计算器</title>
+    <style>
+        .jisuanqi {
+            width: 100%;
+            height: 100%;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jisuanqi">
+        <h2>罗涛牌计算器</h2>
+        <input type="text" id="taxt1" name=taxt1 value="">
+        <select name="" id="list">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" id="taxt2" name=taxt2 value="">
+        <input type="button" id="btn" onclick="boom()" value="计算">
+        <input type="text" id="res" value="">
+
+    </div>
+</body>
+<script>
+        var taxt1 = document.getElementById('taxt1');
+        var taxt2 = document.getElementById('taxt2');
+        var btn = document.getElementById('btn');
+        var list = document.getElementById('list');
+        var res = document.getElementById('res');
+
+        function boom() {
+            console.log('第一个输入框值：' + taxt1.value);
+            console.log('第二个输入框值：' + taxt2.value);
+        
+        if (list.value == '+') {
+            res.value = parseInt(taxt1.value) + parseInt(taxt2.value);
+        } else if (list.value == '-') {
+            res.value = parseInt(taxt1.value) - parseInt(taxt2.value);
+        } else if (list.value == '*') {
+            res.value = parseInt(taxt1.value) * parseInt(taxt2.value);
+        } else if (list.value == '/') {
+            res.value = parseInt(taxt1.value) / parseInt(taxt2.value);
+        }
+        res.innerHTML = '结果' + res;
+        console.logo('res');
+    }
+</script>
+
+</html>

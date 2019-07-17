@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>摄氏度</title>
+</head>
+
+<body>
+    <!--
+小明要到美国旅游，可是那里的温度是以华氏度为单位记录的。它需要一个程序将华氏温度（80度）转换为摄氏度，并以华氏度和摄氏度为单位分别显示该温度。
+
+提示：摄氏度与华氏度的转换公式为：摄氏度 = 5/9.0*(华氏度-32)
+
+    -->
+    <input type="text" id="tex1">°C
+    <input type="button" value="=" id="btn">
+    <input type="text" id="tex2">°F
+</body>
+    <script>
+    var tex1 = document.getElementById("tex1");//华氏度；
+    var tex2 = document.getElementById("tex2");//摄氏度；
+    var btn = document.getElementById("btn");//等于；
+     btn.onclick = function () {
+         var val = tex1.value;
+        tex2.value = 5 / 9.0 * ( val - 32); 
+        tex2.toFixed(2);
+     } 
+    </script>
+</html>

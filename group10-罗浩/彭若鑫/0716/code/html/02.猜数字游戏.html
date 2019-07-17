@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>猜数字游戏</title>
+</head>
+
+<body>
+    <input type="text" id="text1">
+    <input type="button" value="确定" id="btn">
+</body>
+<script>
+    var math = parseInt(Math.random() * 100) + 1;
+    console.log(math);
+    var tex = document.getElementById('text1');
+    var btn = document.getElementById('btn');
+    btn.onclick = function () {
+        var tex1 = tex.value;
+        // console.log(tex1);
+        // var btn = btn.value;
+        if (tex1 == math) {
+            alert('哇哦~，恭喜您猜对了！')
+        } else if (tex1 < math) {
+            alert('对不起，您猜测的值小了，请重新猜测！');
+        } else {
+            alert('对不起，您猜测的值大了，请重新猜测！');
+        }
+    }
+</script>
+
+</html>

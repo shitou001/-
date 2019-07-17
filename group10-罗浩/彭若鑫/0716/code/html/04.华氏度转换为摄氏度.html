@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>华氏度转换为摄氏度</title>
+    <style>
+        #Fahrenheit{
+            width: 200px;
+        }
+        #centigrade{
+            width: 200px;
+        }
+        #btn{
+            margin: 0px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>华氏度转换为摄氏度</h2>
+    </span><input type="text" id="Fahrenheit" placeholder="请输入您所需要转化的华氏度">
+    <input type="button" value="转换" id="btn">
+    <input type="text" id="centigrade">
+</body>
+<script>
+    // 获取节点
+    var Fahrenheit = document.getElementById('Fahrenheit');
+    var centigrade = document.getElementById('centigrade');
+    var btn = document.getElementById('btn');
+    
+    //点击按钮事件
+    btn.onclick = function(){
+        var fahNew = Fahrenheit.value;
+        // console.log(fahNew);
+        if(Fahrenheit){ //判断Fahrenheit是否为空
+            // 在转换时并只保留两位小数
+            centigrade.value = (5 / 9.0 * (fahNew - 32)).toFixed(2);
+        }
+    }
+</script>
+</html>
