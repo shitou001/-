@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var i = 100;
+    while (i >= 100 && i < 10000) {
+        var qian = parseInt(i / 1000);
+        var bai = parseInt((i % 1000) / 100);
+        var shi = parseInt((i % 100) / 10);
+        var ge = i % 10;
+        if (i == Math.pow(qian, 4) + Math.pow(bai, 4) + Math.pow(shi, 4) + Math.pow(ge, 4)) {
+            document.write(i + '.');
+        } else
+        if (i == Math.pow(qian, 3) + Math.pow(bai, 3) + Math.pow(shi, 3) + Math.pow(ge, 3)) {
+            document.write(i + '.');
+        }
+        i++;
+    }
+</script>
+
+</html>

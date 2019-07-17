@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BMI体重指数</title>
+</head>
+
+<body>
+    <span>身高：</span>
+    <input type="text" id="stature">
+    <span>体重：</span>
+    <input type="text" id="weight">
+    <input type="button" value="确定" id="btn">
+    <span>体重是否正常：</span>
+    <input type="text" id="result">
+</body>
+
+</html>
+<script>
+    var stature = document.getElementById('stature');//身高
+    var weight = document.getElementById('weight');//体重
+    var btn = document.getElementById('btn');//确定按钮
+    var result = document.getElementById('result');//输出结果
+    btn.onclick = function () {
+        var num1 = stature.value * 1;//身高
+        var num2 = weight.value * 1;//体重
+        // console.log(num1,num2);
+        var num3 = num2 / (num1 * num1);//BMI结果
+        // console.log(num3.toFixed(2));
+        if (num3 < 18.5) {
+            result.value = '过轻';
+        } else if (num3 >= 18.5 && num3 <= 24.99) {
+            result.value = '正常';
+        }
+        else if (num3 >= 25 && num3 <= 28) {
+            result.value = '过重';
+        }
+        else if (num3 >= 28 && num3 <= 32) {
+            result.value = '肥胖';
+        }
+        else if (num3 > 32) {
+            result.value = '非常肥胖';
+        }
+
+    }
+</script>

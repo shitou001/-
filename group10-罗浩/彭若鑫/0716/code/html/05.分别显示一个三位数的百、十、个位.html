@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>分别显示一个三位数的百、十、个位</title>
+</head>
+
+<body>
+    <h2>分别显示一个三位数的百、十、个位</h2>
+    <input type="text" placeholder="请输入一个三位数" id="num">
+    <input type="button" value="显示" id="btn">
+    <br>
+    <br>
+    <span>百位：</span><input type="text" id="baiwei">
+    <span>十位：</span><input type="text" id="shiwei">
+    <span>个位：</span><input type="text" id="gewei">
+
+
+</body>
+<script>
+    // 找节点
+    var num = document.getElementById('num');
+    var bai = document.getElementById('baiwei');
+    var shi = document.getElementById('shiwei');
+    var ge = document.getElementById('gewei');
+    var btn = document.getElementById('btn');
+
+    //绑定点击事件
+    btn.onclick = function () {
+        var numNew = num.value;
+        // console.log(numNew);
+        if (num) {
+            bai.value = parseInt(numNew / 100) ;
+            // console.log(bai.value);
+            shi.value = parseInt((numNew / 10) % 10);
+            // ge.value =parseInt ((numNew % 100) % 10);
+            ge.value = parseInt(numNew % 10);
+
+        }
+    }
+
+    // console.log(num, ge, shi, bai);
+</script>
+
+</html>

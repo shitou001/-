@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="total">
+    <input type="button" id="btn" value="=">
+    百<input type="text" id="tex1">
+    十<input type="text" id="tex2">
+    个<input type="text" id="tex3">
+
+</body>
+
+</html>
+<script>
+    var total = document.getElementById('total');
+    var btn = document.getElementById('btn');
+    var tex1 = document.getElementById('tex1');
+    var tex2 = document.getElementById('tex2');
+    var tex3= document.getElementById('tex3');
+
+        btn.onclick = function () {
+            var num1 = tex1.value;
+            var num2 = tex2.value;
+            var num3 = tex3.value;
+            var zong = total.value;
+
+            var num1 = parseInt(zong / 100);
+            tex1.value = num1;
+
+            var num2 = parseInt(zong % 100  / 10);
+            tex2.value = num2 ;
+
+            var num3 = parseInt( (zong % 100)  % 10 );
+            tex3.value = num3 ;
+        }
+</script>
