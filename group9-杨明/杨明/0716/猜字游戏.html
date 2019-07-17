@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>猜字游戏</title>
+</head>
+
+<body>
+    <h1>猜字游戏</h1>
+    <input type="text" name="" id="num">
+    <input type="button" id="btn" value="猜数字">
+    结果：<span id="result"></span>
+</body>
+<script>
+    //1.找节点
+    var num = document.getElementById('num');
+    var btn = document.getElementById('btn');
+    var result = document.getElementById('result');
+    var randnum = parseInt(Math.random() * 100) + 1; //获取随机数1-100；
+    console.log(randnum);
+    //2.绑定事件
+    btn.onclick = function () {
+        //3.获取表单的值
+        var num1 = num.value;
+        //4.判断表单的值与随机数是否相等
+        if (num1 == randnum) {
+            // alert('恭喜你，猜对了！')
+            result.innerHTML = "恭喜你，猜对了！"
+        } else if (num1 > randnum) {
+            // alert('大了！')
+            result.innerHTML = "大了，换小一点的数再试试！"
+        } else if (num1 < randnum) {
+            // alert('小了！')
+            result.innerHTML = "小了，换大一点的数再试试！"
+        }
+    }
+</script>
+
+</html>
