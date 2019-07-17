@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    输入成绩：<input type="text">
+    <button>判断</button>
+    <br>
+    <span></span>
+    <script>
+        var month = document.getElementsByTagName("input")[0],
+            days = document.getElementsByTagName("button")[0],
+            output = document.getElementsByTagName("span")[0];
+        days.onclick = function () {
+            var mon = month.value;
+            if (mon > 85 && mon <= 100) {
+                output.innerHTML = `你太优秀了啦`;
+            } else if (mon >= 75 && mon <= 85) {
+                output.innerHTML = `良好，还行吧`;
+            } else if (mon >= 60 && mon < 75) {
+                output.innerHTML = `勉强及格，请继续证明自己不是垃圾`;
+            } else if (mon > 100) {
+                output.innerHTML = `没有这么高的分数，SB`;
+            } else {
+                output.innerHTML = `不及格，留级吧骚年！`;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>求两个数的最大数</title>
+    <style>
+       .box{
+           text-align: center;
+           padding-top: 50px;
+           
+       }
+       .box-1{
+           text-align: center;
+           font-size: 60px;
+           color: #bc58bc;
+           /* -webkit-webkit: scrollamount 20; */
+           /* display: inline-block; */
+       }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="text" id="sum1"> 跟
+        <input type="text" id="sum2">
+        <input type="button" value="比较" id="btn"></div>
+    <!-- <div id="ends" class="box-1"></div> -->
+    <marquee id="ends" class="box-1"></marquee>
+</body>
+<script>
+    /*
+ * 结构 > 表单  表单  按钮 => 比较结果 
+   寻找节点  获取节点值  进行验证
+*/
+    // 寻找表格的节点
+    var sum1 = document.getElementById('sum1');
+    var sum2 = document.getElementById('sum2');
+    var btn = document.getElementById('btn');
+    var ends = document.getElementById('ends');
+    btn.onclick = function () {
+        var sm1 = sum1.value;
+        // console.log(sm1);
+        var sm2 = sum2.value;
+        if (sm1 > sm2) {
+            ends.value = sm1 + '这个数比' + sm2 + '大';
+        } else {
+            ends.innerHTML = sm1 + '这个数比' + sm2 + '小';
+        }
+    }
+</script>
+
+</html>
