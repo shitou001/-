@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 需求
+        // .找出所有的水仙花数，三位数，各位立方和等于该数本身。
+        // 100 - 999 枚举法
+        // 156 == 1 * 1 * 1 + 5 * 5 * 5 + 6 * 6 * 6
+        // Math.pow(num, 3);//2的三次方
+    </script>
+</head>
+
+<body>
+    <h2>
+        100-999的水仙花数为：
+    </h2>
+</body>
+<script>
+    var i = 99;
+    var bai = 0;
+    var shi = 0;
+    var ge = 0;
+    while (i < 999) {
+        i++;
+        bai = parseInt(i / 100);
+        shi = parseInt((i - bai * 100) / 10);
+        ge = parseInt((i - bai * 100) % 10);
+        // console.log(bai, shi, ge);
+        if (i == Math.pow(bai, 3) + Math.pow(shi, 3) + Math.pow(ge, 3)) {
+            document.write(i + ",");
+        }
+    }
+</script>
+
+</html>

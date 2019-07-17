@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>价格</title>
+
+</head>
+
+<body>
+    <img src="../img/1.jpg" alt="">
+    <h3>购买数量</h3>
+    <input type="button" value="-" id="jian">
+    <input type="text" id="shu" value="1">
+    <input type="button" value="+" id="jia"><br>
+    商品单价：
+    <span id="dan">90.00</span><br>
+    购买总价：
+    <span id="zong">￥90.00</span>
+</body>
+<script>
+    var jian = document.getElementById("jian");//减号
+    var shu = document.getElementById("shu");//文本框显示数字
+    var jia = document.getElementById("jia");//加号
+    var dan = document.getElementById("dan");//产品的单价
+    var zong = document.getElementById("zong");//产品的总价格
+
+    jian.onclick = function () {//添加点击事件
+        var num = shu.value;//获取数量值
+        num--;//利用自减进行隐性转换
+        if (num <= 1) {//添加一个临界值
+            num = 1;
+            console.log(num);
+        }
+        shu.value = num;
+        var zongdan = num * dan.innerHTML;//转换成数字
+        zong.innerHTML = '￥' + zongdan.toFixed(2)
+    }
+    jia.onclick = function () {
+        var num = shu.value;
+        num++;
+        if (num >= 10) {
+            num = 10;
+            console.log(num)
+        }
+        shu.value = num;
+        var zongdan = num * dan.innerHTML;
+        zong.innerHTML = '￥' + zongdan.toFixed(2)
+    }
+
+</script>
+
+</html>
