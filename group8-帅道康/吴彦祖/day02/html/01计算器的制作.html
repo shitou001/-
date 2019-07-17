@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="text1">
+    <select name="" id="fuhao">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+
+    </select>
+    <input type="text" id="text2">
+    <input type="button" id="bnt" value="=">
+    <input type="text" id="text3">
+    
+    
+</body>
+<script>
+    //需求做一个简易的计算器
+    //获取元素，找到元素的节点
+    var text1 = document.getElementById("text1")
+    var select = document.getElementById("fuhao")
+    var text2 = document.getElementById("text2")
+    var button = document.getElementById("bnt")
+    var text3 = document.getElementById("text3")
+
+    //绑定事件 
+    bnt.onclick = function () {
+        // 点击获取表单的值
+        // var sel = select.value;
+        // var text1 = parseInt(text1.value);
+        // var text2 = parseInt(text2.value);
+        
+        // 做判断
+        if(select.value == "+"){
+            text3.value = parseInt(text1.value*1 + text2.value*1);
+            console.log(text3.value)
+        }else if(select.value == "-"){
+            text3.value = parseInt(text1.value) - parseInt(text2.value);
+            console.log(text3.value)
+        }else if(select.value == "*"){
+            text3.value = parseInt(text1.value) * parseInt(text2.value);
+            console.log(text3.value)
+        }else if(select.value == "/"){
+            text3.value = parseInt(text1.value) / parseInt(text2.value);
+            console.log(text3.value)
+        }else{
+            text3.value = parseInt(text1.value) % parseInt(text2.value);
+            console.log(text3.value)
+        }
+
+
+    }
+</script>
+</html>

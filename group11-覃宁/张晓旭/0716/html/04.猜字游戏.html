@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>刮刮乐</h1>
+    <input type="text" id="text1">
+    <input type="button" value="来试试" id="btn">
+</body>
+<script>
+    var text1 = document.getElementById('text1');
+    var btn = document.getElementById('btn');
+    var num = parseInt(Math.random() * 100);
+    btn.onclick = function () {
+        var text1s = text1.value;
+        console.log(text1s);
+        console.log(num);
+        if (text1s == num) {
+            alert('牛');
+         }else if(text1s > num){
+            alert('大了');
+         }else {
+            alert('我笑了');
+         }
+
+    }
+</script>
+
+</html>

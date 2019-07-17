@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <span>摄氏度</span>
+    <input type="text">
+    <button>转华氏度</button>
+    <br>
+    <span>华氏度</span>
+    <input type="text">
+    <button>转摄氏度</button>
+    <br>
+    <span></span>
+    <script>
+        var Fahrenheit = document.getElementsByTagName("button")[0];
+        var celsius = document.getElementsByTagName("button")[1];
+        var result = document.getElementsByTagName("span");
+        var input = document.getElementsByTagName("input");
+        Fahrenheit.onclick = function () {
+            var celsius1 = (input[0].value * 9 / 5 + 32).toFixed(0);
+            console.log(celsius1);
+            result[2].innerHTML = "华氏度为：" + celsius1 + "°";
+        }
+        celsius.onclick = function () {
+            var celsius1 = (5 / 9 * (input[1].value * 1 - 32)).toFixed(0);
+            console.log(celsius1);
+            result[2].innerHTML = "摄氏度为：" + celsius1 + "°";
+        }
+    </script>
+</body>
+
+</html>
