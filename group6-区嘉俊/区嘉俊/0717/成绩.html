@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    4.输入成绩，进行成绩判定(要求用if和switch两种写法)
+    
+    大于85 优秀
+    大于等于75小于等于85 良好
+    大于等于60小于75 及格
+    小于60 不及格
+    -->
+    <input type="text" id="tex1">
+    <input type="button" value="=" id="deng">
+    <p id="xian"></p>
+</body>
+<script>
+    //获取
+    var num = document.getElementById("tex1");
+    var but = document.getElementById("deng");
+
+    //绑定
+    but.onclick = function () {
+        //取值
+        var val = tex1.value;
+        console.log(val)   
+        //判断
+        if (val >0 && val < 60){
+            xian.innerHTML = "你回去多敲点代码吧"
+        }else if (val >= 60 && val < 75){
+            xian.innerHTML = "多努点力，有希望"
+        }else if (val >= 75 & val <= 85 ){
+            xian.innerHTML = "你月入过万了"
+        }else if (val >= 85 && val == 100){
+            xian.innerHTML = "你可能是下一个马云"
+        }else{
+            xian.innerHTML = "请输入0-100以内的数值"
+        }
+    }
+</script>
+</html>
