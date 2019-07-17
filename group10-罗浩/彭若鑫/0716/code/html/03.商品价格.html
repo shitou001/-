@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品价格</title>
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>风扇</h2>
+    <img src="../images/01.jpg" alt="">
+    <br>
+    <span> 添加商品：</span><input type="button" value="-" id="cut">
+    <input type="text" value="1" id='count'>
+    <input type="button" value="+" id="add"><span>(库存:15份)</span>
+    <br>
+    <span> 单价:</span><input type="text" id="price" value="59.9">
+    <br>
+    <span>总价：</span><input type="text" id="total">
+
+</body>
+<script>
+    //找节点
+    var cut = document.getElementById('cut');
+    var add = document.getElementById('add');
+    var cocountntent = document.getElementById('count');
+
+    //点击事件
+    cut.onclick = function () {
+        var countNew = count.value; //数量
+        var priceNew = price.value;
+        if (countNew > 1) {
+            countNew -= 1;
+            count.value = countNew;
+            total.value = priceNew * countNew;
+        } else {
+            alert('亲，对不起哦~购买数量不能低于1件！')
+        }
+    }
+
+    add.onclick = function () {
+        var countNew = count.value; //数量
+        var priceNew = price.value;
+        if (countNew < 15) {
+            countNew = (countNew - 0) + (1 - 0);
+            count.value = countNew;
+            total.value = (priceNew * countNew).toFixed(2);
+        } else if (countNew >= 15) {
+            alert('对不起哦，亲~~~库存没有那么多，请联系客服！')
+        }
+    }
+    count.oninput = function (){
+        var countNew = count.value;
+        var priceNew = price.value;
+
+        if(countNew <= 1){
+            countNew = 1;
+            // console.log(countNew);
+        }else if(countNew >=15){
+            countNew = 15;
+            // console.log(countNew);
+        }
+        total.value = priceNew * countNew;
+    }
+    // function limitInput(num) {
+    //     var value = num.value;
+    //     var min = 1;
+    //     var max = 15;
+    //     if (parseInt(value) < min) {
+    //         return min
+    //     } else if (parseInt(value) > max) {
+    //         return max
+    //     } else {
+    //         return value
+    //     }
+    // }
+</script>
+
+</html>
