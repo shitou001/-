@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #sum {
+            height: 20px;
+            width: 100px;
+            border: 1px solid #ccc;
+
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="tex1">
+    <select name="" id="calue">
+        <option value="+" id="plus">+</option>
+        <option value="-" id="min">-</option>
+        <option value="*" id="cheng">*</option>
+        <option value="/" id="chu">/</option>
+        <option value="%" id="qiuyu">%</option>
+    </select>
+    <input type="text" id="tex2">
+    <input type="button" id="btn" value="=">
+    <span id="sum"></span>
+</body>
+<script>
+    var tex1 = document.getElementById("tex1");
+    var tex2 = document.getElementById("tex2");
+    var calue = document.getElementById("calue");
+    var btn = document.getElementById("btn");
+    var output = document.getElementById("sum");
+
+    btn.onclick = function () {
+        var num1 = tex1.value - 0;
+        var num2 = tex2.value - 0;
+        var way = calue.value;
+
+        if (num1 && num2) {
+            if (way == "+") {
+                var sum = num1 + num2;
+                output.innerHTML = sum;
+            }
+            else if (way == "-") {
+                var sum = num1 - num2;
+                output.innerHTML = sum;
+            }
+            else if (way == "*") {
+                var sum = num1 * num2;
+                output.innerHTML = sum;
+            }
+            else if (way == "/") {
+                var sum = num1 / num2;
+                output.innerHTML = sum;
+            }
+            else if (way == "%") {
+                var sum = num1 % num2;
+                output.innerHTML = sum;
+            }
+
+        } else {
+            alert("请输入数字")
+        }
+
+
+    }
+</script>
+
+</html>

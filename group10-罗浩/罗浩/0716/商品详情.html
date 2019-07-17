@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情单</title>
+    <style>
+        * {
+            margin: 0;
+            ;
+            padding: 0;
+        }
+
+        .box {
+            margin: 100px auto;
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+        }
+
+        input {
+            text-align: center;
+            width: 50px;
+        }
+
+        #cut,
+        #add {
+            width: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="../images/1.jpg" alt="">
+        <p class="Stock">
+            库存数: <span id="kc">9</span>
+        </p>
+        <form action="">
+            <span>购买数量：</span>
+            <input type="button" id="cut" value="-">
+            <input type="text" id="num" value="1">
+            <input type="button" id="add" value="+">
+        </form>
+        <p>
+            总价：￥
+            <span id="total">99.90</span>
+        </p>
+        <p><input type="button" value="购买" id="buy"></p>
+    </div>
+
+</body>
+<script>
+    //先获取控件
+    var kc = document.getElementById('kc');
+    var num = document.getElementById('num');
+    var total = document.getElementById('total');
+    var cut = document.getElementById('cut');
+    //绑定事件
+    //减少按钮
+    total.innerText = (num.value * 99.9).toFixed(2);
+    cut.onclick = function () {
+        var bynum = num.value;
+        add.disabled = false;   //解锁增加按钮
+        bynum--;
+        if (bynum > 0) {
+            num.value = bynum;
+            total.innerText = (num.value * 99.9).toFixed(2);
+        } else {
+            num.value = 1;
+            cut.disabled = true;
+        }
+    }
+    //增加按钮
+    add.onclick = function () {
+        cut.disabled = false; //解锁减少按钮
+        var bynum = num.value;
+        var tt = kc.innerText - 0;
+        bynum++;
+        if (bynum <= tt) {
+            num.value = bynum;
+            total.innerText = (num.value * 99.9).toFixed(2);
+        } else {
+            num.value = tt;
+            add.disabled = true;
+        }
+    }
+    var buy = document.getElementById('buy');
+    //购买
+    buy.onclick = function () {
+        var tatolNum = kc.innerText - 0;
+        var Surplus = tatolNum - num.value;  //剩余数量
+        if (Surplus < 0) {
+            buy.disabled = true;
+        } else {
+            kc.innerText = Surplus;
+            //初始化 
+            num.value = 1;
+            total.innerText = 99.90;
+        }
+    }
+    //数值(内容)发生改变时改变
+    num.oninput = function () {
+        var NowNum = num.value - 0;
+        // console.log(NowNum);
+        if ((NowNum <= kc.innerText) && (NowNum > 0)) {
+            total.innerText = (num.value * 99.9).toFixed(2);
+        } else if (NowNum > kc.innerText) {
+            num.value = kc.innerText;
+            total.innerText = (num.value * 99.9).toFixed(2);
+        } else if (NowNum < 0) {
+            console.log(NowNum);
+            num.value = 1;
+            total.innerText = (num.value * 99.9).toFixed(2);
+        }
+    }
+    // var tat= kc.innerText - 0;
+    // console.log(tat);
+    // if(tat <= 0){
+    //     buy.disabled = true;
+    // }
+
+
+</script>
+
+</html>

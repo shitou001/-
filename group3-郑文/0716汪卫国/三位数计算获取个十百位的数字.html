@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <title>汪卫国</title>
+    <style>
+        body{font-family:"Microsoft yahei";}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;display: block;}
+        a{text-decoration: none; color: inherit;}
+        input{outline: none; border: none;}
+        .clearfix::after{display: block; content: ""; clear: both;}
+        
+        input{
+            width: 50px;
+            height: 25px;
+            border: 1px solid #cccccc;
+            text-align: center;
+            line-height: 25px;
+        }
+    </style>
+</head>
+<body>
+    请输入一个三位数：<input type="text" id="inp">
+    <button id="btn">获取</button><br>
+    百位是：<input type="text" name="" id="bai" disabled><br>
+    十位是：<input type="text" name="" id="shi" disabled><br>
+    个位是：<input type="text" name="" id="ge" disabled>
+    <script>
+        var inp = document.getElementById("inp");
+        var btn = document.getElementById("btn");
+        var bai = document.getElementById("bai");
+        var shi = document.getElementById("shi");
+        var ge = document.getElementById("ge");
+        
+        btn.onclick = function () {
+            num = inp.value * 1;
+            bai.value = parseInt(num / 100);
+            shi.value = parseInt(num % 100 / 10);
+            ge.value = num % 100 % 10; 
+        }
+
+    </script>
+</body>
+</html>
