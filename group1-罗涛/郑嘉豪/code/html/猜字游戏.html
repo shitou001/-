@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>猜字游戏</title>
+</head>
+
+<body>
+    <h1>猜字游戏：从1-99，猜对有挂开</h1>
+    <input type="text" id="num">
+    <input type="button" value="猜字啊兄弟别磨磨蹭蹭的" id="btn">
+    <div id="box"></div>
+</body>
+<script>
+   
+    var num = document.getElementById('num');
+    var btn = document.getElementById('btn');
+    var box = document.getElementById('box');
+    var rannum = parseInt(Math.random() * 100) + 1;
+    btn.onclick = function () {
+        
+        var n = num.value;
+        console.log(n);
+        if (n == rannum) {
+            alert('猜对了!兄弟');
+        } else if (n > rannum) {
+            alert('猜大了，菜鸡');
+        } else {
+            alert('猜小了菜鸡');
+        }
+    }
+</script>
+
+</html>

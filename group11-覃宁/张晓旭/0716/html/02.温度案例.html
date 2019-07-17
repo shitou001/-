@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>Document</title>
+</head>
+
+<body>
+    华氏温度：
+    <input type="text" id="hua">
+    <input type="button" value="转换" id="zhuan"><br> 摄氏温度：
+    <input type="text" id="she">
+</body>
+<script>
+    var hua = document.getElementById('hua');
+    var but = document.getElementById('zhuan');
+    var she = document.getElementById('she');
+    but.onclick = function () {
+        var huas = hua.value;
+        var shes = she.value;
+        if (shes > 0) {
+            hua.value = shes * 9 / 5 + 32 + "°F";
+        }
+        else {
+            she.value = (5 / 9.0 * (huas - 32)).toFixed(2) + "°C";
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#res{
+				width: 250px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" name="" id="te1" value="" />
+		<input type="button" name="" id="btn" value="查找" />
+		<input type="text" name="" id="res" value="" />
+	</body>
+	<script type="text/javascript">
+		
+		// 找到元素
+		var te1 = document.getElementById('te1');
+		var btn = document.getElementById('btn');
+		var res = document.getElementById('res');
+		
+		
+		btn.onclick = function() {
+			
+			var hundreds = parseInt(te1.value / 100);//找到百位数
+			var decade = parseInt((te1.value % 100) / 10);//找到十位数
+			var TheUnit = parseInt(te1.value % 10);//找到个位数
+			
+			//输出结果到ID为res的输入框里
+			res.value ='百位：' + hundreds + '；十位:' + decade + '；个位：' + TheUnit;
+		}
+		
+	</script>
+</html>

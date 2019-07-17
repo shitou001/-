@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>摄氏转换</title>
+
+</head>
+<body>
+    <input type="text" id="txt1">
+    <input type="button" name="" id="btn" value="换算">
+</body>
+<script>
+    var txt = document.getElementById('txt1');
+    var oBtn = document.getElementById('btn');
+    oBtn.onclick = function(){
+        var num = parseInt(5 / 9.0 * (txt.value - 32));
+        console.log(parseInt(num));
+        txt.value ="摄氏温度为 ：" + num;
+    }
+</script>
+</html>

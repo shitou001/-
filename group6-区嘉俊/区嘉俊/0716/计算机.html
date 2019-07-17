@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计算机</title>
+    <style>
+    div{
+        width: 100px;
+        height: 50px;
+        border: 1px solid #e0e0e0;
+    }
+    select{
+        appearance: none;
+        width: 50px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 12px;
+    }
+    </style>
+</head>
+<body>
+    <input type="text" id="text1">
+    <select name="" id="xiala">
+        <option value="jia">+</option>
+        <option value="jian">-</option>
+        <option value="cheng">*</option>
+        <option value="chu">/</option>
+    </select>
+    <input type="text" id="text2">
+    <input type="button" value=" = " id="btn">
+    <div id="deng"></div>
+</body>
+<script>
+    var btn = document.getElementById("btn");
+    var text1 = document.getElementById("text1");
+    var text2 = document.getElementById("text2");
+    var sels = document.getElementById("xiala");
+    var deng = document.getElementById("deng");
+
+    btn.onclick = function () {
+        var num1 = text1.value - 0;
+        var num2 = text2.value * 1;
+        var val = sels.value;
+        if (val == 'jia') {
+            sum = num1 + num2;
+        } else if (val == 'jian') {
+            sum = num1 - num2;
+        }else if (val == "cheng") {
+            sum = num1 * num2;
+        } else if (val == "chu") {
+            sum = num1 / num2;
+        }
+        if(num1 && num2){
+            deng.innerHTML = sum;
+        }else{
+            alert("我怀疑你在刁难我")
+        }
+        console.log(val);
+        console.log(sum);
+    }
+</script>
+</html>

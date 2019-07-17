@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var secs = 2311;//秒数 - xx时xx分xx秒 09：43：22  一个小时3600秒  
+        //secs % 60 == 秒数
+        //parseInt(secs / 3600) == 小时数
+        var hours = parseInt(secs / 3600);//不写var目前不会报错，不写var其实就是默认这个变量是全局变量；在ES5中不写var会报错
+        var mints = parseInt((secs - hours * 3600) / 60);
+        var sec = parseInt(secs - hours * 3600 - mints * 60);
+        console.log(hours + ":" + mints + ":" + sec);
+      
+        var k = 0;
+        m1 = k++;
+        console.log("k的值为："+ k);//1
+        m2 =m1+  ++k ;
+        console.log("k的值为："+ k);//2
+        m3 = m2 +k ;
+        console.log("k的值为："+ k);//2
+        m4= m3 +k++;
+        console.log("k的值为："+ k);//3
+        console.log(m1);//0
+        console.log(m2);//2
+        console.log(m3);//4
+        console.log(m4);//6
+
+        //琳姐
+        var secs2 = 72;
+        //小时
+        var hours2 = parseInt(secs2 / 3600);
+        //分和秒
+        var num = secs2 - hours2 * 3600;//剩下分和秒  假设 72秒
+        //分
+        var mins2 = parseInt(num / 60);
+        //秒
+        var sec2 = num % 60;
+
+        //补零操作(选做，没有学到函数)
+        function toDb(data) {//形参
+            if(data < 10) {
+                return '0' + data;
+            }else{
+                return '' + data;
+            }
+        }
+
+        console.log(secs2 + '时间换算后:' + toDb(hours2) + ':' + toDb(mins2) + ':' + toDb(sec2));//xx时xx分xx秒
+    </script>
+</body>
+
+</html>
