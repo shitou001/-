@@ -13,16 +13,16 @@
     
 </body>
 <script>
-    // 1、找到所有所需节点
+   
     huashi=document.getElementById('huashi');
     sheshi=document.getElementById('sheshi');
     btn = document.getElementById('btn');
-    // 2、绑定按钮事件
+   
     btn.onclick=function(){
-        // 3、获取节点值
+        
         var huashidu= huashi.value-0;
         var sheshidu= sheshi.value-0;
-        // 4、华氏度转换
+        
         if(huashidu){
             var res=5/9.0*(huashidu-32);
             sheshi.value=res;
