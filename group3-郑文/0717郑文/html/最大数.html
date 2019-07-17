@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>max and min</title>
+</head>
+<body>
+    <label for="">请输入第一个数:</label>
+    <input type="text" id="txt1"><br />
+    <label for="">请输入第二个数:</label>
+    <input type="text" id="txt2"><br />
+    <input type="button" value="比较" id="btn">
+    <label for="">较大的数是:</label>
+    <input type="text" id="result">
+</body>
+<script>
+    var txt1 = document.getElementById('txt1');
+    var txt2 = document.getElementById('txt2');
+    var oBtn = document.getElementById('btn');
+    var res = document.getElementById('result');
+    oBtn.onclick = function(){
+        var n1 = txt1.value*1;
+        var n2 = txt2.value*1;
+        // console.log(n1,n2);
+        if(n1 > n2){
+            var num1 = n1;
+            res.value =num1;
+        }else if(n1 < n2){
+            var num2 = n2;
+            res.value = num2;
+        }else{
+            res.value = '你输入的数字相等啦,或者你输入的不是数字';
+        }
+    }
+</script>
+</html>
