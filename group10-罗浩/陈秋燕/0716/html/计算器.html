@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* div{
+            width: 50px;
+            height: 50px;
+        } */
+    </style>
+</head>
+
+<body>
+    <input type="text" id="text1">
+    <select name="" id="jiajian">
+        <option value="add">+</option>
+        <option value="jian">-</option>
+        <option value="chu">/</option>
+        <option value="cheng">*</option>
+    </select>
+    <input type="text" id="text2">
+    <input type="button" value="等于" id="btn">
+    <div id="num"></div>
+</body>
+<script>
+    //1.找到所有需要的节点Node(元素Element)
+    var text11 = document.getElementById('text1');
+    var text22 = document.getElementById('text2');
+    var jiajian = document.getElementById('jiajian');
+    var btn = document.getElementById('btn');
+    var num = document.getElementById('num')
+    //2.给按钮绑定点击事件
+    btn.onclick = function () {
+        //3.获取内容：两个text表单的内容
+        // 获取内容为1找到的节点
+        var tex1 = text11.value - 0;
+        var tex2 = text22.value * 1;
+        if (tex1 && tex2) {
+            var val = jiajian.value;
+            if (val == 'add') {
+                // sum变量名不要和找到节点名num一样
+                var sum = tex1 + tex2;
+                // div是普通节点，用innerHTML
+                num.innerHTML = sum;
+
+            } else if (val == 'jian') {
+                var s = tex1 - tex2;
+                num.innerHTML = s;
+
+            } else if (val == 'cheng') {
+                var s = tex1 * tex2;
+                num.innerHTML = s;
+            } else {
+                var s = tex1 / tex2;
+                num.innerHTML = s;
+            }
+            // alert('有值');
+
+
+        } else {
+            alert('空值');
+
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>闰土</title>
+    <style>
+        fieldset{
+            width: 600px;
+            height: 60px;
+            margin: 100px auto;
+
+            
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>查闰年</legend>
+            <input type="text" id="tex1">
+            <input type="button" value="查看" id="btn">
+            <input type="text" id="tex2">
+        </fieldset>
+    </form>
+</body>
+<script>
+    var tex1 = document.getElementById('tex1');
+    var tex2 = document.getElementById('tex2');
+    var btn = document.getElementById('btn');
+    btn.onclick = function () {
+        num = tex1.value;
+        var num1 = num % 4;
+        var num2 = num % 100;
+        var num3 = num % 400;
+        console.log(num1,num2,num3);
+        if (num3 == 0 || (num1 == 0 && num2 != 0)) { 
+            tex2.value = "这一年是闰年哦"
+        }else{
+            tex2.value = "这一年不是闰年嗯"
+        }
+    }
+</script>
+
+</html>

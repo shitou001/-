@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="../images/device2.jpg" alt=""><br />
+    <span>购买量:</span>
+    <input type="button" name="" id="reduce" value="-">
+    <input type="text" name="" id="txt" value="1">
+    <input type="button" name="" id="add" value="+">
+    <span>库存（12）</span><br />
+    单价:<span id="p1">99</span>
+    总价:<span id="p2">￥99</span>
+</body>
+<script>
+    var txt = document.getElementById('txt');
+    var oBtn1 = document.getElementById('reduce');
+    var oBtn2 = document.getElementById('add');
+    var p1 = document.getElementById('p1');
+    var p2 = document.getElementById('p2');
+    oBtn1.onclick = function () {
+        var n1 = txt.value;
+        n1--;
+        n1 = n1--;
+        if (n1 <= 1) {
+            n1 = 1;
+        }
+        txt.value = n1;
+        var num = n1 * p1.innerHTML;
+        console.log(num);
+        p2.innerHTML = '￥' + num;
+    }
+    oBtn2.onclick = function () {
+        var n2 = txt.value;
+        n2++;
+        // n2 = n2++;
+        
+        if (n2 >= 12) {
+            n2 = 12;
+        }
+        txt.value = n2;
+        var num = n2 * p1.innerHTML;
+        p2.innerHTML = '￥' + num;
+        console.log(num);
+    }
+</script>
+
+</html>
