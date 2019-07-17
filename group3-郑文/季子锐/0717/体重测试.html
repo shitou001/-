@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 40px;
+            border: 1px solid black;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>体重测试</h2>
+    <input type="text" id="tizhong" placeholder="请输入体重">单位：KG
+    <br><input type="text" id="shengao" placeholder="请输入身高">单位：M
+    <br><input type="button" id="btn" value="计算BMI值">
+    <input type="text" id="BMI">
+    <div id="box"></div>
+</body>
+<script>
+    var tizhong = document.getElementById('tizhong');
+    var shengao = document.getElementById('shengao');
+    var BMI = document.getElementById('BMI');
+    var box = document.getElementById('box');
+    btn.onclick = function () {
+        var weight = tizhong.value;
+        var height = shengao.value;
+        BMI.value = 'BMI值为' + (weight / (height * height)).toFixed(2);
+        var zhi = (weight / (height * height)).toFixed(2);
+        if (zhi < 18.5) {
+            box.innerHTML = '过轻';
+        }
+        else if (zhi >= 18.5 && zhi <= 24.99) {
+            box.innerHTML = '正常';
+        }
+        else if (zhi >= 25 && zhi <= 28) {
+            box.innerHTML = '过重';
+        }
+        else if (zhi >= 28 && zhi <= 32) {
+            box.innerHTML = '肥胖';
+        }
+        else if (zhi >= 32) {
+            box.innerHTML = '非常肥胖';
+        }
+    }
+
+
+</script>
+
+</html>
