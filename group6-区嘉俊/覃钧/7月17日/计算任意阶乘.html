@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="price">
+    <input type="button" value="计算阶乘" id="count">
+    <p id="jieguo"></p>
+    <script>
+        var price = document.getElementById("price"),
+            count = document.getElementById("count"),
+            jieguo = document.getElementById("jieguo");
+        count.onclick = function () {
+            var haha = price.value * 1,
+                wu = 1;
+            for (i = 1; i <= haha; i++) {
+                wu = wu * i;
+                jieguo.innerText = "阶乘结果为：" + wu;
+            }
+        }
+    </script>
+</body>
+
+</html>

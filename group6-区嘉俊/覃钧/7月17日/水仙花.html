@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var i = 100;
+        while (i < 999) {
+            i++;
+            var g = i % 10,
+                s = parseInt(i / 10) % 10,
+                b = parseInt(i / 100);
+            if (i == Math.pow(g, 3) + Math.pow(s, 3) + Math.pow(b, 3)) {
+                document.write("百位数的水仙花数为：" + i + "<br>");
+            }
+        }
+    </script>
+</body>
+
+</html>
