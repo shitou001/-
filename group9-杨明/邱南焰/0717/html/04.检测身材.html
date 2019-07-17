@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 根据公式（身高-108）*2=体重，可以有10斤左右的浮动。来观察测试者体重是否合适 -->
+    <input type="text" placeholder="请输入你的身高" id="shengao">单位（cm）<br>
+    <input type="text" placeholder="请输入你的体重" id="tizhong"> 单位（斤）<br>
+    <input type="button" value="检测" id="btn"><br>
+    <input type="text" value="" id="jieguo">
+</body>
+<script>
+    // 找节点
+    var shengao = document.getElementById('shengao');
+    var tizhong = document.getElementById('tizhong');
+    var jieguo = document.getElementById('jieguo');
+
+    // 绑定事件
+    btn.onclick = function () {
+        // 获取数据
+        var num1 = shengao.value;
+        var num2 = tizhong.value;
+        var num3 = (((num1 - 108) * 2) - num2);
+        if (num3 <= 10 && num3 >= -10) {
+            jieguo.value = '亲，你的身材非常棒'
+        } else {
+            jieguo.value = '亲，你要多健身哟'
+        }
+
+    }
+</script>
+
+
+</html>
