@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>古啊</title>
+    <style>
+        fieldset {
+            width: 400px;
+            height: 80px;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>估啦</legend>
+            <input type="text" id="tex1">
+            <input type="button" value="你估下" id="btn">
+            <span id="answer"></span>
+        </fieldset>
+    </form>
+</body>
+<script>
+    var tex1 = document.getElementById('tex1');
+    var btn = document.getElementById('btn');
+    var ans = document.getElementById('answer');
+    suinum = parseInt(Math.random() * 100) + 1;
+    console.log(suinum);
+    btn.onclick = function () {
+        var num = tex1.value;
+        if (num > 100) {
+            alert('请输入细于100的三位数');
+        } else {
+            if (num > suinum) {
+                ans.innerHTML = '你估大左啦！';
+            } else if (num < suinum) {
+                ans.innerHTML = "你估细左啦！";
+            } else {
+                ans.innerHTML = "叻仔，估中左"
+            }
+        }
+    }
+</script>
+
+</html>

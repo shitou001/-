@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="huashi" placeholder="华氏度">
+    <input type="button" value="转换" id="btn">
+    <input type="text" id="sheshi" placeholder="摄氏度">
+    
+</body>
+<script>
+    // 1、找到所有所需节点
+    huashi=document.getElementById('huashi');
+    sheshi=document.getElementById('sheshi');
+    btn = document.getElementById('btn');
+    // 2、绑定按钮事件
+    btn.onclick=function(){
+        // 3、获取节点值
+        var huashidu= huashi.value-0;
+        var sheshidu= sheshi.value-0;
+        // 4、华氏度转换
+        if(huashidu){
+            var res=5/9.0*(huashidu-32);
+            sheshi.value=res;
+
+
+        }else if(sheshidu){
+            var res=sheshidu*9/5+32
+            huashi.value=res;
+             
+        }
+
+
+
+    }
+    // var f=80;
+    // var s;
+    // s=5/9.0*(f-32);
+    // console.log('摄氏度为'+s+',华氏度为'+f);
+</script>
+</html>

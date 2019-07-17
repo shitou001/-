@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 400px;
+            margin: auto;
+            margin-top: 100px;
+        }
+
+        #num {
+            text-align: center;
+            width: 100px;
+        }
+
+        /* #cut:disabled{
+            background: #ccc;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="../images/4f036ae4d45002b2a6fb6756cedebf02.png" alt="">
+        <br>
+        商品库存：
+        <input type="button" id="cut" value="-">
+        <input type="text" id="num" value="1">
+        <input type="button" id="add" value="+">(仅剩8份库存)
+        <br>
+        商品价格:￥<i id="price">199</i>
+        <br>
+        商品总价：<span id="total">￥199.00</span>
+    </div>
+</body>
+<script>
+    cut = document.getElementById('cut');
+    num = document.getElementById('num');
+    add = document.getElementById('add');
+    price = document.getElementById('price');
+    total = document.getElementById('total');
+
+    cut.onclick = function () {
+        var val = num.value;
+        var pricex = price.innerHTML;
+        var totalPrice = val * price.innerHTML;
+        total.innerHTML = '￥' + totalPrice.toFixed(2);
+        // var totalx = total.value;
+        val--;
+
+        if (val <= 1) {
+            val = 1;
+            // 需要去思考？？？
+        }
+        num.value = val;
+        total.innerHTML = pricex.innerHTML * num.value;
+        //   var totalPrice = val * price.innerHTML;
+        total.innerHTML = '￥' + totalPrice.toFixed(2);
+    }
+    add.onclick = function () {
+        var val = num.value;
+        var pricex = price.innerHTML;
+        val++;
+
+        if (val > 8) {
+            val = 8;
+            alert("已经是最大库存了");
+        }
+        num.value = val;
+        // total.innerHTML = pricex.innerHTML * num.value;
+        var totalPrice = val * price.innerHTML;
+        total.innerHTML = '￥' + totalPrice.toFixed(2);
+    }
+</script>
+
+</html>
