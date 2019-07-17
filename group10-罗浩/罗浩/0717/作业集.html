@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>作业集合</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 500px;
+            height: 100%;
+            margin: 100px auto;
+        }
+
+        div {
+            margin-top: 15px;
+            padding: 10px;
+            border: 1px solid red;
+        }
+
+        .box1 {
+            height: 120px;
+        }
+
+        input {
+            width: 100px;
+        }
+
+        #numbers_jo {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- 健康指数 -->
+        <div class="box1">
+            <h2>健康指数测试</h2>
+            <br>
+            <form action="">
+                <span>体重:</span>
+                <input type="text" id="tz">(Kg)
+                <span>身高:</span>
+                <input type="text" id="sg">(cm)
+                <input type="button" id="test" value="测试一下">
+                <br>
+                <span id="res"></span>
+            </form>
+        </div>
+        <!-- 奇偶数判断 -->
+        <div class="box2">
+            <h2>判断奇偶数</h2>
+            <br>
+            <form action="">
+                <input type="text" placeholder="  请输入需要判定的数" id="numbers_jo">
+                <span id="res_jo"></span>
+            </form>
+        </div>
+        <!--求两个数的最大数 -->
+        <div class="box3">
+            <h2>求两个数的最大数</h2>
+            <br>
+            <form action="" id="aaaa">
+                数值1:
+                <input type="text" id="numbers_num1">
+                数值2:
+                <input type="text" id="numbers_num2">
+                最大值为:
+                <span id="res_max"></span>
+            </form>
+        </div>
+        <!-- 成绩判定 -->
+        <div class="box4">
+            <h2>成绩等级判定</h2>
+            <br>
+            <form action="">
+                请输入您的成绩:
+                <input type="text" id="score" placeholder="  在此输入成绩">
+                您的分数等级为:
+                <span id="res_score"></span>
+            </form>
+        </div>
+        <!--输入月份，显示当月的天数 -->
+        <div class="box5">
+            <h2>输入月份，显示当月的天数</h2>
+            <br>
+            <form action="">
+                请输入需要查询的月份:
+                <input type="text" id="qq_month" placeholder="输入阿拉伯数字">
+                <span id="res_month"> </span>
+            </form>
+        </div>
+        <!-- 打印100以内的奇数 -->
+        <div class="box6">
+            <h2>打印100以内的奇数</h2>
+            <br>
+            <span id="res_jishu"></span>
+        </div>
+        <!--计算任意数的阶乘n!  -->
+        <div class="box7">
+            <h2>计算任意数的阶乘n!</h2>
+            <br>
+            <form action="">
+                请输入计算阶乘的数:
+                <input type="text" id="factorial" placeholder="在此输入">
+                结果为:
+                <span id="res_jc"></span>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    /* 体重测试实现思路:
+        *现在做好基本的页面布局
+        *var 找到标记
+        *绑定测试按钮事件
+            *获取控件的值，按照公式计算指数
+            *if逻辑判断并给出提示 */
+    //获取控件
+    var tz = document.getElementById('tz');
+    var sg = document.getElementById('sg');
+    var test = document.getElementById('test');
+    var res = document.getElementById('res');
+    //绑定事件
+    test.onclick = function () {
+        //获取控件值
+        var tizhong = tz.value - 0;
+        var shengao = sg.value / 100;
+        console.log(shengao)
+        /* 成人的BMI数值：
+                 - 过轻：低于18.5
+                 - 正常：18.5-24.99
+                 - 过重：25-28
+                 - 肥胖：28-32
+                 - 非常肥胖, 高于32
+             公式：体质指数（BMI）= 体重（kg）÷身高^2（m）
+             如：70kg÷（1.75×1.75）=22.86
+          */
+        //计算指数
+        var BMI = tizhong / (shengao * shengao);
+        console.log(BMI)
+        //判断
+        if (BMI < 18.5) {
+            res.innerText = '你是真滴瘦，不是病的吧？！';
+        } else if (18.5 < BMI && BMI < 24.99) {
+            res.innerText = '万中无一的好身材，hold住！'
+        } else if (25 < BMI && BMI < 28) {
+            res.innerText = '貌似有点重，要注意运动了。。。'
+        } else if (28 < BMI && BMI < 32) {
+            res.innerText = '肥胖，赶紧制定减肥计划啦'
+        } else if (32 < BMI) {
+            res.innerText = '兄die，自己心里应该有B数了吧，严重肥胖。'
+        }
+    }
+
+    // 判断奇偶数
+    var numbers_jo = document.getElementById('numbers_jo');
+    var res_jo = document.getElementById('res_jo');
+    numbers_jo.oninput = function () {
+        console.log('罗浩秀儿');
+        if (numbers_jo.value % 2 == 0) {
+            res_jo.innerText = numbers_jo.value + '为偶数'
+            res_jo.style.color = 'red';
+        } else {
+            res_jo.innerText = numbers_jo.value + '为奇数'
+            res_jo.style.color = 'black';
+        }
+    }
+
+    //最值
+    var numbers_num1 = document.getElementById('numbers_num1');
+    var numbers_num2 = document.getElementById('numbers_num2');
+    var res_max = document.getElementById('res_max');
+    //绑定form事件，表单内容变化时计算最值
+    aaaa.oninput = function () {
+        var v_num1 = numbers_num1.value - 0;
+        var v_num2 = numbers_num2.value - 0;
+        var max = v_num1 > v_num2 ? v_num1 : v_num2;
+        res_max.innerText = max;
+    }
+
+    // 成绩判定系统
+    var score = document.getElementById('score');
+    var res_score = document.getElementById('res_score');
+    score.oninput = function () {
+        var grade = score.value - 0;
+        console.log(grade)
+        res_score.style.color = 'red';
+        //if的方式
+        if (0 < grade && grade < 60) {
+            res_score.innerText = '放学带家长来见我';
+        } else if (65 <= grade && grade < 75) {
+            res_score.innerText = '勉勉强强';
+        } else if (75 <= grade && grade <= 85) {
+            res_score.innerText = '良好吧';
+        } else if (85 < grade) {
+            res_score.innerText = '真滴秀，秀儿';
+        } else {
+            res_score.innerText = '输入分数,要是0分你就死定了';
+        }
+
+        //switch的方式
+        // switch (true) {
+        //     case (0 < grade && grade < 60):
+        //         res_score.innerText = '放学带家长来见我';
+        //         break;
+        //     case 65 <= grade && grade < 75:
+        //         res_score.innerText = '勉勉强强';
+        //         break;
+        //     case 75 <= grade && grade <= 85:
+        //     res_score.innerText = '良好吧';
+        //         break;
+        //     case 85 < grade:
+        //     res_score.innerText = '真滴秀，秀儿';
+        //         break;
+        //     case grade<=0:
+        //         res_score.innerText = '输入分数,要是0分你就死定了';
+        //         break;
+        // }
+
+    }
+
+
+    //查询天数
+    var qq_month = document.getElementById('qq_month');
+    var res_month = document.getElementById('res_month');
+    qq_month.oninput = function () {
+        var day1 = qq_month.value - 0;
+
+        switch (day1) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                console.log(day1)
+                res_month.innerText = day1 + '月份有31天';
+                break;
+            case 2:
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                res_month.innerText = day1 + '月份有30天';
+                break;
+            case 2:
+                res_month.innerText = day1 + '月份有28天，注意闰年是有29天的哦';
+                break;
+            default:
+                res_month.innerText = '请输入正确月份';
+        }
+    }
+
+    //.打印100以内的奇数
+    var res_jishu = document.getElementById('res_jishu');
+    var i = 1
+    while (i <= 100) {
+        if (i % 2 != 0) {
+            res_jishu.innerHTML = res_jishu.innerHTML + i + '、';
+        }
+        i++;
+    }
+
+    //计算阶乘
+    var factorial = document.getElementById('factorial');
+    var res_jc = document.getElementById('res_jc');
+    factorial.oninput = function () {
+        var k = factorial.value-0;
+        var j = 1;
+        var sum = k;1
+        while (k > 1 && k>j) {
+            sum = sum*(k - j)
+            j++;
+        }
+        res_jc.innerText = sum;
+    }
+
+</script>
+
+</html>
