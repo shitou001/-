@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>leap year</title>
+</head>
+<body>
+    <h1>判断闰年</h1>
+    <input type="text" id="text1">
+    <input type="button" id="btn" value="判断是否为闰年">
+    <span id="res">待会告诉你</span>
+</body>
+<script>
+    var text1 = document.getElementById('text1');
+    var btn = document.getElementById('btn');
+    var res = document.getElementById('res');
+    btn.onclick = function(){
+        if(text1.value){
+            var year = text1.value - 0;
+            if((year % 4 == 0 && year % 100 !=0) || year % 400 ==0){
+                res.innerHTML = '是闰年';
+            }
+            else{
+                res.innerHTML = '不是闰年';
+            }
+        }
+        else{
+            alert('你不输入年份我判断个毛呢');
+        }
+    }
+</script>
+</html>
