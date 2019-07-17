@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>猜数字游戏</h1>
+    <input type="text" id="num">
+    <input type="button" value="猜数字" id="btn">
+    <div id="box"> </div>
+</body>
+<script>
+ /*
+        猜数字游戏：
+            * 点击按钮的时候
+            * 获取表单的值和一个随机数相比较
+            * 输出判断的结果
+        
+        知识点：
+            * 随机数获取: Math.random()
+            * 边做边检测
+    */
+var num = document.getElementById('num');
+var btn = document.getElementById('btn');
+var box = document.getElementById('box');
+var ranum = parseInt(Math.random() * 100) + 1;/*随机获取数字*/
+
+btn.onclick = function(){
+    var m = num.value;
+    console.log(m);
+    if(m == ranum){
+        alert('猜对了');
+    }else if(m>ranum){
+        alert('猜大了');
+    }else{
+        alert('猜小了')
+    }
+}
+</script>
+</html>

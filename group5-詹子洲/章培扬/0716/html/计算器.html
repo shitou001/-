@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>计算两个文本框的和</h1>
+    <input type="text" id="tex1">
+    <input type="text" id="tex2">
+    
+   <select name="" id="class">
+       <option value="add">+</option>
+       <option value="cut">-</option>
+       <option value="cheng">*</option>
+       <option value="chu">/</option>
+   </select>
+   <input type="button" value="计算" id="btn">
+   <div id="output">
+
+    </div>
+</body>
+<script>
+    var tex1 = document.getElementById('tex1');
+    var tex2 = document.getElementById('tex2');
+    var sels = document.getElementById('class');
+    var output = document.getElementById('output');
+    var btn = document.getElementById('btn');
+ 
+
+   
+    btn.onclick = function (){
+        var val = sels.value;
+        m1 = tex1.value - 0;
+        m2 = tex2.value - 0;
+        if(val == 'add'){
+            m = m1 + m2;
+
+        }else if(val == 'cut'){
+            m = m1 - m2;
+
+        }else if(val == 'cheng'){
+            m = m1 * m2;
+
+        }else if(val == 'chu'){
+            m = m1 / m2;
+
+        }
+        output.innerHTML = m;
+
+    }
+</script>
+</html>
