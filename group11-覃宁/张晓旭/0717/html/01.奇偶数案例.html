@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>奇偶数判断</h1>
+    <input type="text" id="text1">
+    <input type="button" value="判断" id="button">
+    <input type="text" id="text2">
+</body>
+<script>
+    var one = document.getElementById('text1');
+    var btn = document.getElementById('button');
+    var two = document.getElementById('text2');
+    btn.onclick = function () {
+        var ones = one.value
+        // console.log(ones)
+        if (ones % 2 == 0) {
+            two.value = '偶数'
+        }else{
+            two.value = '奇数'
+        }
+    }
+</script>
+
+</html>
