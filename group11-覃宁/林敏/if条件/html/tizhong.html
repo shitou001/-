@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="shengao" placeholder="身高">
+    <input type="text" id="tizhong" placeholder="体重">
+    <input type="button" value="测" id="btn">
+</body>
+<script>
+    var shengao = document.getElementById('shengao')
+    var tizhong = document.getElementById('tizhong')
+    btn.onclick = function () {
+        var shengao1 = (shengao.value / 100);
+        var tizhong1 = tizhong.value;
+        if (tizhong1 / (shengao1 * shengao1) < 18.5) {
+            alert('宁过于苗条')
+        } else
+        if (tizhong1 / (shengao1 * shengao1) > 18.5 && tizhong1 / (shengao1 * shengao1) < 24.99) {
+            alert('正常')
+        } else
+        if (tizhong1 / (shengao1 * shengao1) > 25 && tizhong1 / (shengao1 * shengao1) < 28) {
+            alert('过重')
+        } else
+        if (tizhong1 / (shengao1 * shengao1) > 28 && tizhong1 / (shengao1 * shengao1) < 32) {
+            alert('肥胖')
+        } else {
+            (tizhong1 / (shengao1 * shengao1) > 32)
+            alert('超级肥胖')
+        }
+    }
+</script>
+
+</html>

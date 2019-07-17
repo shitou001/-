@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>是鸡还是藕</title>
+    <style>
+        fieldset {
+            width: 400px;
+            height: 60px;
+            margin: 100px auto;
+            border-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>你是鸡还是藕</legend>
+            <input type="text" id="tex1">
+            <input type="button" id="btn" value="点吧">
+            <span id="res"></span>
+        </fieldset>
+    </form>
+</body>
+<script>
+
+    /*
+        首先，输入一个数
+        然后给按钮一个点击事件，在触发点击按键的时候
+        先获得这个数的值，然后再用这个数对2求余，那么余数为0的就是偶数，余数为1的就是奇数
+        最后再把结果渲染给span
+    */
+
+    //获取节点
+    var tex1 = document.getElementById('tex1');
+    var btn = document.getElementById('btn');
+    var res = document.getElementById('res');
+
+    //点击事件
+    btn.onclick = function () {
+        var num = tex1.value;
+        console.log(num);
+        if (num == '') {
+            alert('求求你输个数字吧');
+        }
+        if (num % 2 == 0) {
+            res.innerHTML = num + '是个偶数';
+        } else {
+            res.innerHTML = num + '是个奇数';
+        }
+    }
+</script>
+
+</html>

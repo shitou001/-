@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <title>if-else判断成绩分段</title>
+    <style>
+        body{font-family:"Microsoft yahei";}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;display: block;}
+        a{text-decoration: none; color: inherit;}
+        input{outline: none;}
+        .clearfix::after{display: block; content: ""; clear: both;}
+        
+    </style>
+</head>
+<body>
+    请输入成绩：
+    <input type="text" name="" id="score">
+    <button id="btn">判断</button>
+    <script>
+        var score = document.getElementById("score");
+        var btn = document.getElementById("btn");
+
+        btn.onclick = function () {
+            let number = score.value * 1;
+
+            if(number >= 0 && number <=100){
+                // 成绩合法 进行判断
+                if(number > 85){
+                    alert("优秀！");
+                }else if(score >= 75 && score <= 85){
+                    alert("良好");
+                }
+                else if(score >= 60 && score < 75){
+                    alert("及格");
+                }else{
+                    alert("不及格，得加油哦");
+                }
+
+            }else{
+                alert("你输入的成绩不合法，请重新输入！")
+                score.value = "";
+            }
+            
+        }
+    
+    
+    </script>
+</body>
+</html>

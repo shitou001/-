@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>温度转换</h1>
+    <input type="text" id="input">华氏度
+    <input type="button" id="btn" value="转换"><br>
+    <input type="text" id="output">摄氏度
+</body>
+<script>
+    var input = document.getElementById("input");
+    var btn = document.getElementById("btn");
+    var output = document.getElementById("output");
+
+    btn.onclick = function () {
+        var num = input.value;
+        var num1 = (5 / 9) * (num - 32);
+        output.value = num1.toFixed(2);
+
+    }
+
+</script>
+
+</html>

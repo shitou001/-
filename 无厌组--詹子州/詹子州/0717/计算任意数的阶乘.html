@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计算任意数的阶乘</title>
+</head>
+<body>
+    <h1>任意数的阶乘</h1>
+    <input type="text" id="tex1">
+    <input type="button" value="计算" id="btn">
+    <h2 id="jieguo"></h2>
+</body>
+<script>
+   var tex1 = document.getElementById('tex1');
+   var btn = document.getElementById('btn');
+    
+    var num = tex1.value;
+     
+     btn.onclick = function () {
+        var num = tex1.value;
+        var shu = 1;
+        var a = 1;
+        while (a <= num){
+            shu *= a;
+            a++;
+        }
+        jieguo.innerHTML = shu;
+     }
+
+
+
+</script>
+</html>

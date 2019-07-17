@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+          // 需求：求两个数的最大数；
+    // 描述：分别在两个输入框里输入一个数，点击判断按钮，显示较大的数
+    // 方案：
+    // html：
+    // 1.添加两个输入文本框
+    // 2.添加一个判断按钮
+    // 3.添加一个输出容器
+    // 4.添加一个错误提示容器
+    // JS:
+    // 1.绑定ID
+    // 2.设置点击事件{
+    //     （1）获取这个数；
+    //     （2）判断这个数是不是数字类型，如果是，执行（3），不是就做错误提示；
+    //     （3）比较两个数，取较大值为结果
+    //     （4）将结果返回页面
+    // }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="number1">
+    <input type="text" id="number2">
+    <input type="button" id="panduan" value="判断">
+    <span id="tishi"></span>
+    <p id="jieguo"></p>
+
+</body>
+<script>
+    var number1 = document.getElementById("number1");
+    var number2 = document.getElementById("number2");
+    var panduan = document.getElementById("panduan");
+    var tishi = document.getElementById("tishi");
+    var jieguo = document.getElementById("jieguo");
+    panduan.onclick = function () {
+        var num1 = number1.value;
+        var num2 = number2.value;
+        // console.log(num1, num2)
+        // console.log(isNaN(num1), isNaN(num2))
+        // if (isNaN(num1) || isNaN(num2)) {
+        //     tishi.innerHTML = "请输入数字";
+        //     jieguo.innerHTML = "";
+        // } else {
+        //     if (num1 == num2) {
+        //         jieguo.innerHTML = "这两个数一样大";
+        //     } if (num1 > num2) {
+        //         jieguo.innerHTML = num1 + "比较大";
+        //     } if (num1 < num2) {
+        //         jieguo.innerHTML = num2 + "比较大";
+        //     }
+        // }
+        // 三目运算：
+        jieguo.innerHTML = num1 < num2 ? num2 : num1;
+    }
+</script>
+
+</html>

@@ -1,0 +1,322 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+#xiaomi {
+    width: 100%;
+    height: 100%;
+
+    .content {
+        width: 1228px;
+        height: 100%;
+        background: pink;
+        margin: auto;
+    }
+
+    .nav {
+        width: 100%;
+        height: 40px;
+        background: #333333;
+
+        .content {
+            .nav-l {
+                width: 700px;
+                height: 100%;
+                position: relative;
+                float: left;
+
+                li {
+                    height: 100%;
+                    float: left;
+                    margin-right: 8px;
+
+                    a {
+                        display: inline-block;
+                        height: 100%;
+                        font-size: 11px;
+                        color: #b0b0b0;
+                        line-height: 40px;
+                        text-align: center;
+
+                    }
+
+                    a:hover {
+                        color: #ffffff;
+                    }
+
+                    span {
+                        color: #3e3934;
+                    }
+                }
+
+                .li-a {
+                    .app {
+                        width: 120px;
+                        height: 150px;
+                        position: absolute;
+                        left: 505px;
+                        top: 40px;
+                        border: 1px solid gainsboro;
+                        box-sizing: border-box;
+                        padding: 10px;
+                        display: none;
+
+
+                        img {
+                            width: 100px;
+                            height: 100px;
+                        }
+
+                        p {
+                            font-size: 16px;
+                            text-align: center;
+                            line-height: 16px;
+                            margin-top: 10px;
+                        }
+                    }
+
+                    .sanjiao {
+                        width: 0;
+                        height: 0;
+                        border: 10px solid transparent;
+                        border-bottom-color: #ffffff;
+                        position: absolute;
+                        top: 20px;
+                        left: 550px;
+                        display: none;
+
+                    }
+                }
+
+                .li-a:hover .app {
+                    display: block;
+
+
+                }
+
+                .li-a:hover .sanjiao {
+                    display: block;
+                }
+            }
+
+            .nav-r {
+                float: right;
+                width: 500px;
+                height: 40px;
+
+                .nav-2 {
+                    margin-left: 220px;
+
+
+                    li {
+                        float: left;
+                        margin-right: 8px;
+
+                        a {
+                            display: inline-block;
+                            font-size: 11px;
+                            color: #b0b0b0;
+                            line-height: 40px;
+                            text-align: center;
+                            margin-right: 8px;
+                            height: 100%;
+
+                        }
+
+                        a:hover {
+                            color: #ffffff;
+                        }
+                    }
+
+                }
+
+                .nav-2a {
+                    float: right;
+                    width: 120px;
+                    background: #424242;
+                    position: relative;
+
+                    a {
+                        display: block;
+                        font-size: 11px;
+                        color: #b0b0b0;
+                        line-height: 40px;
+                        text-align: center;
+                        width: 100%;
+                    }
+
+                    .nav-2b {
+                        width: 300px;
+                        height: 120px;
+                        border: 1px solid gainsboro;
+                        background: #ffffff;
+                        position: absolute;
+                        right: 0;
+                        top: 40px;
+                        text-align: center;
+                        line-height: 120px;
+                        display: none;
+                    }
+                }
+
+                .nav-2a:hover .nav-2b {
+                    display: block;
+                }
+
+                .nav-2a:hover {
+                    background: #ffffff;
+
+                }
+
+                .nav-2a:hover a {
+                    color: coral;
+                }
+
+
+            }
+        }
+    }
+
+    .daohang {
+        width: 100%;
+        height: 100px;
+        position: relative;
+
+        .content {
+            overflow: hidden;
+
+            h1 {
+                width: 55px;
+                height: 55px;
+                background-image: url(../images/小米商城/logo.png);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                margin: 22px 190px 0 0;
+                float: left;
+            }
+
+            .daohang1 {
+                width: 610px;
+                height: 100%;
+                float: left;
+
+
+                li {
+                    float: left;
+                    margin-right: 20px;
+
+                    .daohang2 {
+                        height: 200px;
+                        position: absolute;
+                        left: 0;
+                        top: 100px;
+                        right: 0;
+                        display: flex;
+                        justify-content: space-around;
+                        display: none;
+
+                        li {
+                            width: 150px;
+                            height: 200px;
+                            background-image: url(../images/小米商城/shouji.jpg);
+                            background-repeat: no-repeat;
+                            background-size: 100% 100%;
+                        }
+                    }
+
+
+
+                    a {
+                        display: block;
+                        height: 100%;
+                        font-size: 17px;
+                        color: #333333;
+                        line-height: 100px;
+                        text-align: center;
+                    }
+                }
+
+                li:hover .daohang2 {
+                    display: block;
+                }
+
+                li:hover a {
+
+                    color: coral;
+                }
+            }
+
+            input {
+                float: right;
+                width: 297px;
+                height: 50px;
+                border: 1px solid #e0e0e0;
+                margin-top: 25px;
+                text-align: right;
+            }
+
+        }
+    }
+
+    .main1 {
+        width: 100%;
+        height: 462px;
+
+        .content {
+            ul {
+                height: 100%;
+                width: 234px;
+                background: #5f6365;
+                float: left;
+                box-sizing: border-box;
+                padding-top: 30px;
+
+
+
+                li {
+                    width: 100%;
+                    height: 20px;
+                    margin-bottom: 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    box-sizing: border-box;
+                    padding: 0 22px 0 30px;
+
+                    i {
+                        display: inline-block;
+                        width: 11px;
+                        height: 13px;
+                        background-image: url(../images/jian.png);
+                        background-repeat: no-repeat;
+                        background-size: 100% 100%;
+                    }
+
+
+                    a {
+                        display: inline-block;
+                        font-size: 14px;
+                        color: #ffffff;
+                        line-height: 20px;
+                    }
+                }
+
+                li:hover {
+                    background: coral;
+                }
+            }
+
+            .main1-r {
+                width: 994px;
+                height: 100%;
+                float: left;
+                background-image: url(../images/小米商城/hai.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>水仙花数</title>
+</head>
+
+<body>
+    <div>
+        <h2>水仙花数有哪些呢</h2>
+        <input type="button" value="看看水仙数有啥" id="btn">
+        <div id="res"></div>
+    </div>
+</body>
+<script>
+    /*
+        按下按钮之后，给i的初始值设置为100，
+        然后判断值为 i<1000，
+        当满足这个条件时开始循环，
+        先求出i的个十百位数，
+        再通过if判断个十百位的立方的和是否等于i
+        如果为ture，就输出结果
+        然后继续循环
+        知道i不满足条件为止
+        （Math.pow(num,3)---num的三次方）
+    */
+
+    //获取节点
+    var btn = document.getElementById('btn');
+    var res = document.getElementById('res');
+
+    //点击事件
+    btn.onclick = function () {
+        res.innerHTML = '水仙花数有：';
+        var i = 100;
+        var hun = 0;
+        var ten = 0;
+        var one = 0;
+        var j = 0; 
+        while (i < 1000) {
+            hun = parseInt(i / 100);
+            ten = parseInt((i - hun * 100) / 10);
+            one = parseInt(i % 10);
+            j = Math.pow(hun,3) + Math.pow(ten,3) + Math.pow(one,3);
+            // console.log(hun,ten,one);
+            if (i == j) { 
+                res.innerHTML += "-" + i + "-";
+            }
+            i++;
+        }
+    }
+</script>
+
+</html>

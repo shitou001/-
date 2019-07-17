@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    输入月份：<input type="text" id="month">
+    <input type="button" value="点我有惊喜" id="btn"><br>
+    结果：<div class="finally"></div>
+</body>
+<script>
+    //月份输入框一个，显示月份天数按钮一个，外加显示框一个
+    //获取节点
+    var month = document.getElementById("month");
+    var btn = document.getElementById("btn");
+    var fina = document.getElementById("finally");
+
+    //事件触发
+    btn.onclick = function () {
+        var k = Number(month.value);
+        console.log(k);
+        if (k <= 12 && k >= 1) {
+            console.log(k);
+            switch (k) {
+                case 1:
+                case 3:
+                case 7:
+                case 9:
+                case 10:
+                case 12:
+                    fina.innerHTML = k + "月有31天";
+                    break;
+                case 2:
+                    fina.innerHTML = k + "月有28天";
+                    break;
+                case 4:
+                case 8:
+                case 11:
+                    fina.innerHTML = k + "月有30天";
+                    break;
+            }
+        } else {
+            fina.innerHTML = "哪来的妖怪？";
+
+        }
+
+    }
+
+</script>
+
+</html>

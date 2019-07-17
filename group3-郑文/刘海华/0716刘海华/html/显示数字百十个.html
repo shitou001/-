@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input">
+    <input type="button" id="btn" value="转换">
+    <div id="output"></div>
+
+</body>
+
+<script>
+    var input = document.getElementById("input");
+    var btn = document.getElementById("btn");
+    var output = document.getElementById("output");
+    btn.onclick = function () {
+        var num = input.value;
+        var num1 = parseInt(num / 100);
+        var num2 = parseInt(num % 100 / 10);
+        var num3 = num % 10;
+
+        output.innerHTML = "百位:" + num1 + "十位:" + num2 + "个位:" + num3;
+
+        console.log(num1, num2, num3)
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    h1{
+        color: red;
+    }
+    </style>
+</head>
+<body>
+     <h2>判定成绩的等级<br>秀宗>秀师>秀者>秀士(0--100)</h2>
+        <input type="text" id="tex1">：分
+        <input type="button" value="判断" id="btn">
+         <h1 id="tex2"></h1>
+</body>
+<script>
+
+   var tex1 = document.getElementById('tex1');
+   var btn = document.getElementById('btn');
+   var tex2 = document.getElementById('tex2');
+
+
+ btn.onclick = function () {
+    switch (true) {
+       case tex1.value >= 0 && tex1.value < 60:
+                 tex2.innerHTML = '秀士，咸鱼你该要努力翻身'
+                 break;
+       case tex1.value >= 60 && tex1.value < 80:
+                 tex2.innerHTML = '秀者，你是条不错的咸鱼了'
+                 break;
+       case tex1.value >= 80 && tex1.value < 90:
+                 tex2.innerHTML = '秀师，你以小有名气'
+                 break;
+        case tex1.value >= 90 && tex1.value <= 100:
+                 tex2.innerHTML = '秀宗，恐怖如斯'
+                 break;
+        default :
+            tex2.innerHTML = '该吃药了，别放弃治疗'
+            break;
+
+
+    }
+
+
+
+ }
+
+
+</script>
+</html>

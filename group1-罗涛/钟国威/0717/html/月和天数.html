@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>how mang days</title>
+</head>
+
+<body>
+    <div>
+        <h2>输入一个月，看看有多少天呢</h2>
+        <form action="">
+            <input type="text" id="tex1">
+            <input type="button" value="how many" id="btn">
+            <p id="res"></p>
+        </form>
+    </div>
+</body>
+<script>
+    /*
+        在点击按钮btn的时候，获得tex1（月份）的值，
+        然后通过switch来判断是大月，还是小月，
+        如果是大月就把31天渲染到res中，如果是小月就把30天渲染到res中，如果值为2，那么就是28天了。
+    */
+
+    //获取节点
+    var tex1 = document.getElementById('tex1');
+    var btn = document.getElementById('btn');
+    var res = document.getElementById('res');
+
+    //点击事件为：
+    btn.onclick = function () {
+        var num = tex1.value - 0;
+        switch (num) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                res.innerHTML = num + '月份有31天';
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                res.innerHTML = num + '月份有30天';
+                break;
+            case 2:
+                res.innerHTML = num + '月份有28天';
+                break;
+            default:
+                res.innerHTML = '请输入一个1-12的月份数';
+        }
+
+    }
+</script>
+
+</html>

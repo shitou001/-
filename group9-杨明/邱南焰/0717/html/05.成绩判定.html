@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 大于85 优秀
+         大于等于75小于等于85 良好
+         大于等于60小于75 及格
+         小于60 不及格 -->
+    <h2>成绩的判断</h2>
+    <input type="text" id="chengji"><br>
+    <input type="button" value="判断" id="btn"><br>
+    <input type="text" id="jieguo">
+</body>
+<script>
+    //   找节点 
+
+    var chengji = document.getElementById('chengji');
+    var jieguo = document.getElementById('jieguo');
+    // 绑定事件
+    btn.onclick = function () {
+        //    获取数据
+        var num1 = chengji.value;
+        // 判断条件 方法 一
+        // if (num1 > 85 && num1 <= 100) {
+        //     jieguo.value = '优秀'
+        // } else if (num1 >= 75 && num1 <= 85) {
+        //     jieguo.value = '良好'
+        // } else if (num1 >= 60 && num1 < 75) {
+        //     jieguo.value = '及格'
+        // } else if (num1 >= 0 && num < 60) {
+        //     jieguo.value = '不及格'
+        // } else {
+        //     jieguo.value = '请输入0-100内数字'
+        // }
+        // 方法 二
+        switch (true) {
+            case num1 > 85 && num1 <= 100:
+                jieguo.value = '优秀';
+                break;
+            case num1 >= 75 && num1 <= 85:
+                jieguo.value = '良好';
+                break;
+            case num1 >= 60 && num1 < 75:
+                jieguo.value = '及格';
+                break;
+            case num1 >= 0 && num1 < 60:
+                jieguo.value = '不及格';
+                break;
+            default:
+                jieguo.value = '请输入0-100内的数字';
+                break;
+        }
+
+
+    }
+</script>
+
+</html>
