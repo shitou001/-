@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>计算器</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 500px;
+            height: 200px;
+            margin: 100px auto;
+            /* border: 1px solid red; */
+        }
+
+        fieldset {
+            width: 500px;
+            height: 200px;
+            padding: 50px;
+        }
+
+        input {
+            width: 100px;
+            height: 25px;
+        }
+
+        select {
+            width: 50px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <fieldset>
+            <legend>计算器</legend>
+            <form action="">
+                <input type="text" id="text1" placeholder="  请输入数值1">
+                <select name="" id="calc">
+                    <option value="add">+</option>
+                    <option value="cut">-</option>
+                    <option value="mul">*</option>
+                    <option value="division">/</option>
+                    <option value="surplus">%</option>
+                </select>
+                <input type="text" id="text2" placeholder="  请输入数值2">
+                <input type="button" value="=" style="width:50px;" id="btn">
+                <input type="text" placeholder="  结果" id="res">
+            </form>
+        </fieldset>
+
+    </div>
+</body>
+<script>
+    //找到控件
+    var text1 = document.getElementById('text1');   //数值1
+    var text2 = document.getElementById('text2');   //数值2
+    var calc = document.getElementById('calc');     //云算符
+    var btn = document.getElementById('btn');       //计算符
+    var res = document.getElementById('res');       //结果
+    //绑定事件
+    btn.onclick = function () {
+        var str = calc.value;
+        var num1 = text1.value - 0;
+        var num2 = text2.value - 0;
+        // if (toString(num1)  == 'NaN') {
+        //     alert('请输入正确的数值');
+        // } else {
+            if (str == 'add') {
+                var sum = num1 + num2;
+                res.value = sum;
+            }
+            else if (str == 'cut') {
+                var sum = num1 - num2;
+                res.value = sum;
+            }
+            else if (str == 'mul') {
+                var sum = num1 * num2;
+                res.value = sum;
+            }
+            else if (str == 'division') {
+                var sum = num1 / num2;
+                res.value = sum;
+            }
+            else if (str == 'surplus') {
+                var sum = num1 % num2;
+                res.value = sum;
+            }
+
+        }
+    // }
+</script>
+
+</html>
