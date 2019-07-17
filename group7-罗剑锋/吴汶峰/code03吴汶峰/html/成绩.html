@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 一个个个输入框、一个按钮、一个输出 -->
+    <input type="text" id="source">
+    <input type="button" value="判断"  id="btn">
+  
+    <div id="sum"></div>
+</body>
+<script>
+    // 1找节点
+    var num = document.getElementById('source');
+    var btn = document.getElementById('btn');
+    var sum = document.getElementById('sum');
+    // 2.点击事件
+    btn.onclick = function () {
+        // 首先获取数据
+        var Num = num.value - 0;
+        if ( Num > 0 && Num < 60){
+            sum.innerHTML = '不及格';
+        }else if (Num > 60 && Num < 75){
+            sum.innerHTML = '及格';
+        }else if ( Num > 75 && Num < 85){
+            sum.innerHTML = '良好';
+        }else if ( Num >85 && Num <= 100){
+            sum.innerHTML = '优秀';
+        }else if ( Num >100){
+            sum.innerHTML = '输入错误';
+        }
+    }
+</script>
+</html>
