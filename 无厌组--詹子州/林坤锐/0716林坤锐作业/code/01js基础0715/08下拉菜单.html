@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>08下拉菜单</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="下拉菜单" id="btn">
+    <div id="box"></div>
+</body>
+<script>
+    /*
+        怎么让一个盒子隐藏：
+            * display :none;
+            * height:0
+            * width:0
+            * opacity:0
+            * div遮罩
+            * left
+            * top
+    */
+
+    /*
+        需求：实现一个下拉菜单效果，点击就出现，再点击又隐藏
+            * 找到两个节点:btn box
+            * 给btn绑定点击事件，功能就是控制box的显示和隐藏
+    */
+
+    var btn = document.getElementById('btn');
+    var box = document.getElementById('box');
+    var isok = true;//开关
+    //绑定事件: 节点.事件名 = function() { 功能 }
+    btn.onclick = function() {//函数
+        // alert(123);
+        //节点名.style.属性名 = 属性值
+        if(isok) {//true
+            box.style.display = 'block';
+        }else{
+            box.style.display = 'none';
+        }
+        isok = !isok;
+    }
+
+</script>
+</html>

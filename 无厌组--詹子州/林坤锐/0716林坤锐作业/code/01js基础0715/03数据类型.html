@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03数据类型</title>
+</head>
+<body>
+    <input type="text" id="usn" value="生蚝">
+</body>
+<script>
+
+    /*
+        数据类型：
+            * 基本数据类型：
+                * 值类型：string/number/boolean
+                * 特殊类型：null/undefined
+            * 复合数据类型(引用类型):array数组、对象 object{}
+            * 检测数据类型：typeof(数据)，返回数据类型
+    */
+
+    //值类型
+    var str = '鸡你太美';//可以单引号可以双引号，有引号装起来的就是字符串类型
+    console.log(str);
+    console.log(typeof(str));//string
+    
+    var num = 88;
+    console.log(num);
+    console.log(typeof(num));//nubmer
+
+    //数学运算无法运行的时候，就是显示NaN
+    var n1 = 12;
+    var n2 = '10';
+    var n3 = n1 + n2;
+    console.log(n3);//1210 ? +在程序里面有两个功能，如果两边都是数字，就是纯粹的数学运算相加；如果其中一边是字符串，就是字符串拼接(得到一个字符串)
+
+    var m1 = 12;
+    var m2 = '10';
+    var m3 = m1 - m2;//隐式类型转换：系统帮你偷偷的转换了数据类型再相减
+    console.log(m3);//2
+
+    var k1 = 12;
+    var k2 = 'good';
+    var k3 = k1 - k2;
+    console.log(k3);//NaN 
+    console.log('数据类型是' + typeof(k3));
+
+    var isok = true;//布尔值  真
+    console.log(typeof(isok));//boolean
+    console.log(NaN == NaN);//false
+
+    //isNaN() 这不是一个数字，返回true：这不是数字； false：真是数字
+    console.log('k3是数字吗?' + isNaN(k3));
+    console.log('k2是数字吗?' + isNaN(k2));
+    
+    //特殊类型
+    var price;
+    console.log(price);//price is not defined 还没有定义这个变量;undefined 声明未赋值
+
+    //验证null
+    var usn = document.getElementById('usn');
+    if(usn.value) {
+        //非空验证-正则验证-ajax传给后端
+        console.log('非空');
+    }else{
+        //空
+        console.log('空');
+    }
+
+</script>
+</html>

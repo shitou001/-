@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04数据类型的转换</title>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+<script>
+    /*
+        04数据类型的转换:
+            * 强制类型转换：系统提供一些方法，让你强制的把某个数据类型转成另外一种
+                * String(要转的数据) ：得到字符串(重点)
+                * Number(要转的数据) ： 得到的数字(重点)
+                * Boolean(要转的数据) :得到布尔值
+                * parseInt() : 把字符串转成数字类型，整型，整数(重点)
+                * parseFloat() :把字符串转成数字类型,但是可以保留小数部分，float 浮点数，小数
+            * 隐式类型转换：系统会自动帮你转换数据类型，转不了就返回NaN
+                
+    */
+
+    var num = 123;
+    var str = String(num);//数字转成字符串
+    console.log(num,str);//?
+
+    //字符串转成数字
+    var price = '88';
+    var priceNum = Number(price);
+    console.log(priceNum);
+
+    var box = document.getElementById('box');
+    var ele = null;
+    //什么是真和假？
+    //真：true、非零数字、表达式为真的、非空字符串、非空对象 box
+    //假：false、数字0、表达式为假的、空字符串、空对象 ele、undefined
+
+    // 5>3
+    // if(表达式) {//在if语句后面的条件表达式里面，会自动的转换成布尔值
+    //     //返回真，执行这里的代码
+    // }else{
+    //     //返回假：执行这里的代码
+    // }
+
+
+    //parseInt()
+
+    var all = '999';
+    var newAll = parseInt(all);//1.把字符串转成数字类型
+    console.log(all,newAll);
+
+    var n1 = '32num';
+    var n2 = parseInt(n1);//2.提前字符串中数字开头的数字部分，并转成数字
+    console.log(n1,n2);
+
+    var n3 = 67.8;
+    var n4 = parseInt(n3);//3.取整
+    console.log(n3,n4);
+
+    //隐式类型转换:- * / % ==
+    var n1 = 4;
+    var n2 = '4';
+    console.log(n1 + n2);//24,+ 不会进行隐式转换
+    console.log(n1 - n2);
+    console.log(n1 * n2);
+    console.log(n1 == n2);//?true  == 进行隐式转换,等于
+    console.log(n1 === n2);//false 恒等，全等,不能隐式转换，直接比较
+
+
+    //需求：把字符串转成数字
+    var num = '90';
+    console.log(Number(num));
+    console.log(num - 0);
+    console.log(num * 1);
+    console.log(num / 1);
+    console.log(parseInt(num));
+    console.log(parseFloat(num));
+</script>
+</html>
