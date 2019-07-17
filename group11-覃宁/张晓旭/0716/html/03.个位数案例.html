@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>Document</title>
+</head>
+
+<body>
+    数字：
+    <input type="text" id="text1">
+    <input type="button" value="换算" id="button">
+    <!-- <span id="text2"></span> -->
+    <input type="text" id="text2">
+</body>
+<script>
+    var one = document.getElementById('text1');
+    var but = document.getElementById('button');
+    var two = document.getElementById('text2');
+    but.onclick = function () {
+        var ones = one.value;
+        var bai = parseInt( ones / 100);
+        var shi =  parseInt((ones % 100) / 10);
+        var ge =  parseInt((ones % 10));
+        console.log(bai)
+        two.value = bai + '是百位' + shi + '是十位' + ge + '是个位'
+
+    }
+</script>
+
+</html>
