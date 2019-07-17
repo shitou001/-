@@ -13,3 +13,10 @@ Uncaught TypeError: Cannot read property 'value' of null
 
 
 Uncaught SyntaxError: Unexpected token ||
+
+
+Uncaught SyntaxError: Unexpected token else
+
+
+
+Uncaught SyntaxError: Unexpected end of input
