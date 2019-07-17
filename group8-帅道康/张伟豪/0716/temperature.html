@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>temperature</title>
+</head>
+<body>
+    <h1>温度转变</h1>
+    <select name="" id="converter">
+        <option value="fahrenheit">华氏温度转换成摄氏温度</option>
+        <option value="centigrade">摄氏温度转化成华氏温度</option>
+    </select>
+    <input type="text" id="text1">
+    <input type="button" id="btn" value="转换">
+    <input type="text" id="res">
+<!-- *1.8+32 -->
+</body>
+<script>
+    var converter = document.getElementById('converter');
+    var text1 = document.getElementById('text1');
+    var btn = document.getElementById('btn');
+    var res = document.getElementById('res');
+    btn.onclick = function(){
+        if(text1.value){
+            text1.value = parseFloat(text1.value);
+            if(converter.value == 'fahrenheit'){
+                var result = (text1.value - 32) /1.8;
+                res.value = result
+
+            }
+            else{
+                var result = text1.value * 1.8 + 32;
+                res.value = result;
+            }
+
+        }else{
+            alert('输入结果不能为空')
+        }
+    }
+</script>
+</html>
