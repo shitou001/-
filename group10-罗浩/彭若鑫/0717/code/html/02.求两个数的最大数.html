@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>求两个数的最大数</title>
+</head>
+
+<body>
+    <h2>求两个数的最大数</h2>
+    <!-- 
+          实现功能的思路：
+           1.我要什么效果？
+              * 判断输入的两个数是谁比较大？
+              * 需要两个表单接收输入的数、需要一个按钮在点击的时候做判断、判断的结果输出到一个表单。(总：三个表单--input，一个按钮---input:button)
+            
+           2.具体的需求
+              * 给按钮绑定事件：btn.onclik = function(){}
+              * 在点击的功能里面：获取输入的数值 var num = text1.value;
+              * 判断最大的数是哪个，能被2整除的数是偶数，不能被2整除的数就是奇数；
+              * 判断得到的结果显示到一个表单里面 text2.value = '结果'；
+            
+           3.编写代码
+              * 注意变量规范：不能用数字开头，也不要用关键字和保留字作为变量名
+              * 边做边去控制台检测所写的代码是否正确或者规范
+     -->
+     <input type="text" id="text1">
+     <input type="text" id="text2">
+     <input type="button" value="判断" id="btn">
+     最大值为： <input type="text" id="result">
+</body>
+<script>
+    //找节点
+    var text1 = document.getElementById('text1');
+    var text2 = document.getElementById('text2');
+    var btn = document.getElementById('btn');
+    var result = document.getElementById('result');
+
+    //绑定点击按钮
+    //方法一：if语句判断
+    btn.onclick = function (){
+        var tex1 = text1.value;
+        var tex2 = text2.value;
+        if(tex1 - tex2 > 0){
+            result.value =tex1;
+        }else if(tex1 - tex2 == 0){
+            result.value ='二者一样大';
+        }else{
+            result.value =tex2;
+        }
+    }
+
+
+    // 方法二：三元运算
+    // btn.onclick = function (){
+    //     var tex1 = text1.value;
+    //     var tex2 = text2.value;
+    //     result.value = tex1 > tex2 ? tex1 : tex2 ;
+    //     if(tex1 == tex2){
+    //         result.value = '二者一样大';
+    //     }
+    // }
+</script>
+</html>

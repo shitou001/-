@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>水仙花数</title>
+</head>
+<!-- 
+    实现思路：
+         1.我要实现怎么样的效果？
+           * 找到100-999的所有水仙花数，将它们分别打印到页面
+
+         2.具体的需求
+              * 先用for循环把100-999内的数都找出来
+              * 分别计算出每一个数对应的个、十、百的数字
+              * 计算这个数的各位立方和并把它们相加
+              * 用if语句判断这个数的各位立方和是否等于该数本身，如果等于，就把它打印到页面；如果不等于，就忽略，依次进行下去，直到条件不满足为止。
+            
+           3.编写代码
+              * 注意变量规范：不能用数字开头，也不要用关键字和保留字作为变量名
+              * 边做边去控制台检测所写的代码是否正确或者规范
+ -->
+<body>
+    <h2>100-999以内的水仙花数</h2>
+</body>
+<script>
+    for(var i = 100; i <= 999; i++){
+        var ge = parseInt(i % 10); //求出个位数
+        var shi = parseInt((i / 10) % 10); //求出十位数
+        var bai = parseInt(i / 100) ; //求出百位数
+        var res = Math.pow(ge,3) + Math.pow(shi,3) + Math.pow(bai,3);
+        if(res == i){
+            document.write(res + ' ');
+        }
+    }
+        
+</script>
+</html>
