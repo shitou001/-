@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #input1 {
+            width: 50px;
+            height: 30px;
+        }
+
+        #btn {
+            width: 40px;
+            height: 30px;
+            line-height: 30px;
+
+            margin-left: 20px;
+            text-align: center;
+            /* border: 1px solid #ccc; */
+        }
+
+        #sp1,
+        #sp2,
+        #sp3 {
+            width: 50px;
+            height: 30px;
+            height: 30px;
+            text-align: center;
+
+            margin-right: 10px;
+
+        }
+    </style>
+</head>
+<!-- 3.给定一个三位数，分别把这个数字的百位、十位、个位算出来并显示。 -->
+
+<body>
+    <fieldset>
+        输入一个三位数：<input type="text" id="input1">
+        <input type="button" value="=" id="btn">
+        <br>
+        百位：<span id="sp1"> </span>
+        <br>
+        十位: <span id="sp2"> </span>
+        <br>
+        个位：<span id="sp3"> </span>
+    </fieldset>
+
+
+</body>
+<script>
+   
+    btn.onclick = function () {
+        var shuzi = document.getElementById(input1);
+        var shu = input1.value;
+        var bai = parseInt(shu / 100);
+         console.log(bai );
+        var shi = parseInt((shu - (bai * 100) ) / 10);
+        var ge = parseInt(shu - bai * 100 - shi * 10);
+        sp1.innerHTML = bai;
+        sp2.innerHTML = shi;
+        sp3.innerHTML = ge;
+    }
+
+</script>
+
+
+
+</html>
