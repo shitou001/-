@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="num">
+    <input type="button" id="btn" value="提交">
+</body>
+<script>
+    var x = parseInt(Math.random() * 100);
+    num = document.getElementById('num');
+    btn = document.getElementById('btn');
+    btn.onclick = function () {
+        var val = num.value;
+        console.log(x);
+
+        if (val == x) {
+            document.write('你猜对了');
+            console.log('你猜对了');
+
+        } else if (val > x) {
+            alert('你猜大了');
+            //  document.write('你猜大了');
+            console.log('你猜大了');
+
+        } else {
+            alert('你猜小了');
+            //  document.write('你猜小了');
+            console.log('你猜小了');
+        }
+    }
+</script>
+
+</html>
