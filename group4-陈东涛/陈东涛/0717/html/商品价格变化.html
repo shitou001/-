@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品价格变化</title>
+</head>
+
+<body>
+    <img src="../images/pms_1547020972.223707!220x220.jpg" alt="">
+    <p>
+        <span>购买数量：</span>
+        <input type="button" value="-" id="subtract">
+        <input type="text" name="" value="1" id="text1">
+        <input type="button" value="+" id="plus">（库存量6份）
+        <br>
+        商品价格：<span id="price">99.9</span><br>
+        <span>商品总价：</span>
+        <span id="zongjia"></span>
+    </p>
+</body>
+
+</html>
+<script>
+    var subtract = document.getElementById('subtract');
+    var text1 = document.getElementById('text1');
+    var plus = document.getElementById('plus');
+    var price = document.getElementById('price');
+    var zongjia = document.getElementById('zongjia');
+    // 减
+    subtract.onclick = function () {
+        var box = text1.value;
+        // var pr = price.value;
+        box--;
+        if (box <= 1) {
+            box = 1;
+        }
+        text1.value = box;
+        // console.log(box);
+        var jiage = box * price.innerHTML;
+        // console.log(zongjia);
+        zongjia.innerHTML = '￥' + jiage.toFixed(2);
+    }
+    //加
+    plus.onclick = function () {
+        var box = text1.value;
+        box++;
+        if (box >= 6) {
+            box = 6;
+        }
+        text1.value = box;
+        var jiage = box * price.innerHTML;
+        zongjia.innerHTML = '￥' + jiage.toFixed(2);
+    }
+    //内容发生改变时
+    text1.oninput = function () {
+        var box = text1.value;
+        if (box <= 1) {
+            box = 1;
+        } else if (box >= 6) {
+            box = 6;
+        }
+        text1.value = box;
+        // console.log(box);
+        jiage = box * price.innerHTML;
+        zongjia.innerHTML = '￥' + jiage.toFixed(2);
+    }
+</script>

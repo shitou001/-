@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>判断是否闰年</h1>
+    <input type="text" id="tex1">
+    <input type="button" id="btn" value="提交">
+    <input type="text" id="tex2">
+</body>
+
+</html>
+<script>
+    var tex1 = document.getElementById('tex1');
+    var btn = document.getElementById('btn');
+    var tex2 = document.getElementById('tex2');
+    btn.onclick = function () {
+        var year = tex1.value;
+        var num = tex2.value;
+        
+            if(year % 4 == 0 || year % 400 == 0){
+                 tex2.value = '是';
+                //    num = year;   
+                // alert('是闰年');              
+            }else if(year % 100 != 0 ){
+                tex2.value = '不是';
+                // num = year;
+                // alert('不是闰年');
+            }
+    }
+
+</script>
