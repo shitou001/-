@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="year" placeholder="请输入年份">
+    <input type="button" id="panduan" value="判断">
+    <span id="tishi"></span>
+    <p id="jieguo"></p>
+
+</body>
+<!-- 需求：判断输入框输入的年份是否为闰年:
+能被4整除但不能被100整除，或者能被400整除的才叫闰年
+功能描述：在一个文本框里输入年份，点击一个按钮，页面中会显示该年份是否为闰年；
+方案：
+HTML：
+1.输入框
+2.判断按钮
+3提示文本
+4.结果提示容器
+JS:
+1.获取ID；
+2.设置点击事件；{
+（1）获取年份
+（2）判断获取到的信息是不是可检测数据类型，如果不是，提示用户从新输入，如果是则执行---（3）
+（3）运算：该年份除以4求余数等于0或者除以400余数等于0，则返回闰年，否则返回非闰年
+} -->
+
+<script>
+    var year = document.getElementById("year");
+    var panduan = document.getElementById("panduan");
+    var tishi = document.getElementById("tishi");
+    var jieguo = document.getElementById("jieguo");
+    panduan.onclick = function () {
+        var year_1 = year.value;
+        if (isNaN(parseInt(year_1))) {
+            tishi.innerHTML = "请输入正确的年份（xxxx年）"
+        } else {
+            tishi.innerHTML = ""
+            if (year_1 % 4 == 0 || year_1 % 400 == 0) {
+                jieguo.innerHTML = year_1 + "是闰年";
+            } else {
+                jieguo.innerHTML = year_1 + "不是闰年";
+            }
+        }
+    }
+</script>
+
+</html>

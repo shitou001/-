@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>天帝换不锈钢盆啦</title>
+    <style>
+        div {
+            width: 400px;
+            height: 300px;
+            box-shadow: 0 0 8px 1px #ccc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 100px auto;
+        }
+
+        img {
+            width: 120px;
+            height: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="../images/list2-4.jpg" alt="">
+        <h2>不要999</h2>
+        <form action="">
+            <input type="button" value="-" id="cut">
+            <input type="text" value="1" id="num">
+            <input type="button" value="+" id="add">
+        </form>
+        <p>
+            <span>库存：666</span><br>
+            <span>单价：￥</span><span id="pri">998</span><br>
+            <span>总价:</span><span id="total">￥998</span>
+        </p>
+    </div>
+</body>
+<script>
+    var cut = document.getElementById('cut');
+    var add = document.getElementById('add');
+    var num = document.getElementById('num');
+    var pri = document.getElementById('pri');
+    var tol = document.getElementById('total');
+    add.onclick = function () {
+        var qua = num.value;
+        if (qua >= 666) {
+            qua = 666;
+            num.value = qua;
+        } else {
+            qua++;
+            num.value = qua;
+        }
+        tol.innerHTML = '￥' + (qua * pri.innerHTML);
+    }
+    cut.onclick = function () {
+        var qua = num.value;
+        if (qua <= 1) {
+            qua = 1;
+            num.value = qua;
+        } else {
+            qua--;
+            num.value = qua;
+        }
+        tol.innerHTML = '￥' + (qua * pri.innerHTML);
+    }
+    num.oninput = function () {
+        var qua = num.value;
+        if (qua <= 1) {
+            qua = 1;
+            num.value = qua;
+        } else if (qua >= 666) {
+            qua = 666;
+            num.value = qua;
+        }
+        // console.log(qua);
+        tol.innerHTML = '￥' + (qua * pri.innerHTML);
+    }
+</script>
+
+</html>
