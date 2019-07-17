@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>温度转换</title>
+    <style>
+        form{
+            width: 600px;
+            height: 100px;
+            border: 1px solid red;
+            margin: 100px auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <input type="text" id="tex1">
+        <select name="" id="sel">
+            <option value="ic">华氏度转摄氏度</option>
+            <option value="c">摄氏度转华氏度</option>
+        </select>
+        <input type="button" id="btn" value="转换">
+        <input type="text" id="tex2">
+    </form>
+</body>
+<script>
+    var tex1 = document.getElementById("tex1");
+    var tex2 = document.getElementById("tex2");
+    var sel = document.getElementById("sel");
+    var btn = document.getElementById("btn");
+    btn.onclick = function () {
+        val = sel.value;
+        if (val == 'ic') {
+            var num1 = tex1.value;
+            var num2 = 5 / 9 * (num1 - 32);
+            // console.log(num2);
+            tex2.value = num2.toFixed(2); 
+        } else { 
+            var num1 = tex1.value;
+            var num2 = 9 / 5 * num1 + 32;
+            console.log(num2);
+            tex2.value = num2; 
+        }
+    }
+</script>
+
+</html>

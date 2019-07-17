@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    输入年份：<input type="text">
+    <button>判断是否为闰年</button>
+    <br>
+    <span></span>
+    <script>
+        var year = document.getElementsByTagName("input")[0],
+            judge = document.getElementsByTagName("button")[0],
+            result = document.getElementsByTagName("span")[0];
+        judge.onclick = function () {
+            var value = Number(year.value),
+                res = "您获得的年份为：";
+            if (value % 4 == 0 && value % 100 != 0 || value % 400 == 0) {
+                res = res + "闰年";
+            } else {
+                res = res + "平年";
+            }
+            result.innerHTML = res;
+        }
+    </script>
+</body>
+
+</html>

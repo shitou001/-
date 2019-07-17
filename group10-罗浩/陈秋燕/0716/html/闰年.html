@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="year">
+    <input type="button" id="btn" value="查看">
+    <div id="box"></div>
+
+</body>
+<script>
+    year = document.getElementById('year');
+    btn = document.getElementById('btn');
+    btn.onclick = function () {
+        var ifyear = year.value;
+        if (ifyear % 4 == 0 && ifyear % 100 != 0 || ifyear % 400 == 0) {
+            console.log(year.value + '是闰年');
+        } else {
+            console.log(ifyear + '是平年');
+        }
+    }
+</script>
+
+</html>
