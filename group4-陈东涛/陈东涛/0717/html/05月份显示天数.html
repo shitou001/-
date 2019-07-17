@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>月份显示天数</title>
+</head>
+
+<body>
+    <span>请输入月份：</span>
+    <input type="text" value="" id="text1">
+    <input type="button" value="确定" id="btn">
+    <span>此月的天数为：</span>
+    <input type="text" id="days">
+</body>
+
+</html>
+<script>
+    var text1 = document.getElementById('text1');//输入的月份
+    var btn = document.getElementById('btn');//按钮
+    var days = document.getElementById('days');//计算的天数
+    btn.onclick = function () {
+        var month = text1.value * 1;
+        // console.log(month);
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                // console.log('31天');
+                days.value = '31天';
+                break;
+            case 2:
+                // console.log('28天');
+                days.value = '28天';
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                // console.log('30天');
+                days.value = '30天';
+                break;
+        }
+    }
+</script>
