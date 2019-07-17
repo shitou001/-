@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>判断是否为闰年</title>
+</head>
+
+<body>
+    <h2>判断所输入年份是否为闰年</h2>
+    <input type="text" placeholder="请输入年份" id="inputyear">
+    <input type="button" value="判断" id="btn">
+    <input type="text" id="result">
+
+
+</body>
+<script>
+    //找节点
+    var inputyear = document.getElementById('inputyear');
+    var btn = document.getElementById('btn');
+    var result = document.getElementById('result');
+
+    //判断是否为闰年---点击事件
+    btn.onclick = function () {
+        var yearNew = inputyear.value;
+        if (yearNew) {
+
+            if (((yearNew % 4 == 0) && yearNew % 100 != 0) || (yearNew % 400 == 0)) {
+                result.value = yearNew + '年是闰年！';
+                // console.log('您输入的年份：' + yearNew + '年是闰年！');
+            } else {
+                result.value = yearNew + '年不是闰年！';
+                // console.log('您输入的年份：' + yearNew + '年不是闰年！');
+            }
+        }
+    }
+</script>
+
+</html>

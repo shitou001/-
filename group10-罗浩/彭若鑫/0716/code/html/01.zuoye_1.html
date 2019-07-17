@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2311秒</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    //写法一：
+    var secs=2311; //总的秒数
+    var hours=parseInt(secs / 3600); //小时数
+    var mins=parseInt(secs / 60); //分数
+    var sec=secs % 60; //秒数
+    console.log('2133秒转换为：' + hours + '时' + mins + '分' + sec + '秒');
+
+
+    //另一种写法：
+    var secs2 = 2311;
+    var hours2 = parseInt(secs / 3600); //小时
+    //分和秒
+    var num = secs2 - hours2 * 3600; //剩下分和秒
+    var mins2 = parseInt(num / 60); //分
+    var sec2 = num % 60; //秒
+
+    //补零操作
+    function toDb(data){ //形参
+        if(data <10){
+            return '0' + data;
+        } else{
+            return '' + data;
+        }
+    }
+    console.log(secs2 +'时间换算后：' + toDb(hours2) + ':' + toDb(mins2) + ':' + toDb(sec2));
+</script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input:nth-child(1) {
+            background: #ccc;
+            height: 30px;
+            width: 100px;
+            box-shadow: 0 0 5px 2px #ccc;
+            vertical-align: middle;
+        }
+
+        input:nth-child(2) {
+            height: 30px;
+            width: 40px;
+            margin-left: 10px;
+            background: gray;
+            font-size: 12px;
+            color: #fff;
+            vertical-align: middle;
+        }
+
+        span {
+            display: inline-block;
+            height: 30px;
+            background: #ccc;
+            width: 200px;
+            vertical-align: middle;
+        }
+
+        div {
+
+            height: 30px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="shuju" placeholder="请输入计算金额">
+        <input type="button" id="btn" value="计算">
+        <span id="jieguo"></span>
+    </div>
+
+</body>
+
+<script>
+    var btn = document.getElementById("btn");
+    var shuju = document.getElementById("shuju");
+    var jieguo = document.getElementById("jieguo")
+
+    btn.onclick = function () {
+        if (shuju.value <= 999 && shuju.value >= 100) {
+            var num = shuju.value;
+            var hun = parseInt(num / 100);
+            var ten = parseInt((num % 100) / 10);
+            var ge = (num % 100) % 10;
+            console.log(ten);
+            console.log(hun);
+            console.log(ge);
+            jieguo.innerHTML = hun + "百" + ten + "十" + ge + "元";
+        }
+        else {
+            alert("请输入三位数！");
+        }
+    }
+
+
+
+</script>
+
+</html>

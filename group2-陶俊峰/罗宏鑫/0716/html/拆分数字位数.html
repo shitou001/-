@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="num"><br>
+    <input type="button" value="转换" id="btn"><br>
+    百位数：<div id="bai"></div>
+    十位数：<div id="shi"></div>
+    个位数：<div id="ge"></div>
+</body>
+<script>
+    var num = document.getElementById("num");
+    var bai = document.getElementById("bai");
+    var shi = document.getElementById("shi");
+    var ge = document.getElementById("ge");
+    btn.onclick = function () {
+        var n = num.value;
+        var b = parseInt(n / 100);
+        var s = parseInt(n % 100 / 10);
+        var g = parseInt(n % 10);
+        bai.innerHTML = b;
+        shi.innerHTML = s;
+        ge.innerHTML = g;
+    } 
+</script>
+
+</html>

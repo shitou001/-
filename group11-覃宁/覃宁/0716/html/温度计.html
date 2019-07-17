@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 需求：小明要到美国旅游，可是那里的温度是以华氏度为单位记录的。
+    它需要一个程序将华氏温度（80度）转换为摄氏度，并以华氏
+    度和摄氏度为单位分别显示该温度。
+    提示：摄氏度与华氏度的转换公式为：摄氏度 = 5/9.0*(华氏度-32)
+
+    方案：
+    1.添加华氏度输入文本框
+    2.添加摄氏度输出容器(不能是input)
+    3.添加转化事件按钮
+
+    JS工作过程:
+    1.绑定ID
+    2.将转化按钮设置成点击事件
+    3.点击事件工作{
+    （1）获取华氏度
+    （2）判断获取的数据类型，如果是数字则-----》（3），不是，则-----》（4）
+    （3）数字按照公式处理：摄氏度 = 5/9.0*(华氏度-32)，var值接受，将结果渲染到页面
+    （4）提示用户输出错误，请重新输入
+    } -->
+    <!-- 华氏度 -->
+    <input type="text" id="huashi">华氏度
+    <!-- 转换 -->
+    <input type="button" id="zhuanhuan" value="转换">
+    <!-- 摄氏度 -->
+    <span id="sheshi"></span>
+</body>
+<script>
+    // 获取ID
+    var text1 = document.getElementById("huashi");
+    var text2 = document.getElementById("sheshi");
+    var bon = document.getElementById("zhuanhuan");
+    // 绑定点击事件
+    bon.onclick = function () {
+        //获取华氏度
+        var huashi = text1.value;
+        //判断华氏度是否输入正确
+        if (isNaN(huashi)) {
+            text2.innerHTML = "请输入数字";
+        } else {
+            //转化运算并接收
+            var sheshi = 5 / 9.0 * (huashi - 32);
+            console.log(sheshi);
+            text2.innerHTML = sheshi.toFixed(2) + "摄氏度";
+        }
+    }
+</script>
+
+</html>
