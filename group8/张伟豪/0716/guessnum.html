@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>猜数字</title>
+</head>
+<body>
+    <h1>猜数字</h1>
+    <input type="text" id="text1">
+    <input type="button" id="btn" value="点我开猜">
+</body>
+<script>
+    var text1 = document.getElementById('text1');
+    var btn = document.getElementById('btn');
+    var randnum = Math.random();
+    randnum = parseInt(randnum * 100)+1;
+    btn.onclick = function(){
+      
+        
+        if(text1.value){
+            
+            // console.log(randnum);
+            if(text1.value == randnum ){
+                alert('lucky')
+            }
+            else if(text1.value > randnum){
+                alert('猜大了')
+            }
+            else{
+                alert('猜小了')
+            }
+        }else{
+            alert('输入不能为空')
+        }
+    }
+</script>
+</html>
