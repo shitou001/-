@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>BMI</h1>
+    <input type="text" placeholder="身高,请输入cm" id="shengao">
+    <input type="text" placeholder="体重，请输入kg" id="tizhong">
+    <input type="button" value="检测" id="button">
+    <input type="text" id="jieguo">
+</body>
+<script>
+    var shengao = document.getElementById('shengao');
+    var tizhong = document.getElementById('tizhong');
+    var btn = document.getElementById('button');
+    var jieguo = document.getElementById('jieguo')
+   
+    btn.onclick = function () {
+        var sgs = shengao.value / 100;
+        var tzs = tizhong.value;
+        var num = tzs / (sgs * sgs)
+        console.log(tzs)
+        console.log(sgs)
+        console.log(num)
+        if (num < 18.5) {
+            jieguo.value = "过轻"
+        } else if (num >= 18.5 && num <= 24.99){
+            jieguo.value ='正常'
+        }else if(num >= 25 && num <= 28){
+            jieguo.value ='过重'
+        }
+        else if(num >= 28 && num <= 32){
+            jieguo.value ='肥胖'
+        }else if(num >32 ){
+            jieguo.value ='请减肥'
+        }
+
+    }
+</script>
+
+</html>

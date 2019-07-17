@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <title>计算任意数的阶乘</title>
+    <style>
+        body{font-family:"Microsoft yahei";}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;display: block;}
+        a{text-decoration: none; color: inherit;}
+        input{outline: none;}
+        .clearfix::after{display: block; content: ""; clear: both;}
+        
+    </style>
+</head>
+<body>
+    请输入一个数：<input type="text" name="" id="inp">
+    <button id="btn">计算</button>
+    <input type="text" name="" id="num">
+
+    <script>
+        var inp = document.getElementById("inp");
+        var btn = document.getElementById("btn");
+        var num = document.getElementById("num");
+        var sum = 1;
+
+        btn.onclick =  function () {
+            // 获取初始值
+            var flag = Number(inp.value);
+            
+
+            while(flag > 0){
+                sum *= flag;
+                flag--;
+            }
+            // 执行完毕将结果赋给num对象
+            num.value = sum;
+        }
+    
+    
+    </script>
+</body>
+</html>
