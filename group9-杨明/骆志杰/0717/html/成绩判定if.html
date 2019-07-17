@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>成绩判定if</title>
+    <style>
+    marquee{
+        font-size: 100px;
+        color: #58bc58;
+    }
+    </style>
+</head>
+
+<body>
+    <h2>成绩判定</h2>
+    <input type="text" id="sso" placeholder="请输入您的成绩！">
+    <input type="button" value="查询" id="btn">
+    <marquee behavior="" direction="" id="oop"></marquee>
+</body>
+<script>
+// 找到页面中的节点 
+var sso = document.getElementById('sso');
+var btn = document.getElementById('btn');
+btn.onclick = function(){
+    console.log(sso);
+    var val = sso.value;
+    if(val > 85 && val <= 100){
+        oop.innerHTML = '恭喜，您的成绩评定为优秀！';
+    }else if(val >=75 && val<=85){
+        oop.innerHTML = '您的成绩评定为良好！';
+    }else if(val >=60 && val<=75){
+        oop.innerHTML = '您的成绩评定为及格！';
+    }else if(val >=0 && val<60){
+        oop.innerHTML = '您的成绩评定为不及格！';
+    }
+     else{
+        oop.innerHTML = '请按规定输入分数！！！';
+     }
+}
+</script>
+</html>

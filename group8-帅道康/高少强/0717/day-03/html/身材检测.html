@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            height: 300px;
+            width: 300px;
+            background: gray;
+            margin: auto;
+            color: #fff;
+            padding-top: 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        div #text1 {
+            border: 1px solid #ccc;
+            box-shadow: 0 0 5px 2px #ccc;
+            margin-bottom: 10px;
+
+        }
+
+        div #text2 {
+            border: 1px solid #ccc;
+            box-shadow: 0 0 5px 2px #ccc;
+            margin-bottom: 10px;
+        }
+
+        div #btn {
+            width: 100px;
+            height: 50px;
+            color: coral;
+        }
+
+        a {
+            position: absolute;
+            right: 15px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        span {
+            position: absolute;
+            top: 180px;
+            left: calc(50% - 32px);
+        }
+    </style>
+</head>
+<!-- 
+            开发一款软件，根据公式（身高-108）*2=体重，可以有10斤左右的浮动。来观察测试者体重是否合适;
+
+BMI指数（即身体质量指数，简称体质指数又称体重，英文为Body Mass Index，简称BMI），是用体重公斤数除以身高米数平方得出的数字，是目前国际上常用的衡量人体胖瘦程度以及是否健康的一个标准。主要用于统计用途，当我们需要比较及分析一个人的体重对于不同高度的人所带来的健康影响时，BMI值是一个中立而可靠的指标。
+
+成人的BMI数值：
+
+过轻：低于18.5
+正常：18.5-24.99
+过重：25-28
+肥胖：28-32
+非常肥胖, 高于32
+体质指数（BMI）= 体重（kg）÷身高^2（m） 如：70kg÷（1.75×1.75）=22.86
+         -->
+
+<body>
+    <div>
+        身高：<input type="text" id="text1" placeholder="输入身高">
+        <a href="">cm</a>
+        <br>
+        体重：<input type="text" id="text2" placeholder="输入体重">
+        <a href="">kg</a>
+        <br>
+        <input type="button" value="检测" id="btn">
+        <span id="res"></span>
+    </div>
+</body>
+<script>
+    var text1 = document.getElementById("text1");
+    var text2 = document.getElementById("text2");
+    var btn = document.getElementById("btn");
+    var res = document.getElementById("res");
+    // 获取节点
+    btn.onclick = function () {
+        // 点击事件
+        var sg = text1.value / 100;
+        var tz = text2.value;
+        var num = tz / (sg ^ 2);
+        if (num != 0) {
+
+
+            if (num < 18.5) {
+                res.innerHTML = "体重过轻";
+            }
+            else if (num >= 18.5 && num <= 24.99) {
+                res.innerHTML = "身材完美";
+            }
+            else if (num >= 25 && num <= 28) {
+                res.innerHTML = "体重过重";
+            }
+            else if (num > 28 && num <= 32) {
+                res.innerHTML = "体重肥胖";
+            }
+            else if (num > 32) {
+                res.innerHTML = "你胖的像个球";
+            }
+            // 判断
+        }
+        else{
+            alert("请输入身高和体重");
+        }
+    }
+
+</script>
+
+</html>

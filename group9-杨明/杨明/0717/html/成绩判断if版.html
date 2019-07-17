@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>成绩判断if</h1>
+    输入成绩：<input type="text" name="" id="num1">
+    <input type="button" value="判断" onclick="f()">
+    结果：<input type="text" id="result">
+
+</body>
+<script>
+    /*
+        输入成绩，进行成绩判定(要求用if和switch两种写法)
+        大于85 优秀
+        大于等于75小于等于85 良好
+        大于等于60小于75 及格
+        小于60 不及格
+        
+    */
+    //1.找节点
+    var num1 = document.getElementById('num1');
+    var result = document.getElementById('result')
+
+    function f() {
+        var score = num1.value * 1;
+        if (score > 85 && score <= 100) {
+            result.value = "优秀"
+        } else if (score >= 75 && score <= 85) {
+            result.value = "良好"
+        } else if (score >= 60 && score <= 75) {
+            result.value = "及格"
+        } else if (score >= 0 && score < 60) {
+            result.value = "不及格"
+        } else {
+            result.value = "请输入0-100的值"
+        }
+    }
+</script>
+
+</html>

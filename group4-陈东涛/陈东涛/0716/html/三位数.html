@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>给定一个三位数，分别把这个数字的百位、十位、个位算出来并显示。</title>
+</head>
+<style>
+    .box {
+        margin-top: 10px;
+    }
+
+    .box span,
+    .box .box1,
+    .box .box2,
+    .box .box3 {
+        height: 30px;
+        float: left;
+    }
+</style>
+
+<body>
+    <span>请输入想输入的数字：</span>
+    <input type="text" id="text1">
+    <input type="button" value="确定" id="button">
+    <div class="box">
+        <span>当前数字百位是：</span>
+        <div id="box1"></div>
+    </div>
+    <br>
+    <div class="box">
+        <span>当前数字十位是：</span>
+        <div id="box2"></div>
+    </div>
+    <br>
+    <div class="box">
+        <span>当前数字个位是：</span>
+        <div id="box3"></div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    var text1 = document.getElementById('text1');
+    var button = document.getElementById('button');
+    var box1 = document.getElementById('box1');
+    button.onclick = function () {
+        var shuzhi = text1.value - 0;
+        var hundreds = parseInt(shuzhi / 100 % 10);
+        // console.log(box1);
+        var decade = parseInt(shuzhi / 10 % 10);
+        // console.log(box2);
+        var unit = parseInt(shuzhi / 1 % 10);
+        // console.log(box2);
+        box1.innerHTML = hundreds; 
+        box2.innerHTML = decade;
+        box3.innerHTML = unit;
+
+    }
+</script>

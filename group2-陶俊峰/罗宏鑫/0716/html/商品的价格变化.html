@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="../images/20180526124459_mejxt.gif" alt="" style="width: 200px;height: 200px;"><br>
+    单价：￥99 <br>
+    数量：12件 <br>
+    购买数量：<input type="button" id="cut" value="-"><input type="text" id="num"><input type="button" id="add"
+        value="+"><br>
+    总价： <div id="sum"></div>
+</body>
+<script>
+    var cut = document.getElementById("cut");
+    var add = document.getElementById("add");
+    var num = document.getElementById("num");
+    var sum = document.getElementById("sum");
+
+    cut.onclick = function () {
+        if (num.value <= 2) {
+            num.value = 2;
+        }
+        num.value--;
+        sum.innerHTML = num.value * 99 + "￥";
+    }
+    add.onclick = function () {
+        if (num.value >= 11) {
+            num.value = 11;
+        }
+        num.value++;
+        sum.innerHTML = num.value * 99 + "￥";
+    }
+    num.oninput = function () {
+        if (num.value >= 1 && num.value <= 12) {
+            sum.innerHTML = num.value * 99 + "￥";
+        } else {
+            sum.innerHTML = "想啥呢！"
+        }
+    }
+
+
+</script>
+
+</html>

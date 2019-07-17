@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>输入1-100数字，猜对请你吃糖</h3>
+    <input type="text" id="num">
+    <input type="button" id="btn" value="文明人别按！">
+    <div id="test"></div>
+
+</body>
+<script>
+    var num = document.getElementById("num");
+    var btn = document.getElementById("btn");
+    var test = document.getElementById("test");
+    var k = parseInt(Math.random() * 100 + 1);
+    btn.onclick = function () {
+        var n = num.value;
+        if (n > k) {
+            test.innerHTML = "叼毛，你猜大了";
+        }
+        else if (n < k) {
+            test.innerHTML = "废物，老是猜错，证明你太小了";
+        }
+        else if (n == k) {
+            test.innerHTML = "犀利喔！全体起立，终于猜对了！恭喜你，证明你不是智障！";
+
+        }
+    }
+
+</script>
+
+</html>

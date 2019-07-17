@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    成绩：<input type="text" id="left">
+    <input type="button" value="结果" id="btn">
+    <input type="text" id="right">
+
+</body>
+<script>
+
+    var left = document.getElementById('left');
+    var btn = document.getElementById('btn');
+    var right = document.getElementById('right');
+    left.value = 0;
+    btn.onclick = function () {
+        switch (true) {
+            case left.value <= 100 && left.value >= 80:
+                right.value = '优秀'
+                // document.write('优秀');
+                console.log(right);
+                break;
+            case left.value <= 79 && left.value >= 60:
+                right.value = '良好'
+                // document.write('优秀');
+                console.log(right);
+                break;
+            case left.value <=59 && left.value >= 0:
+                right.value = '不及格'
+                // document.write('优秀');
+                console.log(right);
+                break;
+                default:right.value = '请输入正确的'
+                break;
+            // case left.value >= 60:
+            //     right.value = '良好'
+            //     break;
+        }
+    }
+</script>
+
+</html>

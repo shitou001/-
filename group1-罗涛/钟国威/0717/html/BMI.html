@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI</title>
+</head>
+<body>
+    <div>
+        <h2>看看你健8健康</h2>
+        <form action="">
+            <input type="text" id="tex1" placeholder="身高(m)">
+            <input type="text" id="tex2"
+            placeholder="体重(kg)">
+            <input type="button" value="go" id="btn">
+            <p id="res"></p>
+        </form>
+    </div>
+</body>
+<script>
+
+    /*
+        在点击btn的时候，获取到tex1和tex2的值,代表身高和体重,然后算出BMI，再用if或者switch来判断是否健康。
+    */
+
+    //获取节点
+    var tex1 = document.getElementById('tex1');
+    var tex2 = document.getElementById('tex2');
+    var btn = document.getElementById('btn');
+    var res = document.getElementById('res');
+
+    //点击事件
+    btn.onclick = function() {
+        var hei = tex1.value;
+        var wei = tex2.value;
+        var bmi = (wei / Math.pow(hei,2)).toFixed(2);
+        console.log(hei,wei,bmi);
+        // if (bmi < 18.5) {
+        //     res.innerHTML = '你太瘦啦兄dei';
+        // }else if (bmi >= 18.5 && bmi < 25) {
+        //     res.innerHTML = '恭喜你，完美身材';
+        // }else if(bmi >= 25 && bmi < 28) {
+        //     res.innerHTML = '兄弟有点重哈';
+        // }else if(bmi >= 28 && bmi <= 32) {
+        //     res.innerHTML = '兄弟你点像哆啦A梦';
+        // }else if(bmi > 32) {
+        //     res.innerHTML = '兄弟你肥到需要去看医生了';
+        // }
+
+        switch(true) {
+            case bmi < 18.5:
+            res.innerHTML = '你太瘦啦兄dei';
+            break;
+            case bmi >= 18.5 && bmi < 25:
+            res.innerHTML = '恭喜你，完美身材';
+            break;
+            case bmi >= 25 && bmi < 28:
+            res.innerHTML = '兄弟有点重哈';
+            break;
+            case bmi >= 28 && bmi <= 32:
+            res.innerHTML = '兄弟你点像哆啦A梦';
+            break;
+            case bmi > 32:
+            res.innerHTML = '兄弟你肥到需要去看医生了';
+            break;
+        }
+    }
+</script>
+</html>

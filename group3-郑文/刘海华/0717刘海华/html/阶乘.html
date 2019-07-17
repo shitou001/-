@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input">
+    <input type="button" id="btn" value="阶乘">
+    <input type="text" id="output">
+
+</body>
+<script>
+    var input = document.getElementById("input");
+    var btn = document.getElementById("btn");
+    var output = document.getElementById("output");
+
+    btn.onclick = function () {
+        var num = input.value ;
+        // console.log(num)
+        var i = 1;
+        // console.log(i);
+        var sun = 1;
+        // console.log(sun);
+
+        while (i <= num) {
+            sun = sun * i;
+            i++;
+        }
+        output.value = sun;
+
+    }
+
+</script>
+
+</html>

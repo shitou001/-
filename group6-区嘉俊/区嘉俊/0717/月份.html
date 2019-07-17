@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>月份</title>
+</head>
+
+<body>
+    <input type="text" id="tex1">
+    <input type="button" value="=" id="deng">
+    <p id="jie"></p>
+</body>
+<script>
+    //输入月份，显示当月的天数
+
+    var val = document.getElementById("tex1");
+    var but = document.getElementById("deng");
+
+    but.onclick = function () {
+        var val = tex1.value;
+        console.log(val)
+        switch (true) {
+            case val == 1:
+            case val == 3:
+            case val == 5:
+            case val == 7:
+            case val == 9:
+            case val == 11:
+                jie.innerHTML = "这个月31天"
+                break;
+            case val == 4:
+            case val == 6:
+            case val == 8:
+            case val == 10:
+            case val == 12:
+                jie.innerHTML = "这个月30天"
+                break;
+            case val == 2:
+                jie.innerHTML = "这个月28天"
+                break;
+        }
+    }
+</script>
+
+</html>

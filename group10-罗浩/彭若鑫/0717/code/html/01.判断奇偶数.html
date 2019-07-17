@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>判断奇偶数</title>
+</head>
+<body>
+    <h2>判断奇偶数</h2>
+    <!-- 
+        实现功能的思路：
+           1.我要什么效果？
+              * 判断输入的这个数是奇数还是偶数？
+              * 需要一个表单接收输入的数、需要一个按钮在点击的时候做判断、判断的结果输出到一个表单。(总：两个表单--input，一个按钮---input:button)
+            
+           2.具体的需求
+              * 给按钮绑定事件：btn.onclik = function(){}
+              * 在点击的功能里面：获取输入的数值;
+              * 判断输入的这个数是奇数还是偶数，能被2整除的数是偶数，不能被2整除的数就是奇数；
+              * 判断得到的结果显示到一个表单里面 text2.value = '结果'；
+            
+           3.编写代码
+              * 注意变量规范：不能用数字开头，也不要用关键字和保留字作为变量名
+              * 边做边去控制台检测所写的代码是否正确或者规范
+     -->
+
+     <input type="text" id="text1">
+     <input type="button" value="判断" id="btn">
+     <input type="text" id="result">
+</body>
+<script>
+    //获取节点
+    var text1 = document.getElementById('text1');
+    var btn = document.getElementById('btn');
+    var result = document.getElementById('result');
+
+    //绑定按钮事件
+    btn.onclick = function(){
+        var text1New = text1.value; //输入的数字
+        // console.log(tex1);
+        if(text1New % 2 == 0){
+            result.value = '是偶数';
+            // console.log(text1New + '是偶数');
+        }else{
+            result.value =  '是奇数';
+            // console.log(text1New + '是奇数');
+        }
+
+    }
+</script>
+</html>

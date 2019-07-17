@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>成绩判定</h2>
+    <input type="text" id="shuru" placeholder="输入一个成绩">
+    <div id="box"></div>
+</body>
+<script>
+    var shuru = document.getElementById('shuru');
+    shuru.oninput = function () {
+        var chengji = shuru.value;
+        // if (chengji > 85 && chengji <= 100) {
+        //     box.innerHTML = '优秀';
+        // }
+        // else if (chengji >= 75 && chengji <= 85) {
+        //     box.innerHTML = '良好';
+        // }
+        // else if (chengji >= 60 && chengji < 75) {
+        //     box.innerHTML = '及格';
+        // }
+        // else if (chengji >= 0 && chengji < 60) {
+        //     box.innerHTML = '不及格';
+        // }
+        // else {
+        //     box.innerHTML = '输入正确成绩';
+        // }
+        
+
+                        // switch写法
+
+        switch (true) {
+            case chengji > 85 && chengji <= 100 :
+                box.innerHTML = '优秀';
+                break;
+            case chengji >= 75 && chengji <= 85 :
+                box.innerHTML = '良好';
+                break;
+            case chengji >= 60 && chengji < 75 :
+                box.innerHTML = '及格';
+                break;
+            case chengji >= 0 && chengji < 60 :
+                box.innerHTML = '不及格';
+                break;
+            case chengji < 0 || chengji > 100: 
+                box.innerHTML = '输入正确成绩';
+                break;
+        }
+
+    }
+
+
+
+
+</script>
+
+</html>

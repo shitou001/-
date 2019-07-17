@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算器</title>
+</head>
+
+<body>
+    <input type="number" id="n1">
+    <select name="" id="jisuan">
+        <option value="add">+</option>
+        <option value="jian">-</option>
+        <option value="cheng">*</option>
+        <option value="chu">/</option>
+    </select>
+    <input type="number" id="n2">
+    <button id="anniu">=</button>
+    <div id="jieguo" style="display: inline-block"></div>
+    <script>
+        var n1 = document.getElementById("n1");
+        var n2 = document.getElementById("n2");
+        var jisuan = document.getElementById("jisuan");
+        var anniu = document.getElementById("anniu");
+        var jieguo = document.getElementById("jieguo");
+        anniu.onclick = function () {
+            var val = jisuan.value;
+            m1 = n1.value - 0;
+            m2 = n2.value - 0;
+            if (val == "add") {
+                m = m1 + m2;
+            } else if (val == "jian") {
+                m = m1 - m2;
+            } else if (val == "cheng") {
+                m = m1 * m2;
+            } else if (val = "chu") {
+                m = m1 / m2;
+            }
+            jieguo.innerHTML = m;
+        }
+    </script>
+</body>
+
+</html>

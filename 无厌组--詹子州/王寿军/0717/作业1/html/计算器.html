@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  
+    <title>计算器</title>
+</head>
+<body>
+    <h2>计算机</h2>
+    <input type="text" id="day">
+    <select id="box">
+        <option value="add">+</option>
+        <option value="cut">-</option>
+        <option value="cheng">*</option>
+        <option value="chu">/</option>
+    </select>
+    <input type="text" id="te">
+    <input type="button" value="等于" id="run">
+    <div id="output">
+
+    </div>
+</body>
+<script>
+     /*
+        计算两个文本框的和
+            * 点击按钮的时候
+            * 获取两个表单的值并相加
+            * 结果放到div里面显示
+        
+        知识点：
+            * 获取和设置表单的内容：节点.value = 值；(设置)  var val = 节点.value;取值
+            * 获取和设置普通节点的内容：
+                * 设置内容：节点.innerHTML = 内容；获取内容：var con = 节点.innerHTML;
+                * 设置内容：节点.innerText = 内容；获取内容：var con = 节点.innerText;
+    */
+    // 找节点
+    var day = document.getElementById('day');
+    var box = document.getElementById('box');
+    var te = document.getElementById('te');
+    var run = document.getElementById('run');
+    var output = document.getElementById('output');
+    // 绑定点击事件
+    run.onclick = function () {
+        var val = box.value;
+        var m1 = day.value - 0;
+        var m2 = te.value - 0;
+        var m =0;
+        if(val == 'add'){
+         m = m1 + m2;
+
+        }else if(val == 'cut'){
+         m = m1 - m2;
+
+        }else if(val == 'cheng'){
+          m = m1 * m2;
+
+        }else if(val == 'chu'){
+          
+        if(m2 != 0){
+            m = m1 / m2;
+        }else {
+        alert("除数不允许为零");
+        }
+        
+        }
+        output.innerHTML = m;
+    }
+
+</script>
+</html>

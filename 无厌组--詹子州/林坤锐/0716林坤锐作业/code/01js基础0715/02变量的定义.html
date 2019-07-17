@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02变量的定义</title>
+</head>
+
+<body>
+    <h1 id="box"></h1>
+    <div id="login"></div>
+    <div class="fruits"></div>
+</body>
+<script>
+    /*
+
+        js是世界上最灵活的语言：不严谨
+
+        变量的定义：
+            * 变量名必须是数字,字母,下划线_和美元符$组成;
+            * 第一个字符不能为数字
+            * 不能使用关键字或保留字
+    */
+
+    var num = 666;//var 关键字，意思定义一个变量，num就是变量名，把右边的内容存到左边的变量里面
+    num = '韭菜一汤';//一个变量只能存一个值，如果再存值，会被覆盖
+    var str1 = str2 = '婧婧';
+    // alert(num);//?拿到的是最新的num的值，建议不要alert检测代码，会阻塞后面代码的运行
+
+    var box = document.getElementById('box');//通过id查找节点
+    box.innerHTML = '我喜欢旅游';//设置内容
+    var divLogin;
+    var fruits;
+    //打印到控制台
+    console.log(num, str1, str2);//?
+
+    var a = 6;
+    var b = 7;
+    var c = a * b;
+    console.log(c);//?
+
+    //建议声明马上就赋值
+    var age = 0;//如果不确定这个值，先初始化给个默认值，防止undefined
+    console.log(age);//undefined 声明未赋值就会报这个错误
+    age = 18;//覆盖
+
+    /*  
+        变量的规范
+            $this 合法
+            _this 合法
+            var 不合法，关键字
+            class 不合法,关键字
+            6str 不合法，数字开头
+            -num%ss 不合法，出现特殊符号
+            for 不合法，关键字
+    */
+
+    var studentInf;//学员信息
+    var username;
+    var psw;
+
+    /*
+        符号： 数学            程序
+            <> 大于号小于号    尖括号
+            [] 中括号         方括号
+            {} 大括号         花括号
+            () 小括号         圆括号
+
+            遇到花括号就要换行缩进
+    */
+
+    //函数
+    function show() {
+        console.log(123);
+        console.log(123);
+        console.log(123);
+        console.log(123);
+        console.log(123);
+    }
+
+    show();//加分号
+
+</script>
+</html>

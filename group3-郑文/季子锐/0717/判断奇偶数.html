@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>判断奇偶数</h2>
+    <input type="text" id="shuru" placeholder="输入一个自然数">
+    <input type="text" id="shuchu" placeholder="该数字为">
+</body>
+<script>
+    var shuru = document.getElementById('shuru');
+    var shuchu = document.getElementById('shuchu');
+    shuru.oninput = function () {
+        var zhi = shuru.value;
+        if(zhi == 0){
+            shuchu.value = '非奇非偶';
+        }
+        else if(zhi %2 != 0){
+            shuchu.value = '是奇数';
+        }
+        // else if(zhi % 1 != 0){
+        //     shuchu.value = '请输入自然数';
+        // }
+        else if(zhi % 2 == 0){
+            shuchu.value = '偶数';
+        }
+    }
+</script>
+
+</html>

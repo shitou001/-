@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>你的身高:(m)</p>
+    <input type="text" id="tex1">
+    <p>你的体重:(kg)</p>
+    <input type="text" id="tex2"><br>
+    <input type="button" value="计算" id="btn">
+    <h2 id="jieguo"></h2>
+</body>
+<script>
+   var tex1 = document.getElementById('tex1');
+   var btn = document.getElementById('btn');
+   var tex2 = document.getElementById('tex2');
+    
+   btn.onclick = function () {
+      var val1 = tex1.value;
+      var val2 = tex2.value;
+      var val3 = val2 / (val1 * val1);
+      switch (true) {
+       case val3 >= 0 && val3 < 18.5:
+                 jieguo.innerHTML = '太轻了，小心被风吹走'
+                 break;
+       case val3 >= 18.5 && val3 < 24.99:
+                 jieguo.innerHTML = '正常，继续保持'
+                 break;
+       case val3 >= 25 && val3 < 28:
+                 jieguo.innerHTML = '体重偏重，你该去跑步健身了'
+                 break;
+       case val3 >= 28 && val3 < 32:
+                 jieguo.innerHTML = '肥胖，你该去减肥了，还有救'
+                 break;
+        
+       case val3 > 32:
+                 jieguo.innerHTML = '请放弃治疗，你吨位以超重'
+                 break;
+
+    }
+ 
+   }
+
+</script>
+</html>

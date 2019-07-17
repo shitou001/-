@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>成绩判定</h1>
+    <input type="text" placeholder="请输入您的分数" id="text1">
+    <input type="button" value="分数评定" id="button">
+    <input type="text" placeholder="结果" id="text2">
+</body>
+<script>
+    var one = document.getElementById('text1');
+    var btn = document.getElementById('button');
+    var two = document.getElementById('text2');
+    btn.onclick = function () {
+        var ones = one.value;
+        // if (ones > 85 && ones <= 100) { two.value = '优秀' }
+        // else if (ones >= 75 && ones <= 85) { two.value = '良好' }
+        // else if (ones >= 60 && ones <= 75) { two.value = '及格' }
+        // else if (ones < 60) { two.value = '不及格' }
+        // else if (ones > 100) {
+        //     two.value = '请输入正确分数' 
+        // }
+        switch (true) {
+            case ones > 85 && ones <= 100:
+                two.value = '优秀';
+                break;
+                case ones >= 75 && ones <= 85:
+                two.value = '良好';
+                break;
+                case ones >= 60 && ones <= 75:
+                two.value = '及格';
+                break;
+                case ones < 60:
+                two.value = '不及格';
+                break;
+                case ones > 100:
+                two.value = '请输入正确分数';
+                break;
+        }
+    }
+
+</script>
+
+</html>

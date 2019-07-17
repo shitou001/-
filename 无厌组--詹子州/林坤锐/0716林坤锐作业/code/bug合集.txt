@@ -1,0 +1,11 @@
+
+
+1.price is not defined 还没有定义这个变量
+
+2.undefined 声明未赋值
+
+
+-百度
+-互相提问
+-老师
+

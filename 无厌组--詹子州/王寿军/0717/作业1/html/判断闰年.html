@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  
+    <title>判断闰年</title>
+</head>
+<body>
+    <h2>判断闰年</h2>
+    输入年份：<input type="text" id="day">
+    <input type="button" value="判断" id="run">
+    <div id="dau"></div>
+</body>
+<script>
+    // 找节点
+    var day = document.getElementById('day');
+    var run = document.getElementById('run');
+    var dau = document.getElementById('dau');
+
+    // 绑定点击事件
+    run.onclick = function() {
+        var unm1 = day.value;
+        // console.log(unm1);
+        if(unm1 % 4 == 0 && unm1 % 100 != 0 || unm1 % 400 == 0) {
+            dau.innerHTML = ('闰年')
+        }else {
+            dau.innerHTML = ('不是闰年')
+        }
+    }
+</script>
+</html>

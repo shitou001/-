@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>身高体重</title>
+</head>
+
+<body>
+    <!--
+3.开发一款软件，根据公式（身高-108）*2=体重，可以有10斤左右的浮动。来观察测试者体重是否合适;
+
+过轻：低于18.5
+正常：18.5-24.99
+过重：25-28
+肥胖：28-32
+非常肥胖, 高于32
+体质指数（BMI）= 体重（kg）÷身高^2（m） 如：70kg÷（1.75×1.75）=22.86
+
+        
+    -->
+    <input type="text" id="tex1">cm
+    <input type="text" id="tex2">kg
+    <input type="button" value="=" id="btn">
+    bmi<input type="text" id="tex3">
+    <p id="jieguo"></p>
+</body>
+<script>
+    //找到节点
+    var tex1 = document.getElementById("tex1");
+    var btn = document.getElementById("btn");
+    var tex2 = document.getElementById("tex2");
+    var tex3 = document.getElementById("tex3");
+    //添加点击事件
+    btn.onclick = function () {
+        //获取文本框的值
+        var num = tex1.value;
+        console.log(num);
+        var num1 = tex2.value;
+        var m = num / 100;
+        console.log(m);
+
+        var num2 = parseInt(num1 / (m * m));
+        console.log(num2);
+        //  var num2 = tex3.innerText;
+        tex3.value = num2;
+        switch (true) {
+            case num2 >= 0 && num2 < 18.5:
+                jieguo.innerHTML = "你可以起飞了"
+                break;
+            case num2 >= 18.5 && num2 < 24.99:
+                jieguo.innerHTML = "你身材真棒"
+                break;
+            case num2 >= 25 && num2 <= 28:
+               jieguo.innerHTML = "你该注意了"
+                break;
+                case num2 >= 28 && num2 <= 32:
+               jieguo.innerHTML = "赶紧减肥吧"
+                break;
+            default:
+                jieguo.innerHTML = "你莫得救了"
+                break;
+        }
+    }
+</script>
+
+</html>
