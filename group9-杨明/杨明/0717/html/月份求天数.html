@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+    <h1>请输入月份：</h1>
+    <input type="text" id='year'>年
+    <input type="text" id="month">月
+    <button id="btn">判断</button>
+    <input type="text" id="day">天
+
+</body>
+<script>
+    var year = document.getElementById('year');
+    var month = document.getElementById('month');
+    var btn = document.getElementById('btn');
+    var day = document.getElementById('day');
+
+    btn.onclick = function () {
+        var num;
+        switch (month.value) {
+            case '1':
+            case '3':
+            case '5':
+            case '7':
+            case '8':
+            case '10':
+            case '12':
+                num = 31;
+                break;
+            case '4':
+            case '6':
+            case '9':
+            case '11':
+                num = 30;
+                break;
+            case '2':
+                if ((year.value % 4 == 0 && year.value % 100 != 0) || year.value % 400 == 0) {
+                    num = 29;
+                } else {
+                    num = 28;
+                }
+                break;
+        }
+        day.value = num;
+    }
+</script>
+
+
+</html>

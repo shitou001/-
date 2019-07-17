@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>温度转换</title>
+</head>
+<body>
+    <h2>温度转换</h2>
+    华氏度(℉)<input type="text" id="day">
+    <input type="button" id="run" value="转换">
+    <input type="text" id="dax">摄氏度(℃)
+</body>
+    <script>
+        // 获取节点
+        var day = document.getElementById('day');
+        var run = document.getElementById('run');
+        var dax = document.getElementById('dax');
+        
+        // 绑定点击事件
+        run.onclick = function() {
+        var runm1 = day.value;
+        var runm2 = dax.value = parseInt(5/9.0*(runm1 - 32));
+
+        }
+    </script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="num"><br>
+    <input type="button" id="test" value="我判">
+    <div id="answer"></div>
+</body>
+<script>
+    //我要判断奇偶
+    //我需要一个框输入获取需要判断的数字，然后再来个事件触发判断功能，再用个框输出得到的结果
+    var num = document.getElementById("num");
+    var test = document.getElementById("test");
+    var answer = document.getElementById("answer");
+
+    test.onclick = function () {
+        if (num.value % 2 == 0) {
+            answer.innerHTML = "这是偶数";
+        }
+        else if (num.value % 2 != 0) {
+            answer.innerHTML = "这是奇数";
+        }
+    }
+
+</script>
+
+</html>

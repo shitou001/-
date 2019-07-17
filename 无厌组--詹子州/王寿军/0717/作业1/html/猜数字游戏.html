@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>猜数字游戏</title>
+</head>
+<body>
+    <h3>猜数字游戏</h3>
+    <input type="text" id="num">
+    <input type="button" value="猜数字" id="day">
+    <div id="box"></div>
+</body>
+   <script>
+    /*猜数字游戏
+        *点击按钮的时候
+        *获取表单的值和一个随机数相比较
+        *输出判断的结果
+
+    知识点：
+        *随机数获取：Math.random()
+        *边做边检测
+    */
+
+    //1.找节点
+    var num = document.getElementById('num')
+    var day = document.getElementById('day')
+    var box = document.getElementById('box')
+    var ranm = parseInt(Math.random() * 100) + 1;
+    // 获取随机数0-1包含0但是不包含1的随机数
+
+    // 绑定事件
+    day.onclick = function () {
+        var n =num.value;
+        console.log(n);
+        if(n == ranm){
+            alert('猜对了');
+        }else if (n > ranm){
+            alert('你猜大了');
+        }else {
+            alert('猜小了')
+        }
+    }
+   </script>
+</html>

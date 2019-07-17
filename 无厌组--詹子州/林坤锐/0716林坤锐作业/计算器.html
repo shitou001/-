@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="tax">
+    <select name="" id="low">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="text" id="tax2">
+    <input type="button" value="结果" id="btn">
+    <input type="text" id="tex">
+</body>
+<script>
+
+    var text2 = document.getElementById(tax2);
+    var text1 = document.getElementById(tax);
+    var law = document.getElementById(low);
+    var but = document.getElementById(btn);
+    var tex1 = document.getElementById(tex);
+
+    btn.onclick = function () {
+        var val1 = parseInt(tax.value);
+        var val2 = parseInt(tax2.value);
+        // console.log(val1,val2);
+        if (low.value == '+') {
+            tex.value = val1 + val2;
+        }
+        else if (low.value == '-') { tex.value = val1 - val2; }
+        else if (low.value == '*') { tex.value = val1 * val2; }
+        else if (low.value == '/') { tex.value = val1 / val2; }
+
+    }
+
+
+</script>
+
+</html>

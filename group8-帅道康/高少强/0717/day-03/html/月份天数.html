@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            background: pink;
+            height: 200px;
+            width: 200px;
+            text-align: center;
+            margin: auto;
+            margin-top: 50px;
+            padding-top: 50px;
+            box-sizing: border-box;
+        }
+
+        div #text1 {
+            width: 100px;
+            height: 20px;
+            color: #cccccc;
+        }
+
+        div #text2 {
+            width: 100px;
+            height: 20px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="text1" placeholder="请输入月份">
+        <input type="button" id="btn" value="查看">
+        <span id="res">
+
+        </span>
+    </div>
+</body>
+<script>
+    var text1 = document.getElementById("text1");
+    var btn = document.getElementById("btn");
+    var res = document.getElementById("res");
+    btn.onclick = function () {
+        var month = text1.value;
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                res.innerHTML = text1.value + "月份是31天";
+                console.log(res.innerHTML);
+                break;
+            case 2:
+                res.innerHTML = text1.value + "月份是28天";
+                console.log(res.innerHTML);
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                res.innerHTML = text1.value + "月份是30天";
+                break;
+        }
+    }
+</script>
+
+</html>

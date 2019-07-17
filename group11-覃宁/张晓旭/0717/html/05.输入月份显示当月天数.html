@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>月份查询</h1>
+    <input type="text" id="yuefen" placeholder="请输入要查询的月份">
+    <input type="button" id="button" value="请稍等">
+    <input type="text" id="tianshu">
+</body>
+<script>
+    var one = document.getElementById('yuefen');
+    var btn = document.getElementById('button');
+    var two = document.getElementById('tianshu');
+    btn.onclick = function () {
+        var ones = one.value;
+        switch (true) {
+            case ones == 1 ||
+                ones == 3 ||
+                ones == 5 ||
+                ones == 7 ||
+                ones == 8 ||
+                ones == 10:
+                two.value = '31天';
+                break;
+            case ones == 2:
+                two.value = '28天';
+                break;
+            case ones == 4 ||
+                ones == 6 ||
+                ones == 9 ||
+                ones == 11:
+                two.value = '30天';
+                break;
+            case ones < 1 || ones > 12:
+                two.value = '请重新输入';
+                break;
+        }
+    }
+</script>
+
+</html>

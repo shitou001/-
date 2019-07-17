@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    请输入一个数：<input type="text" name="我是你的数" id="num"><br>
+    <input type="button" id="btn" value="阶乘"><br>
+    阶乘结果：<div id="con"></div>
+</body>
+<script>
+    //输入一个数，一个触发按钮，外加输出框一个
+    //咱们先获取节点
+    var num = document.getElementById("num");
+    var btn = document.getElementById("btn");
+    var con = document.getElementById("con");
+    //触发
+    btn.onclick = function () {
+        if (num.value > 0) {
+            con.innerHTML = 1;
+            while (num.value > 0) {
+                con.innerHTML *= num.value;
+                num.value--;
+            }
+            num.value = "苏喂苏喂苏威！"
+
+        } else if (num.value = 0) {
+            con.innerHTML = 0;
+        }
+        else {
+            con.innerHTML = "负数没有阶乘哦！";
+        }
+
+    }
+    num.onclick = function () {
+        num.value = null;
+    }
+
+</script>
+
+</html>

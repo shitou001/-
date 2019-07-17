@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+</head>
+
+<body>
+    <title>计算器2</title>
+    <input type="text" id="sum1">
+    <select name="" id="aaa">
+        <option value="+" id="jia">+</option>
+        <option value="-" id="jian">-</option>
+        <option value="*" id="chen">*</option>
+        <option value="/" id="chu">/</option>
+        <option value="%" id="chu">%</option>
+    </select>
+    <input type="text" id="sum2">
+    <input type="button" value="等于" id="btn">
+    <input type="text" id="add">
+</body>
+<script>
+    //获取页面的中的节点 
+    var sum1 = document.getElementById('sum1');
+    var sum2 = document.getElementById('sum2');
+    var btn = document.getElementById('btn');
+    var jia = document.getElementById('jia');
+    var jian = document.getElementById('jian');
+    var chen = document.getElementById('chen');
+    var chu = document.getElementById('chu');
+    var add = document.getElementById('add');
+    var aaa = document.getElementById('aaa'); //select 的id名
+
+    //定义一个函数 
+    btn.onclick = function () {
+        var sm1 = sum1.value - 0; //进行隐式转换
+        var type = aaa.value;
+        var sm2 = sum2.value - 0;
+        if (type === '+') {
+            add.value = sm1 + sm2
+        }
+        if (type === '-') {
+            add.value = sm1 - sm2
+        }
+        if (type === '*') {
+            add.value = sm1 * sm2
+        }
+        if (type === '/') {
+            add.value = sm1 / sm2
+        }
+        if (type === '%') {
+            add.value = sm1 % sm2
+        }
+    }
+    // console.log(aaa.value);
+</script>
+
+</html>

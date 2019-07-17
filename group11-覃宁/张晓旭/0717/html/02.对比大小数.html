@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>比大小</h1>
+    <input type="text" id="text1">
+    <input type="text" id="text2">
+    <input type="button" id="button" value="比大小">
+    <input type="text" id="text3">
+</body>
+<script>
+    var one = document.getElementById('text1');
+    var two = document.getElementById('text2');
+    var btn = document.getElementById('button');
+    var three = document.getElementById('text3');
+    btn.onclick = function () {
+        var ones = one.value;
+        var twos = two.value;
+        if (ones > twos) {
+            three.value = ones
+        } else if (ones < twos) {
+            three.value = twos
+        } else {
+            three.value = '一样大'
+        }
+    }
+</script>
+
+</html>

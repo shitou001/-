@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>成绩判定switch</title>
+    <style>
+            marquee{
+                font-size: 100px;
+                color: #58bc58;
+            }
+            </style>
+</head>
+
+<body>
+    <input type="text" id="mun">
+    <input type="button" value="成绩评定" id="btn" placeholder="请输入你的成绩!">
+    <marquee behavior="" direction="" id="end"></marquee>
+</body>
+<script>
+    var mun = document.getElementById('mun');
+    var btn = document.getElementById('btn');
+    var end = document.getElementById('end');
+    btn.onclick = function () {
+        var score = mun.value;
+        // score = Number(score);
+        console.log(score); // 打印到控制台，用检测代码是否可以正常执行
+        switch (true) {
+            case score > 85 && score <= 100: // switch 语句循环的条件
+                end.innerHTML = '恭喜你，成绩优秀！';
+                break;
+            case score > 75 && score <= 85: // switch 语句循环的条件
+                end.innerHTML = '恭喜你，成绩良好！';
+                break;
+            case score >= 60 && score < 75: // switch 语句循环的条件
+                end.innerHTML = '恭喜你，成绩及格！';
+                break;
+            case score >= 0 && score < 60: // switch 语句循环的条件
+                end.innerHTML = '不及格！';
+                break;
+            default:
+                end.innerHTML = '请按规格正确填写分数！！！！';
+        }
+    }
+</script>
+
+</html>

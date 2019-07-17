@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>判断闰年</title>
+</head>
+
+<body>
+    <!-- 能被4整除但不能被100整除，或者能被400整除的才叫闰年 -->
+    <h2>判断闰年</h2>
+    年份：<input type="text" value="" id="text1">
+    <input type="button" value="结果" id="btn">
+    <input type="text" value="" id="text2">
+
+</body>
+<script>
+    var text1 = document.getElementById('text1');
+    var text2 = document.getElementById('text2');
+    var btn = document.getElementById('btn');
+
+    btn.onclick = function () {
+        var num1 = text1.value;
+
+        console.log(num1);
+        // 能被4整除， 但不能被100整除
+        if (num1 % 4 == 0 && num1 % 100 != 0 || num1 % 400 == 0) {
+            text2.value = ('闰年')
+            // 或能被400整除
+        } else {
+            text2.value = ('不是闰年')
+
+        }
+
+
+
+
+    }
+</script>
+
+</html>
