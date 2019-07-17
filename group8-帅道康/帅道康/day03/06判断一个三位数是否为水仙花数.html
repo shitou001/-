@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06判断一个三位数是否为水仙花数</title>
+</head>
+<body>
+    <h1>06判断一个三位数是否为水仙花数</h1>
+    <input type="text" placeholder="请输入一个三位数" id="num">
+    <input type="button" value="按钮" id="bnt">
+</body>
+<script>
+    // 判断一个三位数是否为水仙花数
+    // 公式：三位数等于百位的3次方加上十位的3次方加上个位的3次方
+    var num  = a*100 + b*10 + c;
+    var a = Math.random() * 10;
+    var b = Math.random() * 10;
+    var c = Math.random() * 10;
+    // console.log(a,b,c);
+
+    // 找到水仙花数
+
+    var num = document.getElementById("num");
+    var bnt = document.getElementById("bnt");
+
+    bnt.onclick = function () {
+        if(num = Math.pow(a,3) + Math.pow(b,3) + Math.pow(c,3)) {
+            document.write(num);
+        }else{
+            document.write("这个数不是水仙花数");
+        }
+    }
+
+</script>
+</html>
