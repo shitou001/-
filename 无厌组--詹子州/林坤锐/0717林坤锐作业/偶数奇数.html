@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 判断一个数值是偶数还是奇数 -->
+    <input type="text" id="left">
+    <input type="button" value="判断" id="zhong">
+    <input type="text" id="right">
+</body>
+<!-- 获取节点 -->
+<script>
+    var left = document.getElementById('left');
+    var zhong = document.getElementById('zhong');
+    var right = document.getElementById('right');
+    //判断什么是偶数，什么是奇数，给zhong绑定电机事件
+    zhong.onclick = function () { 
+    //    var val1 = left.value;
+
+        if(left.value % 2 == 0 ){
+            right.value = '偶数'
+        }
+        else{
+             right.value = '奇数'
+        }
+    }
+
+
+</script>
+
+</html>

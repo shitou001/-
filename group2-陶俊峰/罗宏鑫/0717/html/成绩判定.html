@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    输入成绩:<input type="text" id="cj"><br>
+    <input type="button" value="判定" id="btn"><br>
+    老师结语：<div id="jieyu"></div>
+</body>
+<script>
+    //额~首先，我需要一个东东来获取成绩，然后再用一个按钮来触发判断事件，得到的结果留给另一个东东
+    //我觉得够了，我要开始敲代码了
+    var cj = document.getElementById("cj");
+    var btn = document.getElementById("btn");
+    var jieyu = document.getElementById("jieyu");
+
+    // btn.onclick = function () {
+    //     if (cj.value > 85) {
+    //         jieyu.innerHTML = "优秀，老师说的";
+    //     }
+    //     else if (cj.value >= 75 && cj.value <= 85) {
+    //         jieyu.innerHTML = "良好，老师讲的";
+    //     }
+    //     else if (cj.value >= 60 && cj.value < 75) {
+    //         jieyu.innerHTML = "及格，老师讲的";
+    //     }
+    //     else if (cj.value < 60) {
+    //         jieyu.innerHTML = "老师不要你了，老师讲的";
+    //         // console.log(jieyu.innerHTML);
+    //     }
+    // }
+    btn.onclick = function () {
+        switch (true) {
+            case cj.value > 85:
+                jieyu.innerHTML = "优秀，老师说的";
+                break
+            case cj.value >= 75 && cj.value <= 85:
+                jieyu.innerHTML = "良好，老师讲的";
+                break
+            case cj.value >= 60 && cj.value < 75:
+                jieyu.innerHTML = "及格，老师讲的";
+                break
+            case cj.value < 60:
+                jieyu.innerHTML = "老师不要你了，老师讲的";
+                break
+        }
+    }
+</script>
+
+</html>

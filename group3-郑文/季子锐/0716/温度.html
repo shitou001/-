@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="hua">°F
+    <input type="button" id="btn" value="转换">
+    <input type="text" id="she">
+</body>
+<script>
+    var hua = document.getElementById('hua');
+    var she = document.getElementById('she');
+    var btn = document.getElementById('btn');
+    btn.onclick = function () {
+        var h = hua.value - 0;
+        she.value = 5 / 9.0 * (h - 32) + '°C';
+    }
+</script>
+
+</html>

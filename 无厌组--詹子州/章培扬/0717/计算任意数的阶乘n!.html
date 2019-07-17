@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>计算任意数的阶乘n!</h1>
+    <input type="text" id="box">
+    <input type="button" value="计算" id="btn">
+    <div id="box1"></div>
+</body>
+<script>
+    var box = document.getElementById('box');
+    var btn = document.getElementById('btn');
+    var num = box.value;
+    btn.onclick = function () {
+        var num = box.value;
+        var shu = 1;
+        var a = 1;
+        while (a <= num) {
+            shu *= a;
+            a++;
+        }
+        box1.innerHTML = shu;
+    }
+</script>
+
+</html>

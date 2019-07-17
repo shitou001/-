@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 获取一个随机数据，直到判断对之前都不会改变，并出现提示信息 -->
+    <input type="text" id="caizi">
+    <input type="button" id="btn" value="提交">
+    <div id="tishi"></div>
+</body>
+<script>
+    // 1.先找节点
+    var num = document.getElementById('caizi');
+    var btn = document.getElementById('btn');
+    var title = document.getElementById('tishi');
+    var rannum = parseInt(Math.random() * 100) + 1;// 先获得一个随机数
+    // 2.添加事件
+    btn.onclick = function () {
+        // 获取输入的数字
+        var Num = num.value - 0;
+        // 设置提示信息
+        if(Num == rannum) {
+            title.innerHTML = ('猜对了，你可以吃辣条!');
+        }else if(Num > rannum) {
+            title.innerHTML = ('你猜大了');
+        }else {
+            title.innerHTML = ('猜小了');
+        }
+    }
+</script>
+</html>

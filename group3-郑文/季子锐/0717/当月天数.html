@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>输入月份，显示当月的天数</h2>
+    <input type="text" id="shuru" placeholder="输入月份">
+    <input type="text" id="jieguo" placeholder="当月天数为">
+
+</body>
+<script>
+    var shuru = document.getElementById('shuru');
+    var jieguo = document.getElementById('jieguo');
+    shuru.oninput = function () {
+        var month = shuru.value;
+        switch(true){
+            case month == 1: 
+            case month == 3:
+            case month == 5:
+            case month == 7:
+            case month == 8:
+            case month == 10:
+            case month == 12:
+            jieguo.value = '当月有31天';
+            break;
+            case month == 4:
+            case month == 6:
+            case month == 9:
+            case month == 11:
+            jieguo.value = '当月有30天';
+            break;
+            case month == 2:
+            jieguo.value = '当月有28天';
+            break;
+        }
+    }
+</script>
+
+</html>

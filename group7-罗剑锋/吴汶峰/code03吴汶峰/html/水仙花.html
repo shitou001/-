@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 一个数的个位数的3次方刚好是原数 -->
+    <!-- （Math.pow(num,3) num的三次方） -->
+    <h2>寻找100-1000以内的水仙花数</h2>
+    <input type="button" value="查询" id="btn">
+    <div id="res"></div>
+</body>
+<script>
+    // 找节点
+    var btn = document.getElementById('btn');
+    var res = document.getElementById('res');
+    // 添加点击事件
+    btn.onclick = function () {
+        var i = 100;
+        var result = '';
+        
+        while (i < 1000){
+            
+            var bai = parseInt(i / 100);
+            var shi = parseInt((i - bai * 100) / 10);
+            var ge = parseInt(i % 10);
+            var j = Math.pow(bai,3) + Math.pow(shi,3) + Math.pow(ge,3);
+            if (i == j){
+               result += i + '、';
+            }
+            i++; 
+        }
+        res.innerHTML =result;
+    }
+</script>
+</html>

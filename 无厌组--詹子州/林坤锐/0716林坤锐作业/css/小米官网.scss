@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.clear {
+  width: 1227px;
+  margin: auto;
+}
+.box {
+  width: 100%;
+  height: 100%;
+  .head {
+    width: 100%;
+    height: 39px;
+    background: #333333;
+    .shang {
+      width: 1227px;
+      height: 100%;
+
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      .sright {
+        height: 100%;
+
+        list-style: none;
+        display: flex;
+        li:hover {
+          color: white;
+        }
+        li {
+          width: 40px;
+          font-size: 12px;
+          line-height: 39px;
+          color: #b0b0b0;
+
+          .rightxia {
+            position: absolute;
+            left: -300px;
+            height: 0px;
+            list-style: none;
+            transition: 2s;
+            right: 0;
+            background: white;
+            z-index: 1;
+          }
+        }
+        li:nth-child(3) {
+          width: 83px;
+        }
+        li:nth-child(4) {
+          width: 120px;
+          text-align: center;
+          background: #424242;
+          color: #b0b0b0;
+          position: relative;
+        }
+        li:nth-child(4):hover {
+          background: white;
+          color: orange;
+        }
+        li:nth-child(4):hover .rightxia {
+          height: 100px;
+        }
+      }
+      .sleft {
+        width: 677px;
+        height: 100%;
+        list-style: none;
+
+        display: flex;
+        justify-content: space-between;
+        li:hover {
+          color: white;
+        }
+
+        li {
+          font-size: 12px;
+          color: #b0b0b0;
+          padding-right: 10px;
+          line-height: 39px;
+          background-image: url(../images/未标题-2.png);
+          background-position: right center;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+  .top {
+    height: 101px;
+    width: 100%;
+
+    .topz {
+      height: 100%;
+      background: pink;
+      display: flex;
+      .logo {
+        width: 234px;
+        height: 100%;
+        background-image: url(../images/小米商城_-_小米CC9、小米MIX_3、Redmi_K20，小米电视官方网站/logo.png);
+        background-repeat: no-repeat;
+        background-position: left center;
+      }
+      .sj {
+        width: 595px;
+        height: 100%;
+        margin-left: 7px;
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        li:hover {
+          color: orange;
+        }
+        li:hover .sjxia {
+          height: 200px;
+          transition: 1s;
+        }
+        li {
+          line-height: 101px;
+          font-size: 17px;
+          .sjxia {
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            right: 0;
+            height: 0px;
+            background: yellow;
+            .xia {
+              height: 100%;
+              background: pink;
+              list-style: none;
+              justify-content: space-between;
+              display: flex;
+              li {
+                width: 200px;
+                background: yellowgreen;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .tv {
+    width: 100%;
+    height: 460px;
+
+    .tvz {
+      height: 100%;
+      position: relative;
+
+      display: flex;
+
+      .tvl {
+        width: 233px;
+        position: relative;
+        height: 100%;
+        list-style: none;
+        background: #5f6365;
+        border: 1px solid white;
+        box-sizing: border-box;
+        .l1:hover {
+          background: orange;
+          background-image: url(../images/未标题-1.png);
+          background-repeat: no-repeat;
+          background-position: 200px center;
+        }
+        .l1:hover .u1 {
+          display: block;
+        }
+        .l1 {
+          font-size: 12px;
+          color: white;
+
+          line-height: 43px;
+          padding-left: 27px;
+          background-image: url(../images/未标题-1.png);
+          background-repeat: no-repeat;
+          background-position: 200px center;
+          .u1 {
+            position: absolute;
+            list-style: none;
+            background: pink;
+            width: 994px;
+            height: 100%;
+            left: 232px;
+            top: 0;
+            display: none;
+          }
+        }
+      }
+      .tvtu {
+        width: 994px;
+        height: 100%;
+        background: fuchsia;
+        img {
+          width: 994px;
+          height: 100%;
+        }
+      }
+    }
+  }
+  .threephoto {
+    width: 100%;
+    height: 171px;
+    margin-top: 14px;
+    margin-bottom: 26px;
+    .xuangou {
+      height: 100%;
+      background: yellow;
+      display: flex;
+
+      .xuanleft {
+        width: 235px;
+        list-style: none;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 14px;
+        li {
+          width: 78px;
+          height: 50%;
+          background: pink;
+          border-right: 1px solid #000;
+          border-top: 1px solid #000;
+          box-sizing: border-box;
+        }
+      }
+      .xuanright {
+        flex: 1;
+
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        li {
+          width: 316px;
+          height: 100%;
+          background-image: url(../images/小米商城_-_小米CC9、小米MIX_3、Redmi_K20，小米电视官方网站/11.jpg);
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 100%;
+        }
+      }
+    }
+  }
+  .wuxian {
+    width: 100%;
+    height: 120px;
+    .wz {
+      height: 100%;
+      background-image: url(../images/小米商城_-_小米CC9、小米MIX_3、Redmi_K20，小米电视官方网站/111.jpg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100%;
+    }
+  }
+}

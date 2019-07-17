@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 输入一个3位数（input），一个按钮，得出3个数字 -->
+    <input type="text" id="number">
+    <input type="button" value="提取" id="btn">
+    <div id="baiwei"></div>
+    <div id="shiwei"></div>
+    <div id="gewei"></div>
+</body>
+<script>
+    // 1.找节点
+    var number = document.getElementById ('number');
+    var btn = document.getElementById ('btn');
+    var baiwei = document.getElementById ('baiwei');
+    var shiwei = document.getElementById ('shiwei');
+    var gewei = document.getElementById ('gewei');
+    // 2.添加点击事件
+    btn.onclick = function () {
+        // 先获取一个3位数
+        var Number = number.value - 0;
+        // 输出结果
+        var m = Number /100;
+        var M = parseInt(m);
+        baiwei.innerHTML = M;
+
+        var n = Number / 10 % 10;
+        var N = parseInt(n);
+        shiwei.innerHTML = N;
+
+        var b = Number %10;
+        var B = parseInt(b);
+        gewei.innerHTML = B;
+        
+   }
+</script>
+</html>

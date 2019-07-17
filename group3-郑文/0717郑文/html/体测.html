@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>体侧</title>
+</head>
+<body>
+    <label for="">请输入您的身高(m):</label>
+    <input type="text" name="" id="t1"><br />
+    <label for="">请输入您的体重（kg）:</label>
+    <input type="text" id="t2"><br />
+    <input type="button" id="btn" value="计算">
+    <input type="text" id="result">
+</body>
+<script>
+    var t1 = document.getElementById('t1');
+    var t2 = document.getElementById('t2');
+    var t3 = document.getElementById('result');
+    var oBtn = document.getElementById('btn');
+    oBtn.onclick = function () {
+        var txt1 = t1.value - 0;
+        var txt2 = t2.value - 0;
+        var res = Math.pow(txt1,2);
+        // console.log(res);
+        var BMI = txt2 / res;
+        // console.log(BMI);
+        if(BMI < 18.5){
+            // console.log('多吃点肉，你太瘦了');
+            t3.value = '多吃点肉，你太瘦了';
+        }else if(BMI >18.5 && BMI <24.99){
+            // console.log('继续保持您的正常身材哦');
+            t3.value = '继续保持您的正常身材哦';
+        }else if(BMI >25 && BMI <28){
+            // consloe.log('您悠着点，有些偏胖啦');
+            t3.value = '您悠着点，有些偏胖啦';
+        }else if(BMI >28 && BMI <32){
+            // consloe.log('您属于肥胖咯，还吃');
+            t3.value = '您属于肥胖咯，还吃';
+        }else{
+            // console.log('您已经非常肥胖了，减减吧')
+            t3.value = '您已经非常肥胖了，减减吧';
+        }
+    }
+</script>
+</html>

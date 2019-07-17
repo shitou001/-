@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>温度转换</title>
+</head>
+<body>
+    <h2>温度转换</h2>
+    华氏度(℉)<input type="text" id="bos">
+    <input type="button" id="run" value="转换">
+    <input type="text" id="bod">摄氏度(℃)
+</body>
+<script>
+    // 找节点
+    var bos = document.getElementById('bos');
+    var run = document.getElementById('run');
+    var bod = document.getElementById('bod');
+
+    // 绑定点击事件
+    run.onclick = function() {
+        var runm = bos.value;
+        var runn = bod.value =  parseInt(5/9.0*(runm - 32));
+    }
+</script>
+</html>

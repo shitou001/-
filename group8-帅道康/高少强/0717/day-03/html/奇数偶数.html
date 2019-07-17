@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 判断一个数是偶数还是奇数，并输出判断结果； -->
+    <input type="text" id="num">
+    <input type="button" value="判断" id="btn">
+    <span id="res"></span>
+</body>
+<script>
+    var num = document.getElementById("num");
+    var btn = document.getElementById("btn");
+    var res = document.getElementById("res");
+    // 找节点
+    btn.onclick = function () {
+        // 绑定按钮单击事件
+        if (num.value >= 0) {
+
+
+
+            if (num.value % 2 == 0) {
+                res.innerHTML = "这是一个偶数";
+                // 输出
+            } else {
+                res.innerHTML = "这是一个奇数";
+                // 输出
+            }
+        }
+        else{
+            res.innerHTML = "请输入正数";
+        }
+    }
+
+</script>
+
+</html>

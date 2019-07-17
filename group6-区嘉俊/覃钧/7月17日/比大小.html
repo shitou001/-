@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <input type="text">
+    <button>判断</button>
+    <br>
+    <span></span>
+    <script>
+        var number1 = document.getElementsByTagName("input")[0],
+            number2 = document.getElementsByTagName("input")[1],
+            judge = document.getElementsByTagName("button")[0],
+            result = document.getElementsByTagName("span")[0];
+        judge.onclick = function () {
+            var num1 = Number(number1.value),
+                num2 = Number(number2.value);
+            if (num1 && num2) {
+                if (num1 > num2) {
+                    // result.innerHTML = num1 + "比" + num2 + "大";
+                    result.innerHTML = `${num1}比${num2}大`;
+
+                } else if (num1 < num2) {
+                    // result.innerHTML = num1 + "比" + num2 + "小";
+                    result.innerHTML = `${num1}比${num2}小`;
+                } else {
+                    result.innerHTML = `${num1}和${num2}相等`;
+                }
+            } else {
+                result.innerHTML = `请输入正确的数字`;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

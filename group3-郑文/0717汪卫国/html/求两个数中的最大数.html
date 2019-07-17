@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <title>判断两个数中较大者</title>
+    <style>
+        body{font-family:"Microsoft yahei";}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;display: block;}
+        a{text-decoration: none; color: inherit;}
+        input{outline: none;}
+        .clearfix::after{display: block; content: ""; clear: both;}
+        
+    </style>
+</head>
+<body>
+    请输入两个数：
+    <input type="text" name="" id="num1">
+    <input type="text" name="" id="num2">
+    <button id="btn">计算</button><br>
+
+    最大数为：
+    <input type="text" id="max">
+
+    <script>
+        var num1 = document.getElementById("num1"),
+            num2 = document.getElementById("num2"),
+            btn = document.getElementById("btn"),
+            maxNum = document.getElementById("max");
+
+        btn.onclick = function () {
+            maxNum.value = Number(num1.value) > Number(num2.value) ? num1.value : num2.value;
+        }
+    </script>
+</body>
+</html>

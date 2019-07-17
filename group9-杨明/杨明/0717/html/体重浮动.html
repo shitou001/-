@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="shengao" placeholder="请输入您的身高"> cm
+    <br>
+    <input type="text" id="tizhong" placeholder="请输入您的体重"> 斤
+    <br>
+    <br>
+    <button id="btn">检测</button>
+    <br>
+    <br>
+    <span id="spanID"></span>
+
+    <script>
+        //1.找节点
+        var input1 = document.getElementById("shengao");
+        var input2 = document.getElementById("tizhong")
+        var btn = document.getElementById("btn");
+        var span1 = document.getElementById("spanID");
+        //2.绑定事件
+        btn.onclick = function () {
+            var height = input1.value * 1;
+            var weight = input2.value * 1;
+            //    公式（身高-108）*2=体重，允许有十斤浮动
+            if ((((height - 108) * 2) - weight) <= 10 && (((height - 108) * 2) - weight) >=
+                10) {
+                span1.innerHTML = "恭喜您！符合要求！"
+            } else {
+                span1.innerHTML = "对不起！您不符合我们本次要求哦！"
+            }
+
+        }
+    </script>
+
+</html>

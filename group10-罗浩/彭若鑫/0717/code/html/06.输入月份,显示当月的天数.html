@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>输入月份,显示当月的天数</title>
+</head>
+
+<!-- 
+    实现思路：
+        1.我要实现怎么样的效果？
+           * 根据输入的月份，判断该月份有多少天。
+           * 需要一个表单来接收输入的月份，一个按钮在点击的时候来做判断，再需要一个表单来存放测试的结果(31天、30天、28天)
+
+         2.具体的需求
+              * 在进行编写前，我们要知道月份的天数是由重复的：
+                  ** 1，3，5，7，8，10，12有31天
+                  ** 4，6，9，11有30天
+                  ** 2有28天
+              * 找到所有的节点
+              * 给按钮绑定事件：btn.onclik = function(){}
+              * 在点击的功能里面：获取输入的数值(输入的月份)
+              * 把输入的月份与判断语句里面的条件进行对比从而得到对应的结果
+              * 把判断得到的结果显示到一个表单里面 result.value = '结果'；
+            
+           3.编写代码
+              * 注意变量规范：不能用数字开头，也不要用关键字和保留字作为变量名
+              * 边做边去控制台检测所写的代码是否正确或者规范
+ -->
+
+<body>
+    <h2>输入月份,显示当月的天数</h2>
+    <input type="text" id="text1">
+    <input type="button" value="判断" id="btn">
+    <input type="text" id="result">
+</body>
+<script>
+    //找节点
+    var text1 = document.getElementById('text1'); //输入的月份
+    var btn = document.getElementById('btn');
+    var result = document.getElementById('result');
+
+    //绑定点击按钮
+    btn.onclick = function () {
+        var tex1 = text1.value;
+        // console.log(tex1);
+        tex1 = tex1 - 0;
+        // console.log(tex1);
+
+        //用switch语句进行判断
+        switch (tex1) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                result.value = tex1 + '月份有31天！';
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                result.value = tex1 + '月份有30天！';
+                break;
+            case 2:
+                result.value = tex1 + '月份有28天！';
+                break;
+            default:
+                result.value = '请输入正确的月份！';
+                break;
+        }
+    }
+</script>
+
+</html>

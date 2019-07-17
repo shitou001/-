@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="zuo">
+    <input type="button" value="转换" id="zhong">
+    <input type="text" id="you">
+
+</body>
+<script>
+    var zuo = document.getElementById('zuo');
+    var zhong = document.getElementById('zhong');
+    var you = document.getElementById('you');
+    zhong.onclick = function () {
+        var val1 = zuo.value;
+        var val2 = you.value;
+        var bai = parseInt(zuo.value / 100);
+        var shi = parseInt((zuo.value % 100) / 10);//取余是百分号，为啥给了百分号就是除？？？
+        var ge = parseFloat((zuo.value % 10) );
+
+
+
+
+        val2 = you.value = '百位' + bai + '十位' + shi + '各位' + ge;
+        console.log(val2);
+    }
+</script>
+
+</html>
