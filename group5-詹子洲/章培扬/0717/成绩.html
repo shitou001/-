@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>输入成绩，进行成绩判定</h1>
+    <input type="text" id="box">
+    <input type="button" value="判定" id="btn">
+    <div id="box1"></div>
+</body>
+<script>
+    var box = document.getElementById('box');
+    var btn = document.getElementById('btn');
+    var box1 = document.getElementById('box1');
+
+    btn.onclick = function () {
+        switch (true) {
+            case box.value >= 0 && box.value <= 60:
+                box1.innerHTML = '不及格'
+                break;
+            case box.value >= 60 && box.value <= 75:
+                box1.innerHTML = '及格'
+                break;
+            case box.value >= 75 && box.value <= 85:
+                box1.innerHTML = '良好'
+                break;
+                case box.value >= 85 && box.value <= 100:
+                box1.innerHTML = '优秀'
+                break;
+            default:
+                box1.innerHTML = '不在分数范围内'
+                break;
+
+        }
+
+
+    }
+</script>
+
+
+
+</html>
