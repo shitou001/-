@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品价格</title>
+</head>
+
+<body>
+    <h1>商品价格</h1>
+    购买数量： <input type="button" id="cut" value="-">
+    <input type="text" id="num" value="1">
+    <input type="button" id="add" value="+">
+    <br>
+    商品单价：¥<span id="dan">55</span>
+    <br>
+    商品总价：<span id="total">¥55</span>
+
+</body>
+
+</html>
+<script>
+    var cut = document.getElementById('cut');
+    var num = document.getElementById('num');
+    var add = document.getElementById('add');
+    var dan = document.getElementById('dan');
+    var total = document.getElementById('total');
+    cut.onclick = function () {
+        var newName = num.value;
+        newName--;
+        console.log(newName);
+        if (newName <= 1) {
+            newName = 1;
+        }
+        num.value = newName;
+        var zongjia = newName * dan.innerHTML;
+        total.innerHTML = '¥' + zongjia;
+    }
+    add.onclick = function () {
+        var newName = num.value;
+        newName++;
+        console.log(newName);
+        if (newName >= 10) {
+            newName = 10;
+        }
+        num.value = newName;
+        var zongjia = newName * dan.innerHTML;
+        total.innerHTML = '¥' + zongjia;
+        console.log(zongjia);
+    }
+    num.oninput = function () {
+        // console.log(111);
+        var newName = num.value;
+        if (newName <= 1) {//临界值判断
+            newName = 1;
+        } else if (newName >= 10) {
+            newName = 10;
+        }
+        num.value = newName * 1;
+        console.log(newName);
+        var zongjia = newName * dan.innerHTML;
+        total.innerHTML = '￥' + zongjia.toFixed(2);
+    }
+
+
+</script>

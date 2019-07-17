@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>月份天数</title>
+</head>
+<body>
+    <label for="">请输入月份:</label>
+    <input type="text" name="" id="txt1"><br />
+    <input type="button" name="" id="btn" value="转换为天数是">
+    <input type="text" name="" id="txt2">
+</body>
+<script>
+    var txt1 = document.getElementById('txt1');
+    var oBtn = document.getElementById('btn');
+    var txt2 = document.getElementById('txt2');
+    oBtn.onclick = function(){
+        var t1 = txt1.value-0;
+        switch(t1){
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+            txt2.value='31';
+            break;
+            case 2:
+            txt2.value='28';
+            break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+            txt2.value='30';
+        }
+    }
+</script>
+</html>

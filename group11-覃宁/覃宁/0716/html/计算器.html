@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="text1">
+    <select name="" id="yansuan">
+        <option value="jia">+</option>
+        <option value="jian">-</option>
+        <option value="cheng">*</option>
+        <option value="chu">/</option>
+        <option value="yu">%</option>
+    </select>
+    <input type="text" id="text2">
+    <input type="button" value="=" id="dengyu">
+    <span id="text3"></span>
+</body>
+<script>
+    //获取jiedian
+    var text1 = document.getElementById("text1");
+    var text2 = document.getElementById("text2");
+    var yansuan = document.getElementById("yansuan");
+    var dengyu = document.getElementById("dengyu");
+    var daan = document.getElementById("text3");
+    //绑定事件
+    dengyu.onclick = function () {
+        var val = yansuan.value;
+        if (val == "jia") {
+            var he = (text1.value - 0) + (text2.value - 0);
+            daan.innerHTML = he;
+        } else if (val == "jian") {
+            var cha = (text1.value - 0) - (text2.value - 0);
+            daan.innerHTML = cha;
+        } else if (val == "cheng") {
+            var ji = (text1.value - 0) * (text2.value - 0);
+            daan.innerHTML = ji;
+        } else if (val == "chu") {
+            var shang = (text1.value - 0) / (text2.value - 0);
+            daan.innerHTML = shang;
+        } else {
+            var yu = (text1.value - 0) % (text2.value - 0);
+            daan.innerHTML = yu;
+        }
+    }
+</script>
+
+</html>
