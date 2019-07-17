@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 成绩输入框 
+             判定框
+             结果框
+     -->
+    请输入成绩：<input type="text" id="input1">
+    <input type="button" value="TEST" id="btn">
+    <br>
+    <span id="outcome"></span>
+
+
+</body>
+<script>
+    // get elements
+    var num1 = document.getElementById(input1);
+    var data = document.getElementById(outcome);
+    // link  actions
+
+    btn.onclick = function () {
+        var scores = input1.value;
+        console.log(scores);
+        switch (true) {
+            case scores > 85 && scores <= 100 :
+                outcome.innerHTML = '成绩优异';
+                break;
+            case scores <= 85 && scores >= 75 :
+                outcome.innerHTML = '成绩良好'
+                break;
+            case scores < 75 && scores >= 60 :
+                outcome.innerHTML = '及格线边缘'
+                break;
+            case scores < 60 && scores >= 0 :
+                outcome.innerHTML = '你挂科了  兄弟'
+                break;
+           default:  outcome.innerHTML = 'please input correcet scores!'
+        }
+    }
+</script>
+
+</html>
