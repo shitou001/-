@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <title>华氏温度转换摄氏温度</title>
+    <style>
+        body{font-family:"Microsoft yahei";}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;display: block;}
+        a{text-decoration: none; color: inherit;}
+        input{outline: none; border: none;}
+        .clearfix::after{display: block; content: ""; clear: both;}
+        input{
+            width: 100px;
+            height: 20px;
+            border: 1px solid #cccccc;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    华氏温度：<input type="text" value="80" id="huashi">
+    摄氏温度：<input type="text" value="" id="sheshi">
+    <button id="btn">转换</button>
+    <script>
+        var huashi = document.getElementById("huashi");
+        var sheshi = document.getElementById("sheshi");
+        
+        btn.onclick =function () {
+            sheshi.value = 5 / 9.0 * (huashi.value - 32);
+        }
+    </script>
+</body>
+</html>

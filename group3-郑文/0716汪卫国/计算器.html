@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <title>简易计算器</title>
+    <style>
+        body{font-family:"Microsoft yahei";}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;display: block;}
+        a{text-decoration: none; color: inherit;}
+        .clearfix::after{display: block; content: ""; clear: both;}
+        
+        #calculator{
+            width: 360px;
+            margin: 50px auto;
+            box-shadow: 2px 2px 15px 0 #ccc;
+        }
+
+        #result{
+            width: 360px;
+            height: 80px;
+            padding-right: 10px;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            box-sizing: border-box;
+            background-color: #dddddd;
+            text-align: right;
+            line-height: 80px;
+            color: #333333;
+            font-size: 26px;
+            font-weight: 550;
+        }
+        #inpcon{
+            width: 360px;
+            height: 40px;
+            padding-right: 10px;
+            border: 1px solid #cccccc;
+            border-top: none;
+            box-sizing: border-box;
+            background-color: #dddddd;
+            text-align: right;
+            line-height: 40px;
+        }
+        #operator, #number{
+            width: 360px;
+            border-left: 1px solid #ccc;
+        }
+    
+        li{
+            float: left;
+            width: 120px;
+            height: 60px;
+            border-right: 1px solid #cccccc;
+            border-bottom: 1px solid #cccccc;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 60px;
+            font-size: 24px;
+            cursor: pointer;
+            user-select: none;
+        }
+        #empty{
+            background-color: skyblue;
+            color: #ffffff;
+            font-weight: 550;
+        }
+        #btn{
+            background-color: orange;
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: 550;
+        }
+    </style>
+</head>
+<body>
+    <div id="calculator">
+        <div id="result"></div>
+        <div id="inpcon"></div>
+        <ul id="operator" class="clearfix">
+            <li>+</li>
+            <li>-</li>
+            <li>*</li>
+            <li>/</li>
+            <li>%</li>
+            <li>x<sup style="font-size: 12px;">2</sup></li>
+        </ul>
+        <ul id="number" class="clearfix">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>0</li>
+            <li id="empty">C</li>
+            <li id="btn">
+                =
+            </li>
+        </ul>
+    </div>
+    <script>
+        let res = document.getElementById("result");
+        let inp = document.getElementById("inpcon");
+        let operator = document.getElementById("operator");
+        // 获取计算类型
+        let operList = operator.getElementsByTagName("li");
+        // 获取计算类型的长度
+        let operLen = operList.length;
+
+        let num = document.getElementById("number");
+        // 获取操作数
+        let numList = num.getElementsByTagName("li");
+        // 获取操作数的个数
+        let numLen = numList.length - 2;
+
+        let btn = document.getElementById("btn");
+        let empty = document.getElementById("empty");
+        
+        // 接受要计算的数
+        let num1 = 0;
+        let num2 = 0;
+        let str = null;
+
+        empty.onclick = function () {
+            inp.innerHTML = "";
+            res.innerHTML = "";
+        }
+
+        btn.onclick = function () {
+            
+            // 遍历切割字符串
+            for(let i = 0; i < inp.innerHTML.length; i++){
+                str = inp.innerHTML;
+                let count = str.indexOf("+");
+
+                switch(str.charAt(i)){
+
+                    case "+": 
+                        count = str.indexOf("+");
+                        num1 = parseInt(str.substring(0, count));
+                        num2 = parseInt(str.substring(count + 1, str.length));
+                        res.innerHTML = num1 + num2;
+                        break;
+
+                    case "-":
+                        count = str.indexOf("-");
+                        num1 = parseInt(str.substring(0, count));
+                        num2 = parseInt(str.substring(count + 1, str.length));
+                        res.innerHTML = num1 - num2;
+                        break;
+
+                    case "*":
+                        check(count);
+                        res.innerHTML = num1 * num2;
+                        break;
+
+                    case "/":
+                        count = str.indexOf("/");
+                        num1 = parseInt(str.substring(0, count));
+
+                        if(num2 !== 0 ){
+                            num2 = parseInt(str.substring(count + 1, str.length));
+                            res.innerHTML = num1 / num2;
+                        }else{
+                            alert("除数不能为0，请重新输入！");
+                        }
+                        
+                        break;
+
+                    case "%":
+                        count = str.indexOf("%");
+                        num1 = parseInt(str.substring(0, count));
+                        num2 = parseInt(str.substring(count + 1, str.length));
+                        res.innerHTML = num1 % num2;
+                        break;
+
+                }
+
+                
+            }
+            
+        }
+
+        // 获取操作数
+        for (let i = 0; i < numLen; i++) {
+            numList[i].onclick = function () {
+                inp.innerHTML += numList[i].innerHTML; num1 = inp.innerHTML;
+            }
+        }
+
+        // 获取操作符
+        for(let i = 0; i < operLen; i++){
+            operList[i].onclick = function () {
+                inp.innerHTML += operList[i].innerHTML;
+            }
+        }
+    </script>
+</body>
+</html>
