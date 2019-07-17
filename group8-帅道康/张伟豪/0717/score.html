@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>评定成绩</title>
+</head>
+<body>
+    <h1>成绩评定</h1>
+    <input type="text" id='score'>
+    <input type="button" id='btn' value="评定">
+    <span id='res'></span>
+</body>
+<script>
+    var score = document.getElementById('score');
+    var btn =document.getElementById('btn');
+    var res = document.getElementById('res');
+    btn.onclick = function(){
+        var sc = score.value;
+        var result = 0;
+        // if(sc > 85){
+        //     result = '优秀';
+        // }
+        // else if(sc >= 75 && sc <= 85){
+        //     result = '良好';
+        // }
+        // else if(sc >= 60 && sc < 75){
+        //     result = '及格';
+        // }
+        // else if(sc < 60){
+        //     result = '不及格';
+        // }
+        // res.innerHTML = result;
+
+        switch(true){
+            case sc > 85:
+            result = '优秀';
+            break;
+            case sc >= 75 && sc <= 85:
+            result = '良好';
+            break;
+            case sc >= 60 && sc < 75:
+            result = '及格';
+            break;
+            case sc < 60:
+            result = '不及格';
+            break;
+            
+        }
+        res.innerHTML = result;
+    }
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>求最大值</title>
+</head>
+
+<body>
+    <h1>求最大值</h1>
+    <input type="text" id="text1">
+    <input type="text" id="text2">
+    <input type="button" id="btn" value="最大值">
+    <span id="res"></span>
+</body>
+<script>
+    var text1 = document.getElementById('text1');
+    var text2 = document.getElementById('text2');
+    var btn = document.getElementById('btn');
+    var res = document.getElementById('res');
+    btn.onclick = function () {
+        var num1 = text1.value;
+        var num2 = text2.value;
+        var result;
+        if (num1 && num2) {
+            if (num1 > num2) {
+                result = '最大值为：' + num1;
+            }
+            else if (num2 > num1) {
+                result = '最大值为：' + num2;
+            }
+            else {
+                result = '一样大'
+            }
+            res.innerHTML = result;
+        } else {
+            alert('输入不能为空')
+        }
+    }
+</script>
+
+</html>
