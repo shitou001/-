@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <input type="button" id="btn" value="判断大小">
+    <input type="text" id="output">
+</body>
+<script>
+    var num1 = document.getElementById("num1");
+    var num2 = document.getElementById("num2");
+    var btn = document.getElementById("btn");
+    var output = document.getElementById("output");
+
+    btn.onclick = function () {
+        var n1 = num1.value;
+        var n2 = num2.value;
+        if (n1 > n2) {
+            output.value = n1;
+        }
+        else{
+            output.value = n2;
+        }
+    }
+
+
+</script>
+
+</html>

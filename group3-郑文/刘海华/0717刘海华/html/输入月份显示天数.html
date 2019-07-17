@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="month">
+    <input type="button" id="btn" value="判断该月天数">
+    <div id="output"></div>
+
+</body>
+<script>
+    var month = document.getElementById("month");
+    var btn = document.getElementById("btn");
+    var output = document.getElementById("output");
+
+    btn.onclick = function () {
+        var mon = month.value;
+        switch (true) {
+            case mon == 1:
+            case mon == 3:
+            case mon == 5:
+            case mon == 7:
+            case mon == 8:
+            case mon == 10:
+            case mon == 12:
+                output.innerHTML = "这个月31天";
+                break;
+            case mon == 2:
+                output.innerHTML = "这个月28天";
+                break;
+            case mon == 4:
+            case mon == 6:
+            case mon == 9:
+            case mon == 11:
+                output.innerHTML = "这个月30天";
+                break;
+                default:
+                output.innerHTML = "请输入正确月份";
+        }
+    }
+
+</script>
+
+</html>

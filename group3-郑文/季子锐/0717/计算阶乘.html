@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>计算阶乘</h2>
+    <input type="text" id="shuru" placeholder="输入一个数字以计算乘阶">
+    <div id="box"></div>
+</body>
+<script>
+    var shuru = document.getElementById('shuru');
+    var box = document.getElementById('box');
+    shuru.oninput = function () {
+        var num = shuru.value;
+        var zhi = 1;
+        var i = 1;
+        while (i <= num) {
+            zhi *= i;
+            i++;
+        }
+        box.innerHTML = '乘阶为' + zhi;
+    }
+
+</script>
+
+</html>
