@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>判断是否为闰年</title>
+</head>
+<body>
+    <p>判断是否为闰年</p>
+    <input type="text" id="nian">
+    <input type="button" id="nth" value="判断">
+    <div id="output"></div>
+</body>
+<script>
+    var nian = document.getElementById("nian");
+    var nth = document.getElementById("nth");
+    var output =document.getElementById("output");
+    nth.onclick = function () {
+        var num = nian.value;
+        if (num % 4 ==0 && num % 100 !==0 || num % 400 ==0){
+            output.innerHTML = "闰年";
+        }else{
+            output.innerHTML = "不是闰年";
+        }
+    }
+
+
+
+</script>
+</html>
