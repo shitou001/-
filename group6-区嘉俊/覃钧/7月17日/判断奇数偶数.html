@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <button>判断</button>
+    <br>
+    <span></span>
+    <script>
+        var content = document.getElementsByTagName("input")[0],
+            judge = document.getElementsByTagName("button")[0],
+            output = document.getElementsByTagName("span")[0];
+
+        judge.onclick = function () {
+            var num = content.value * 1;
+            if (num) {
+                if (num % 2 == 0) {
+                    output.innerText = "你输入的值为偶数"
+                } else {
+                    output.innerText = "你输入的值为奇数"
+                }
+            } else {
+                output.innerText = "请输入数字";
+            }
+        }
+    </script>
+</body>
+
+</html>

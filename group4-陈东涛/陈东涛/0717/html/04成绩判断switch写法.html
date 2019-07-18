@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04成绩判断switch写法</title>
+</head>
+
+<body>
+    <span>输入成绩</span>
+    <input type="text" id="grade">
+    <input type="button" value="判定" id="btn">
+    <span>判定等级：</span>
+    <input type="text" id="score">
+</body>
+
+</html>
+<script>
+    var grade = document.getElementById('grade');//输入的成绩
+    var btn = document.getElementById('btn');//按钮
+    var score = document.getElementById('score');//判定结果
+    btn.onclick = function () {
+        var result = grade.value * 1;
+        switch (true) {
+            case result < 60:
+                score.value = '不及格';
+                break;
+            case result >= 60 && result < 75:
+                score.value = '及格';
+                break;
+            case result >= 75 && result <= 85:
+                score.value = '良好';
+                break;
+            case result > 85 && result <= 100:
+                score.value = '优秀';
+                break;
+            default:
+                score.value = '请输入正确的成绩';
+                break;
+        }
+    }
+</script>

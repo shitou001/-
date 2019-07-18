@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>比较谁最大</title>
+</head>
+
+<body>
+    <!-- 比较必须有两个输入框，一个判断按钮，一个结果输出 -->
+    <h2>比较谁最大</h2>
+    <input type="text" value="" id="box1">
+    <input type="text" value="" id="box2">
+    <input type="button" value="谁大" id="btn">
+    结果：<input type="text" id="jieguo">
+</body>
+<script>
+    //  找节点
+
+    var box1 = document.getElementById('box1');
+    var box2 = document.getElementById('box2');
+    var jieguo = document.getElementById('jieguo');
+
+    // 绑定事件
+    btn.onclick = function () {
+        //  获取数据
+        var num1 = box1.value;
+        var num2 = box2.value;
+        // 判断条件
+        if (num1 > num2) {
+            jieguo.value = num1
+        } else if (num1 < num2) {
+            jieguo.value = num2
+        } else {
+            jieguo.value = '一样大'
+        }
+    }
+</script>
+
+</html>

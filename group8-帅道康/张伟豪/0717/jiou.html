@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>奇偶数</title>
+</head>
+<body>
+    <h1>奇偶数判断</h1>
+    <input type="text" id="text1">
+    <input type="button" id="btn" value="判断">
+    <span id="res"></span>
+</body>
+<script>
+    var text1 = document.getElementById('text1');
+    var btn = document.getElementById('btn');
+    var res = document.getElementById('res');
+    btn.onclick = function(){
+        var num = text1.value - 0;
+        if(text1.value){
+            if(num % 2 == 0){
+                res.innerHTML = '是偶数'
+            }
+            else{
+                res.innerHTML = '是奇数'
+            }
+        }else{
+            alert('输入不能为空')
+        }
+    }
+</script>
+</html>

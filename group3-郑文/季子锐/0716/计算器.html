@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input,
+        section {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="text1">
+    <select name="" id="class">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input type="text" id="text2">
+    <input type="button" value="计算" id="btn">
+    <input type="text" id="text3">
+</body>
+<script>
+    var text1 = document.getElementById('text1');
+    var text2 = document.getElementById('text2');
+    var text3 = document.getElementById('text3');
+    var btn = document.getElementById('btn');
+    var sels = document.getElementById('class');
+
+    btn.onclick = function () {
+        var num1 = text1.value - 0;
+        var num2 = text2.value * 1;
+        var val = sels.value;
+        if (val == '+') {
+            var zhi = num1 + num2;
+        }
+        else if (val == '-') {
+            var zhi = num1 - num2;
+        }
+        else if (val == '*') {
+            var zhi = num1 * num2;
+        }
+        else if (val == '/') {
+            var zhi = num1 / num2;
+        }
+        else if (val == '%') {
+            var zhi = num1 % num2;
+        }
+        console.log(zhi);
+        text3.value = zhi;
+    }
+</script>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成绩判断</title>
+</head>
+
+<body>
+    <h2>请输入您的成绩：</h2>
+    <input type="number" id="chengji">
+    <p id="jieguo"></p>
+</body>
+<script>
+    var chengji = document.getElementById("chengji");
+    var jieguo = document.getElementById("jieguo");
+    chengji.onchange = function () {
+        num = chengji.value * 1;
+        switch (true) {
+            case num >= 0 && num < 60:
+                jieguo.innerHTML = "您的成绩为不及格"
+                break;
+            case num >= 60 && num < 75:
+                jieguo.innerHTML = "您的成绩为及格"
+                break;
+            case num >= 75 && num <= 85:
+                jieguo.innerHTML = "您的成绩为良好"
+                break;
+                case num > 85 && num <=100:
+                jieguo.innerHTML = "您的成绩为优秀"
+                break;
+            default:
+                jieguo.innerHTML = "您输入的成绩不正确（0~100）"
+                break;
+        }
+    }
+</script>
+
+</html>

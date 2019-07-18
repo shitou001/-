@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="shuru">
+    <input type="text" id="bai">
+    <input type="text" id="shi">
+    <input type="text" id="ge">
+</body>
+<script>
+    var shuru = document.getElementById('shuru');
+    var bai = document.getElementById('bai');
+    var shi = document.getElementById('shi');
+    var ge = document.getElementById('ge');
+    shuru.oninput = function () {
+        var num = shuru.value;
+        bai.value = parseInt(num % 1000 / 100) + '百';
+        shi.value = parseInt(num % 100 / 10) + '十';
+        ge.value = parseInt(num % 10) + '个';
+    }
+</script>
+
+</html>

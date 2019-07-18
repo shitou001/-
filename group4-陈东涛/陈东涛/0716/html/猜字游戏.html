@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>猜数字游戏</title>
+</head>
+
+<body>
+    <h2>猜数字游戏</h2>
+    <input type="text" id="text1">
+    <input type="button" value="猜数字" id="btn">
+    <div id="box"></div>
+</body>
+
+</html>
+<script>
+    var text1 = document.getElementById('text1');
+    var btn = document.getElementById('btn');
+    var random = parseInt(Math.random() * 100) + 1; //随机
+    btn.onclick = function () {
+        // console.log(random);
+        var figure = text1.value;
+        if (figure > random) {
+            box.innerHTML = '猜大了';
+            // console.log('大');
+        } else if (figure == random) {
+            // console.log('小');
+            box.innerHTML = '猜对了';
+        } else {
+            // console.log('猜对了')
+            box.innerHTML = '猜小了';
+        }
+    }
+</script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="num1">
+    <input type="button" id="btn" value="判断成绩">
+    <div id="output"></div>
+
+</body>
+<script>
+    var num1 = document.getElementById("num1");
+    var btn = document.getElementById("btn");
+    var output = document.getElementById("output");
+
+    // if写法
+    // btn.onclick = function () {
+    //     var num = num1.value;
+    //     if (num >= 0 && num < 60) {
+    //         output.innerHTML = "不及格";
+    //     }else if (num >= 60 && num < 75){
+    //         output.innerHTML = "及格";
+    //     }else if (num >=75 && num <= 85){
+    //         output.innerHTML = "良好";
+    //     }else if (num >85 && num <= 100){
+    //         output.innerHTML = "优秀";
+    //     }else{
+    //         output.innerHTML ="请输入成绩范围数字";
+    //     }
+    // }
+
+    // swith写法
+    btn.onclick = function () {
+        var num = num1.value;
+        switch (true) {
+            case num >= 0 && num < 60:
+                output.innerHTML = "不及格";
+                break;
+            case num >= 60 && num < 75:
+                output.innerHTML = "及格";
+                break;
+            case num >= 75 && num <= 85:
+                output.innerHTML = "良好";
+                break;
+            case num > 85 && num <= 100:
+                output.innerHTML = "优秀";
+                break;
+            default:
+                output.innerHTML = "请输入成绩范围数字";
+                break;
+        }
+    }
+
+</script>
+
+</html>

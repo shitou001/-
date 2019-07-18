@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>大变活人</h1>
+    <input type="text" placeholder="请输入数字" id="text1">
+    <input type="button" value="变" id="bian">
+</body>
+<script>
+    var text1 = document.getElementById('text1')
+    // var bian = document.getElementById('bian')
+    bian.onclick = function () {
+        var text1s = text1.value
+        if (text1s % 2 == 0) {
+            alert('偶')
+        } else {
+            alert('奇你太美')
+        }
+    }
+</script>
+
+</html>

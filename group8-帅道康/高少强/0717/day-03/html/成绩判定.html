@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 输入成绩，进行成绩判定(要求用if和switch两种写法)
+
+    大于85 优秀
+    大于等于75小于等于85 良好
+    大于等于60小于75 及格
+    小于60 不及格 
+    -->
+    <div>
+        <input type="text" id="text1" placeholder="输入你的成绩">
+        <input type="button" id="btn" value="判定">
+        <span id="res"></span>
+    </div>
+</body>
+    <script>
+        var text1 = document.getElementById("text1");
+        var btn = document.getElementById("btn");
+        var res = document.getElementById("res");
+        btn.onclick = function () {
+            switch(true){
+                case text1.value >= 85 && text1.value <= 100:
+                    res.innerHTML = "优秀";
+                break;
+                case text1.value < 85 && text1.value >= 75:
+                    res.innerHTML = "良好";
+                break;
+                case text1.value < 75 && text1.value >= 60:
+                    res.innerHTML = "及格";
+                break;
+                case text1.value < 60 && text1.value >=0 :
+                    res.innerHTML = "不及格";
+                break;
+                default:
+                    res.innerHTML = "你要上天？"
+            }
+        }
+    </script>
+</html>

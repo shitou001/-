@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        button {
+            height: 20px;
+            width: 40px;
+            color: #fff;
+            border: none;
+            background: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 需求：求两个数的最大数； -->
+    <input type="text" placeholder="请输入要比较的数值" id="text1">
+    <input type="text" placeholder="请输入要比较的数值" id="text2">
+    <button id="btn" value="">比较</button>
+    <span id="res"></span>
+    <!-- 定义控件 -->
+
+</body>
+<script>
+    var text1 = document.getElementById("text1");
+    var text2 = document.getElementById("text2");
+    var btn = document.getElementById("btn");
+    var res = document.getElementById("res");
+    // 获取控件节点
+    btn.onclick = function () {
+        // 绑定按钮点击事件
+        if (text1.value == "" || text2.value == "") {
+            res.innerHTML = "请输入比较的数值";
+            // 内容为空时
+        }
+        else if (text1.value > text2.value) {
+            res.innerHTML = text1.value + "大";
+        }
+        else if (text1.value == text2.value) {
+            res.innerHTML = "这两个数值一样大";
+        }
+
+        else {
+            res.innerHTML = text2.value + "大";
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 一个input放华氏温度数据，中间一个转换按钮，右边显示摄氏温度 -->
+    <!-- 提示：摄氏度与华氏度的转换公式为：摄氏度 = 5/9.0*(华氏度-32)
+    C = 5×(F- 32)/9，F = 9×C /5+32 -->
+    <input type="text" id="huashi">
+    <input type="button" value="转换" id="btn">
+    <div id="sheshi" topix></div>
+</body>
+<script>
+    // 1.找节点
+    var num1 = document.getElementById ('huashi');
+    var btn = document.getElementById ('btn');
+    var num2 = document.getElementById ('sheshi');
+    // 2.添加点击事件
+    btn.onclick = function () {
+        var Num1 = num1.value - 0 ;
+        var Num2 = 0;
+        // 获取华氏温度数据
+        var Num2 = 5 * (Num1 - 32) / 9;
+        num2.innerHTML = Num2.toFixed(2);
+        // 小数位保留2位
+    }
+</script>
+</html>

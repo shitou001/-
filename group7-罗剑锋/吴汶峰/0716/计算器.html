@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../css/base.css"> -->
+    <!-- <link rel="stylesheet" href="../css/计算器.css"> -->
+    <title>Document</title>
+    <style>
+        #sum{
+            display: inline-block;
+            /* width: 20px;
+            height: 12px;
+            border: 1px solid black; */
+        }
+    </style>
+</head>
+<body>
+    <h1>计算器</h1>
+    <input type="text" id="num1">
+    <select name="" id="class">
+        <option value="add">+</option>
+        <option value="cut">-</option>
+        <option value="rid">x</option>
+        <option value="except">/</option>
+        <!-- <option value="
+        remainder">%</option> -->
+    </select>
+    <input type="text" id="num2">
+    <input type="button" value="=" id="btn">
+    <div id="sum" ></div><span id="inf"></span>
+</body>
+<script>
+    // 1.获取相关节点
+    var num1 = document.getElementById('num1');
+    var num2 = document.getElementById('num2');
+    var btn = document.getElementById('btn');
+    var sels = document.getElementById('class');
+    var sum = document.getElementById('sum');
+    // 2.改变下拉菜单时，确定运算符
+
+    //2.点击按钮的时候相加
+	btn.onclick = function () {
+        var Num1 = num1.value - 0 ;
+        var Num2 = num2.value - 0 ;
+        // 将表单里的字符串用隐式转换变为Number
+        var operator = sels.value;
+        // 确认运算符
+        if (Num1 && Num2 ) {
+            // 存在2个数时才能运算
+            if (operator == "add") {
+                Num = Num1 + Num2;
+            } else if (operator == "cut") {
+                Num = Num1 - Num2;
+            } else if (operator == "rid") {
+                Num = Num1 * Num2;
+            } else if (operator = "expect") {
+                Num = Num1 / Num2;
+            }
+            sum.innerHTML = Num;
+        }else{
+            inf.innerHTML = '你输入不正确';
+        }
+    }
+</script>
+</html>

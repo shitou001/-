@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jishu</title>
+</head>
+<body>
+    <h1>打印100以内的奇数</h1>
+    <span id="res"></span>
+</body>
+<script>
+    var i = 1;
+    var res = document.getElementById('res');
+    var result = '100以内奇数为：';
+    while( i <= 100){
+        if(i % 2 != 0){
+            result += i + '、';
+        }
+        
+        res.innerHTML = result;
+        i++;
+    }
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水仙花</title>
+</head>
+<body>
+    <h1>找出100-1000水仙花</h1>
+    <span id="res"></span>
+</body>
+<script>
+    var res = document.getElementById('res')
+    var i = 100;
+    var result = '';
+    while(i<1000) {
+        var bai = parseInt(i/100);
+        console.log(bai);
+        var shi = parseInt(i%100/10);
+        var ge = i%10;
+        if( Math.pow(bai,3) + Math.pow(shi,3) + Math.pow(ge,3) == i){
+            result += i + '、'
+        }
+        res.innerHTML = result;
+        i++;
+    }
+</script>
+</html>

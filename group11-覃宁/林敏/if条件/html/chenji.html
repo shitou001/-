@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="chenji">
+    <input type="button" value="测" id="btn">
+</body>
+<script>
+    var chenji = document.getElementById('chenji')
+    btn.onclick = function () {
+        var chenji1 = chenji.value;
+        if (chenji1 < 60 && chenji1 >= 0) {
+            alert('成绩不合格')
+        } else
+        if (chenji1 >= 60 && chenji1 < 75) {
+            alert('及格')
+        } else
+        if (chenji1 >= 75 && chenji1 < 85) {
+            alert('呀板板')
+        } else
+        if (chenji1 >= 85 && chenji1 <= 100) {
+            alert('秀')
+        } else {
+            alert('成绩输入错误')
+        }
+    }
+</script>
+
+</html>

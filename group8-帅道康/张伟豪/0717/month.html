@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>月份</title>
+</head>
+
+<body>
+    <h1>输入月份判断天数</h1>
+    输入月份：<input type="text" id="month">
+    <input type="button" id="btn" value='判定天数'>
+    <span id="res"></span>
+</body>
+<script>
+    var month = document.getElementById('month')
+    var btn = document.getElementById('btn');
+    var res = document.getElementById('res');
+
+    btn.onclick = function () {
+        var mon = month.value - 0;// 转成数字类型
+        if(mon > 0 && mon<=12 && mon % 1 == 0){
+        //不能输入小数以及1到12以外的数
+        switch (mon) {
+
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                res.innerHTML = '31天'
+                break;
+            case 4: case 6: case 9: case 11:
+                res.innerHTML = '30天'
+                break;
+            case 2:
+                res.innerHTML = '28天'
+                break;
+        }
+        }else{
+            alert('请输入正确月份')
+        }
+    }
+</script>
+
+</html>

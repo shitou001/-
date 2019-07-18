@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    h2{
+        color: red;
+    }
+    </style>
+</head>
+<body>
+    <h1>显示当月的天数</h1>
+        <input type="text" id="tex1">月
+        <input type="button" value="判断" id="btn">
+        <h2 id="tex2"></h2>
+        
+</body>
+<script>
+   var tex1 = document.getElementById('tex1');
+   var btn = document.getElementById('btn');
+   var tex2 = document.getElementById('tex2');
+      
+    btn.onclick = function () {
+ 
+       switch (true) {
+         case tex1.value == 1:
+         case tex1.value == 3:
+         case tex1.value == 5:
+         case tex1.value == 7:
+         case tex1.value == 8:
+         case tex1.value == 10:
+         case tex1.value == 12:
+            tex2.innerHTML = '有31天'
+            break;
+        case tex1.value == 2:
+            tex2.innerHTML = '有28天'
+            break;
+         case tex1.value == 4:
+         case tex1.value == 6:
+         case tex1.value == 9:
+         case tex1.value == 11:
+            tex2.innerHTML = '有30天'
+            break;
+            default :
+            tex2.innerHTML = '该吃药了，别放弃治疗'
+            break;
+       }
+   
+       }
+   
+
+
+
+</script>
+</html>

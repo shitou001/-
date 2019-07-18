@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    输入身高：<input type="text">
+    输入体重：<input type="text">
+    <button>判断</button>
+    <br>
+    <br>
+    <span></span>
+    <br>
+    <br>
+    <span style="color: #58bc58;"></span>
+    <script>
+        var stature = document.getElementsByTagName("input")[0],
+            weight = document.getElementsByTagName("input")[1],
+            judge = document.getElementsByTagName("button")[0],
+            output = document.getElementsByTagName("span")[0],
+            output1 = document.getElementsByTagName("span")[1];
+        judge.onclick = function () {
+            var shengao = stature.value * 1,
+                tizhong = weight.value * 1,
+                haha = (shengao - 108) * 2,
+                tizhi = ((tizhong / 2) / (Math.pow(shengao / 100, 2))).toFixed(2);
+            output1.innerText = `兄弟你的体脂为${tizhi},`
+            if (shengao && tizhong) {
+                if (tizhong <= haha + 5 && tizhong >= haha - 5) {
+                    output.innerText = `你是完美的身材,一起割韭菜不咯！`;
+                } else if (tizhong < haha - 5) {
+                    output.innerText = `老哥，有点瘦了，咱们男人就是要大的！`;
+                } else {
+                    output.innerText = `老哥，不多BB，你是胖的！`;
+                }
+            } else {
+                alert(`请输入正确的身高和体重！`);
+            }
+            if (tizhi < 18.5) {
+                output1.innerText += "兄弟,你这体脂过轻了,还要命吗？"
+            } else if (tizhi >= 18.5 && tizhi <= 24.99) {
+                output1.innerText += "兄弟,可以呀,你这体脂像个正常的人！"
+            } else if (tizhi >= 25 && tizhi <= 27.99) {
+                output1.innerText += "兄弟,你这体脂有一点微胖了，不过够大就行！"
+            } else if (tizhi >= 28 && tizhi <= 32) {
+                output1.innerText += "兄弟,你这体脂胖了，再胖下去就成猪了！"
+            } else {
+                output1.innerText += "兄弟,没救了，你是头猪了！"
+            }
+        }
+    </script>
+</body>
+
+</html>

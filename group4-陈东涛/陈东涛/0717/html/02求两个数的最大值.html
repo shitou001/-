@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>求两个数的最大值</title>
+</head>
+
+<body>
+    <span>请输入第一个数字</span>
+    <input type="text" id="text1">
+    <span>请输入第二个数字</span>
+    <input type="text" id="text2">
+    <input type="button" value="求最大数" id="btn">
+    <span>结果</span>
+    <input type="text" id="jieguo">
+</body>
+
+</html>
+<script>
+    var text1 = document.getElementById('text1');
+    var text2 = document.getElementById('text2');
+    var btn = document.getElementById('btn');
+    var jieguo = document.getElementById('jieguo');
+    btn.onclick = function () {
+        var a1 = text1.value - 0;//第一个数
+        var b1 = text2.value - 0;//第二个数
+        // console.log(a1,b1);
+        if (a1 < b1) {
+            // console.log(b1);
+
+            jieguo.value = b1;
+
+        } else {
+            // console.log(a1);
+            jieguo.value = a1;
+        }
+    }
+</script>

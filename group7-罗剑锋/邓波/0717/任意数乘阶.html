@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>任意数乘阶</title>
+</head>
+
+<body>
+    <h2>请输入一个正整数：</h2>
+    <input type="number" id="number">
+    <p id="jieguo">乘阶结果为：</p>
+    <script>
+        var number = document.getElementById("number");
+        var jieguo = document.getElementById("jieguo");
+        number.oninput = function () {
+            var num = number.value - 0;
+            var shu = 1;
+            var a = 1
+            while (a <= num){
+            shu *= a;
+              a++;}
+            jieguo.innerHTML = "乘阶结果为：" + shu;
+        }
+    </script>
+</body>
+
+</html>

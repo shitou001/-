@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 俩个个输入框、一个按钮、一个输出 -->
+    升高 ：
+    <input type="text" id="height">
+    <br> 
+    体重：
+    <input type="text" id="weight">
+    <br>
+    <input type="button" value="判断" id="btn">
+    <div id="sum"></div>
+    <div id="bmi"></div>
+</body>
+<script>
+    // 1找节点
+    var num1 = document.getElementById('height');
+    var num2 = document.getElementById('weight');
+    var btn = document.getElementById('btn');
+    var sum1 = document.getElementById('sum');
+    var sum2 = document.getElementById('bmi');
+    // 2.点击事件
+    btn.onclick = function () {
+        // 首先获取数据
+        var Num1 = num1.value - 0;
+        var Num2 = num2.value - 0;
+        // （身高-108）*2=体重 并且可以上下浮动10
+        // 首先根据身高得出理论体重
+        var Num = (Num1 - 108) * 2;
+        console.log(Num);
+        // 计算BMI指数,需要
+        var i = parseFloat(Num2 / 100 )  ;
+        console.log(i);
+        var bmi = ( Num2 / (i ^ 2) );
+        // 计算体高比时身高单位时厘米，计算BMI时身高单位是米
+        console.log(bmi);
+        btn.onclick = function () {
+            if( Num2 > Num - 10 && Num2 < Num + 10){
+                sum1.innerHTML = '你的体重正常'
+            }else{
+                sum1.innerHTML = '你的体重不正常'
+            }
+        
+            if( bmi < 18.5){
+                sum2.innerHTML = 'BMI过轻'
+            }else if ( bmi > 18.5 && bmi < 24.99){
+                sum2.innerHTML = 'BMI正常'
+            }else if ( bmi > 25 && bmi < 28){
+                sum2.innerHTML = 'BMI为过重'
+            }else if ( bmi > 28 && bmi < 32){
+                sum2.innerHTML = 'BMI为肥胖'
+            }else if ( bmi >32 ){
+                sum2.innerHTML = 'BMI为非常肥胖'
+            }
+        }
+        // 过轻：低于18.5
+        // 正常：18.5 - 24.99
+        // 过重：25 - 28
+        // 肥胖：28 - 32
+        // 非常肥胖, 高于32
+        // 体质指数（BMI）= 体重（kg）÷身高 ^ 2（m） 如：70kg÷（1.75×1.75）=22.86
+    }
+</script>
+
+</html>

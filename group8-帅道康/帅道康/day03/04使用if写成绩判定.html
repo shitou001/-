@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04使用if写成绩判定</title>
+</head>
+<body>
+    <h1>使用if写成绩判定</h1>
+    <input type="text" id="score">
+    <input type="button" value="按钮" id="bnt">
+</body>
+<script>
+    // 使用if写成绩判定
+    //     大于85 优秀
+    //     大于等于75小于等于85 良好
+    //     大于等于60小于75 及格
+    //     小于60 不及格
+    var score = document.getElementById("score")
+    var button = document.getElementById("bnt")
+    // var num = score.value;
+    // console.log(score)
+
+    bnt.onclick = function () {
+        var num = score.value;
+        if(num >= 0 && num < 60){
+            alert("不及格")
+        }else if(num >= 60 && num < 75){
+            alert("及格")
+        }else if (num >= 75 && num <= 85){
+            alert("良好")
+        }else if (num > 85 && num <= 100){
+            alert("优秀")
+        }else{
+            alert("这不是分数")
+        }
+
+    }       
+</script>
+</html>

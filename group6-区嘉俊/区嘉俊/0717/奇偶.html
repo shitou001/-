@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>奇偶</title>
+</head>
+
+<body>
+    <input type="text" id="tex1">
+    <input type="button" value="=" id="but">
+    <span id="shu"></span>
+</body>
+<script>
+    /*
+    判断一个数是偶数还是奇数，并输出判断结果   
+    */
+    //找节点
+    var tex1 = document.getElementById("tex1");
+    var but = document.getElementById("but");
+    var shu = document.getElementById("shu");
+    //添加点击事件
+    but.onclick = function () {
+        //获取文本框的数据
+        var num = tex1.value;
+        var numNUM = shu.value;
+        console.log(num);
+        //偶数
+        if (num % 2 == 0) {
+            numNUM = shu.value = "偶数"
+            console.log(numNUM);
+        } else {
+            //奇数
+            numNUM = shu.value = "奇数"
+            console.log(numNUM);
+        }
+        shu.innerHTML = numNUM
+    }
+
+</script>
+
+</html>

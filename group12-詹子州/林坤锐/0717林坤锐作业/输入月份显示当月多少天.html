@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    月份：<input type="text" id="te1">
+    <input type="button" value="判定" id="btn">
+    天数：<input type="text" id="te2">
+
+</body>
+<script>
+    //绑定节点
+    var te1 = document.getElementById('te1');
+    var btn = document.getElementById('btn');
+    var te2 = document.getElementById('te2');
+
+    btn.onclick = function () {
+        switch (true) {
+            case te1.value == 1:
+            case te1.value == 3:
+            case te1.value == 5:
+            case te1.value == 7:
+            case te1.value == 8:
+            case te1.value == 10:
+            case te1.value == 12:
+                te2.value = '有三十一天'
+                break;
+                 case te1.value == 4:
+            case te1.value == 6:
+            case te1.value == 9:
+            case te1.value == 11:
+        
+                te2.value = '有三十天'
+                break;
+
+            case te1.value == 2:
+            te2.value='有28天'
+            break;
+            default: te2.value = '你来搞笑的'
+            break;
+        }
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Please input two number</h3>
+    数字1：<input type="text" id="num1"><br>
+    数字2：<input type="text" id="num2"><br>
+    <input type="button" id="test" value="我比"><br>
+    最大值Max：<span id="Max"></span>
+</body>
+<script>
+    //我要在两个数中进行比较求最大值出来
+    //我需要两个框分别输入需要进行比较的两个数，再来个事件触发判断，再用一个元素把求出的最大值装起来
+    //emm...就是这样
+    var num1 = document.getElementById("num1");
+    var num2 = document.getElementById("num2");
+    var btn = document.getElementById("test");
+    var Max = document.getElementById("Max");
+
+    btn.onclick = function () {
+        if (num1.value > num2.value && num1.value != "" && num2.value != "") {
+            Max.innerHTML = num1.value - 0;
+        } else if (num1.value < num2.value && num1.value != "" && num2.value != "") {
+            Max.innerHTML = num2.value - 0;
+        }
+        else if (num1.value == num2.value && num1.value != "" && num2.value != "") {
+            Max.innerHTML = "两个值相等";
+        }
+        else {
+            Max.innerHTML = "你想干哈子？看不到英文还是咋的？别玩花样啊！你等着，我叫人，有本事你继续皮O(∩_∩)O哈哈~";
+        }
+    }
+
+</script>
+
+</html>

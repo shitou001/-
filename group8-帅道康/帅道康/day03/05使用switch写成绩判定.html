@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05使用switch写成绩判定</title>
+</head>
+<body>
+        <h1>使用switch写成绩判定</h1>
+        <input type="text" id="score">
+        <input type="button" value="按钮" id="bnt">
+</body>
+<script>
+    // 使用switch写成绩判定
+    //     大于85 优秀
+    //     大于等于75小于等于85 良好
+    //     大于等于60小于75 及格
+    //     小于60 不及格
+    
+    var bnt = document.getElementById("bnt");
+    var score = document.getElementById("score");
+    bnt.onclick =function() {
+        var num = score.value;
+        switch (true) {
+            case (parseInt(num) > 85 && parseInt(num) <= 100): document.write("优秀");
+            break;
+            case (parseInt(num) >= 75 && parseInt(num) <= 85): document.write("良好");
+            break;
+            case (parseInt(num) >= 60 && parseInt(num) < 75): document.write("优秀");
+            break;
+            case (parseInt(num) >= 0 && parseInt(num) < 60): document.write("不及格");
+            break;
+            case(parseInt(num) >= 100 || parseInt(num) < 0): document.write("这不是分数");
+            break;
+        }
+    }
+
+
+
+</script>
+</html>

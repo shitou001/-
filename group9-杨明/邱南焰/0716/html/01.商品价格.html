@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>苹果超市</h2>
+    价格：<span>￥</span><span id="jiage">18.99</span><br>
+    数量：<input type="number" name="" id="shuliang" value="1" min="1" max="10" style="margin-top: 10px;"><br>
+    总价：<span id="zongjia" style="margin-top: 10px;">xxx</span>
+</body>
+<script>
+    // 1.找节点
+    var shuliang = document.getElementById('shuliang'); //数量
+    var jiage = document.getElementById('jiage');
+    var zongjia = document.getElementById('zongjia');
+    // 2.获取单价
+    var num1 = jiage.innerHTML;
+    //3.表单监听事件，计算总价
+    shuliang.oninput = function () {
+        zongjia.innerHTML = "￥" + (num1 * shuliang.value).toFixed(2);
+
+    }
+    // .toFixed(2) 表示保留小数点后两位
+</script>
+
+</html>

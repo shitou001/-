@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>测试身材</title>
+</head>
+<!-- 
+     实现功能的思路：
+           1.我要什么效果？
+              * 分别输入身高和体重，根据公式计算标准的体重，然后与输入的体重进行对比，在允许10斤的浮动内，看所输入的体重是否合适？
+              * 需要两个表单接收输入的数、需要一个按钮在点击的时候做测试、测试的结果输出到一个表单。(总：三个表单--input，一个按钮---input:button)
+            
+           2.具体的需求
+              * 给按钮绑定事件：btn.onclik = function(){}
+              * 在点击的功能里面：获取输入的数值（身高和体重）：
+                    var tex1 = text1.value - 0;
+                    var tex2 = text2.value - 0 ;
+              * 根据公式（身高 - 108）* 2 = 体重（假设为标准体重）；
+              * 判断测试者的体重是否合适，允许有10斤左右的浮动；
+              * 判断得到的结果显示到一个表单里面  result.value = '结果'；
+            
+           3.编写代码
+              * 注意变量规范：不能用数字开头，也不要用关键字和保留字作为变量名
+              * 边做边去控制台检测所写的代码是否正确或者规范
+ -->
+<body>
+    <h2>测试身材</h2>
+    身高（cm）：<input type="text" id="text1" placeholder="请输入您的身高">
+    体重（斤）：<input type="text" id="text2" placeholder="请输入您的体重">
+    <input type="button" value="测试" id="btn">
+    <input type="text" id="result">
+</body>
+<script>
+    //找节点
+    var text1 = document.getElementById('text1');  //身高cm
+    var text2 = document.getElementById('text2');  //体重斤
+    var result = document.getElementById('result'); //结果
+    var btn = document.getElementById('btn');
+
+    // 绑定按钮事件
+    btn.onclick = function (){
+        var tex1 = text1.value - 0; //身高
+        // console.log(tex1);
+        var tex2 = text2.value - 0 ; //输入的体重
+        // console.log(tex2);
+        var a = (tex1 - 108) * 2; //根据公式计算的体重
+        // console.log(a)
+
+        if(((a - tex2) >= 10 ) && ((a - tex2) <= 10) ){
+            result.value = '您的体重正常！';
+        }else{
+            result.value = '您的体重不正常';
+        }
+      
+    }
+</script>
+</html>

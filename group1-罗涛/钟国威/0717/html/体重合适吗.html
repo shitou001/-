@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>测测</title>
+</head>
+
+<body>
+    <div>
+        <h2>你的体重合适吗</h2>
+        <form action="">
+            <input type="text" id="tex1" placeholder="你的真实身高(cm)"> 
+            <input type="button" value="测试" id="btn">
+            <input type="text" id="tex2" placeholder="你的真实体重(斤)">
+        </form>
+        <p id="res"></p>
+    </div>
+</body>
+<script>
+
+    /*
+        首先，输入一个数进去tex1
+        然后，给btn设置点击事件
+        在事件触发的时候，获取tex1.value和tex2.value
+        然后根据公式用tex1的值算出num
+        然后用if else来对num和tex2进行比较（可以有10斤左右的浮动）
+        输出的结果渲染到res中去
+    */
+
+    //获取节点
+    var tex1 = document.getElementById('tex1');
+    var tex2 = document.getElementById('tex2');
+    var btn = document.getElementById('btn');
+    var res = document.getElementById('res');
+
+    //设置点击事件
+    btn.onclick = function () {
+        var num1 = tex1.value;
+        var num2 = tex2.value;
+        var num = (num1 - 108) * 2;
+        console.log(num1, num2, num);
+        if (num2 >= (num - 10) && num2 <= (num + 10)) {
+            res.innerHTML = '你的体重很合适哦';
+        } else {
+            res.innerHTML = '你的体重有点问题哦';
+        }
+    }
+</script>
+
+</html>
