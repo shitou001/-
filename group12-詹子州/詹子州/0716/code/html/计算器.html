@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计算器</title>
+</head>
+<body>
+   <input type="text" id="tex1"> 
+   <select name="" id="box">
+        <option value="jia">+</option>
+        <option value="jian">-</option>
+        <option value="cheng">*</option>
+        <option value="chu">/</option>
+    </select>
+   <input type="text" id="tex2">
+   <input type="button" value="计算" id="btn">
+   <div id="output"></div>
+
+ </body>
+ <script>
+ //获取节点
+ var tex1 = document.getElementById('tex1');
+ var box = document.getElementById('box');
+ var tex2 = document.getElementById('tex2');
+ var btn = document.getElementById('btn');
+ var output = document.getElementById('output');
+
+ //给按钮绑定点击事件
+ btn.onclick = function () {
+     var val = box.value;
+     m1 = tex1.value - 0;
+     m2 = tex2.value - 0;
+ 
+        if(val == 'jia') {
+            //加法
+            m = m1 + m2;
+        }else if(val == 'jian') {
+            //减法
+            m = m1 - m2;
+      }else if(val == 'cheng') {
+            //乘法
+            m = m1 * m2;
+      }else if(val == 'chu') {
+            //除法
+            m = m1 / m2;
+      }
+      output.innerHTML = m;
+ }
+
+
+
+ 
+ 
+ 
+ 
+ </script>
+ </html>
