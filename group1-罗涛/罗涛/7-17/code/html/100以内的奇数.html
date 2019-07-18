@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        .box{
+            margin: 150px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+    <p>100以内的奇数</p>
+    <button id="btn">查询</button>
+    </div>
+</body>
+<script>
+    var btn = document.getElementById('btn');
+
+    btn.onclick = function () {
+        var num = 0;
+
+        while (num < 100) {
+            if (num % 2 == 1) {
+                document.write('<' + num + '>');
+            }
+            num++;
+        }
+    }
+</script>
+
+</html>

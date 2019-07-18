@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 150px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <p>请输入数字查询</p>
+        <input type="text" id="text1" value="">
+        <input type="button" id="btn" onclick="boom()" value="分析">
+        <input type="text" id="res" value="">
+    </div>
+
+
+</body>
+<script>
+    var text1 = document.getElementById('text1');
+    var btn = document.getElementById('btn');
+    var res = document.getElementById('res');
+
+    btn.onclick = function () {
+        var num = text1.value;
+
+        if (num % 2 == 1) {
+            res.value = num + '是奇数';
+        } else if (num % 2 == 0) {
+            res.value = num + '是偶数';
+        }
+
+    }
+
+
+</script>
+
+</html>
