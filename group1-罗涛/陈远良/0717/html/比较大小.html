@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    输入一个整数：<input type="text" id="num1">
+    输入第二个整数：<input type="text" id="num2">
+    <input type="button" value="点击获取两数中最大数" id="btn">
+    得到最大数为：<input type="text" id="num">
+</body>
+</html>
+<script>
+    var num1 = document.getElementById('num1');
+    var num2 = document.getElementById('num2');
+    var btn = document.getElementById('btn');
+
+    btn.onclick = function () {
+       var sum1 = num1.value - 0;
+       var sum2 = num2.value - 0;
+        if(sum1 > sum2){
+            num.value = sum1;
+        }else{
+            num.value = sum2;
+        }
+    }
+</script>
