@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>判断奇偶啊兄弟</p>
+     <input type="text" id="num1">
+     <input type="button" value="判断" id="panduan">
+     <input type="text" id="num2">
+</body>
+<script>
+    var num1 = document.getElementById('num1');
+    var num2 = document.getElementById('num2');
+    var panduan = document.getElementById('panduan')
+    panduan.onclick = function () {
+    if( 
+        num1.value % 2 ==0){
+            num2.value = '是偶数啊兄弟';
+        }else{
+             num2.value = '是奇数啊兄弟';
+        }
+    }
+</script>
+</html>
