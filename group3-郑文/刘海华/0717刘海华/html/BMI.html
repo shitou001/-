@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    身高：<input type="text" id="height">
+    体重：<input type="text" id="weight">
+    <input type="button" id="btn" value="判断体质指数">
+    <div id="output"></div>
+
+</body>
+<script>
+    var num1 = document.getElementById("height");
+    var num2 = document.getElementById("weight");
+    var btn = document.getElementById("btn");
+    var output = document.getElementById("output");
+
+    btn.onclick = function () {
+        var h = num1.value;
+        // console.log(h);
+
+        var w = num2.value;
+        // console.log(w)
+
+        var bim = w / (h * h);
+        // console.log(bim)
+
+        if (bim < 18.5) {
+            output.innerHTML = "过轻";
+        } else if (bim >= 18.5 && bim < 25) {
+            output.innerHTML = "正常";
+        } else if (bim >= 25 && bim < 28) {
+            output.innerHTML = "过重";
+        } else if (bim >= 28 && bim <= 32) {
+            output.innerHTML = "肥胖";
+        } else if (bim >= 32) {
+            output.innerHTML = "非常肥胖";
+        }
+    }
+
+</script>
+
+</html>

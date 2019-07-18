@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h4>判断一个数是偶数还是奇数</h4>
+    <input type="text" id="num">
+    <input type="button" value="判断为奇偶" id="btn">
+    <span id="box"></sapn>
+
+</body>
+<script>
+    // step 1
+    var num = document.getElementById('num');
+    var btn = document.getElementById('btn');
+    var box = document.getElementById('box');
+
+    num.oninput = function () {
+        nowNum = num.value; //全局变量
+        console.log(nowNum);
+    }
+    // step 2
+    btn.onclick = function () {
+        //step 3 获取表单内容
+        // var nowNum = num.value;
+        if (nowNum % 2 == 0) {
+            box.innerHTML = '是偶数';
+        } else {
+            box.innerHTML = '是奇数';
+        }
+
+
+
+    }
+</script>
+
+</html>

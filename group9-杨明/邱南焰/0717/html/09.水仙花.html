@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>找出所有的水仙花数，三位数，各位立方和等于该数本身。</h2>
+
+</body>
+<script>
+    // 初始值
+    var num = 100;
+    while (num <= 999) {
+        var num1 = parseInt(num / 100);
+        var num2 = parseInt((num - num1 * 100) / 10);
+        var num3 = (num % 10);
+        var sum = num1 * num1 * num1 + num2 * num2 * num2 + num3 * num3 * num3
+        // sum = Math.pow(num1,3) 表示num1的立方
+        if (sum == num) { // 判断值
+            document.write('  ' + sum);
+
+        }
+        num++; // 自增值
+    }
+</script>
+
+</html>

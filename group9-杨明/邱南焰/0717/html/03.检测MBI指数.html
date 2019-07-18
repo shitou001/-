@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    身高(单位m)：<input type="text" value="" id="shengao">
+    体重(单位kg)：<input type="text" value="" id="tizhong">
+    <input type="button" value="检测" id="btn">
+    结果：<input type="text" id="jieguo">
+    <!-- 成人的BMI数值：
+
+             过轻：低于18.5
+             正常：18.5-24.99
+             过重：25-28
+             肥胖：28-32
+             非常肥胖, 高于32
+             体质指数（BMI）= 体重（kg）÷身高^2（m） 如：70kg÷（1.75×1.75）=22.86-->
+</body>
+<script>
+    //  找节点
+    var shenggao = document.getElementById('shengao');
+    var tizhong = document.getElementById('tizhong');
+    var jieguo = document.getElementById('jieguo');
+    // 绑定事件
+    btn.onclick = function () {
+        // 参考数据
+        var num = tizhong.value / (shengao.value * shengao.value);
+        if (num < 18.5) {
+            jieguo.value = ('过轻' + num)
+        } else if (num >= 18.5 && num < 24.99) {
+            jieguo.value = ('正常' + num)
+        } else if (num >= 25 && num < 28) {
+            jieguo.value = ('过重' + num)
+        } else if (num >= 28 && num < 32) {
+            jieguo.value = ('肥胖' + num)
+        } else if (num > 32) {
+            jieguo.value = ('非常肥胖' + num)
+        }
+    }
+</script>
+
+</html>

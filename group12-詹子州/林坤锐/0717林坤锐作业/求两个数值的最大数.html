@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1.创建两个表格进行对比，通过点击最大数值生成结果 -->
+    <input type="text" id="text1">跟
+    <input type="text" id="text2">
+    <input type="button" value="最大值为" id="btn">
+    <span id="jieguo"></span>
+
+</body>
+<script>
+    // 获取节点
+    var text1 = document.getElementById('text1');
+    var text2 = document.getElementById('text2');
+    var btn = document.getElementById('btn');
+    var jieguo = document.getElementById('jieguo');
+    // 绑定点击事件
+    btn.onclick = function () {
+        if (text1.value > text2.value) {
+            var jie = text1.value;
+            // console.log(jie);
+            jieguo.innerHTML = jie;
+
+        }
+        else if (text1.value < text2.value) { 
+            var jieg = text2.value;
+            jieguo.innerHTML = jieg;
+        }
+    }
+
+
+</script>
+
+</html>

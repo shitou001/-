@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 输入一个数，得出这个数的阶乘。一个框一个按钮一个输出 -->
+    <input type="text" id="num">
+    <input type="button" value="阶乘" id="btn">
+    <div id="sum"></div>
+</body>
+<script>
+    // 1.找节点 
+    var num = document.getElementById('num');
+    var btn = document.getElementById('btn');
+    var sum = document.getElementById('sum');
+    // var i = 1;//初始点
+    // 2. 输入的数字一定是正整数,怎么写
+    
+    // 3.点击事件
+    btn.onclick = function () {
+        // 获取数据
+        var Num = num.value - 0;
+        var i = 0;//初始点
+        var n = 1;
+        console.log(Num);
+        while (i < Num) {
+            i++;
+            n = n * i;
+        }
+        sum.innerHTML = n;
+    }
+</script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 150px auto;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box">
+    <p>请输入身高（M）</p>
+    <input type="text" id="shenggao" value="">
+    <p>请输入体重（KG）</p>
+    <input type="text" id="tizhong" value="">
+    <button id="btn">判断</button>
+    <p id="res"></p>
+    </div>
+</body>
+<script>
+    var shenggao = document.getElementById('shenggao');
+    var tizhong = document.getElementById('tizhong');
+    var btn = document.getElementById('btn');
+    var res = document.getElementById('res');
+
+    btn.onclick = function () {
+        var BMI = 0;
+        BMI = tizhong.value / (shenggao.value * shenggao.value);
+        console.log(BMI);
+
+        if (BMI < 18.5) {
+            res.innerHTML = '兄弟你体重过低了 吃多点把！';
+        } else if (BMI >= 18.5 && BMI <= 24.99) {
+            res.innerHTML = '兄弟你体重正常 棒棒哒！请继续保持！';
+        } else if (BMI >= 25 && BMI <= 28) {
+            res.innerHTML = '兄弟你轻微肥胖哦 请适当控制饮食 ！';
+        } else if (BMI >= 28 && BMI <= 32) {
+            res.innerHTML = '兄弟你过于肥胖！ 请控制饮食 多做运动！';
+        } else if (BMI > 32) {
+            res.innerHTML = '兄弟你肥的亚批~ 可以做成烤乳猪了';
+        }
+    }
+</script>
+
+</html>

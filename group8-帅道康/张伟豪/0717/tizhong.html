@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>最佳体重</title>
+</head>
+
+<body>
+    体重（kg）：<input type="text" id="weight"><br>
+    身高（m）：<input type="text" id="height"><br>
+    <input type="button" id="btn" value='你的体质'>
+    <span id="res"></span>
+    <!-- 成人的BMI数值：
+
+过轻：低于18.5
+正常：18.5-24.99
+过重：25-28
+肥胖：28-32
+非常肥胖, 高于32
+体质指数（BMI）= 体重（kg）÷身高^2（m） 如：70kg÷（1.75×1.75）=22.86 -->
+</body>
+<script>
+    var weight = document.getElementById('weight');
+    var height = document.getElementById('height');
+    var btn = document.getElementById('btn');
+    var res = document.getElementById('res');
+    btn.onclick = function () {
+        var wei = weight.value;
+        var hei = height.value;
+        var BMI = wei / (hei * hei);
+        // if (BMI) {
+        //     // 判断输入的体重身高必须是数字且不能为0
+        //     if (BMI < 18.5) {
+        //         res.innerHTML = '过轻'
+        //     }
+        //     else if (BMI >= 18.5 && BMI < 25) {
+        //         res.innerHTML = '正常'
+        //     }
+        //     else if (BMI >= 25 && BMI < 28) {
+        //         res.innerHTML = '过重'
+        //     }
+        //     else if (BMI >= 28 && BMI <= 32) {
+        //         res.innerHTML = '肥胖'
+        //     }
+        //     else if (BMI > 32) {
+        //         res.innerHTML = '非常肥胖'
+        //     }
+        // } else {
+        //     alert('输入错误');
+        // }
+        if (BMI) {
+            switch (true) {
+                case BMI < 18.5:
+                    res.innerHTML = '过轻'
+                    break;
+                case BMI >= 18.5 && BMI < 25:
+                    res.innerHTML = '正常'
+                    break;
+                case BMI >= 25 && BMI < 28:
+                    res.innerHTML = '超重'
+                    break;
+                case BMI >= 28 && BMI <= 32:
+                    res.innerHTML = '肥胖'
+                    break;
+                case BMI > 32:
+                    res.innerHTML = '非常肥胖'
+                    break;
+            }
+        }else{
+            alert('输入错误');
+        }
+    }
+</script>
+
+</html>

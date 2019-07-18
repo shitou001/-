@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02求两个数的最大数</title>
+</head>
+
+<body>
+    <h1>02求两个数的最大数</h1>
+    <input type="text" placeholder="请输入a的值" id="text1">
+    <input type="text" placeholder="请输入b的值" id="text2">
+    <input type="button" value="按钮" id="bnt">
+</body>
+<script>
+    // 求两个数的最大数:a,b
+    // var a=99 , b=111;
+    // console.log(a)
+    // console.log(b)
+     // var num1 = a.value ,num2 = b.value;
+
+    var text1 = document.getElementById("text1");
+    var text2 = document.getElementById("text2");
+   
+
+    bnt.onclick = function () {
+        var num1 = text1.value, num2 = text2.value;
+        var max = num1 > num2 ? num1 : num2;
+        console.log(max);
+    }
+    // console.log(max);
+    // document.write(max);
+</script>
+
+</html>

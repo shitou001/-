@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    请输入一个月份：<input type="text" id="month">
+    <input type="button" value="点击显示当月天数" id="btn">
+    当月有：<input type="text" id="tian">
+</body>
+</html>
+<script>
+     var month = document.getElementById('month');
+     var btn = document.getElementById('btn');
+     var tian = document.getElementById('tian');
+
+     btn.onclick = function () {
+         var num = month.value;
+         if(num == 1 || num == 3 || num == 5 || num == 7 || num == 8 || num == 10 || num == 12){
+             tian.value = 31 + '天';
+         }else if (num == 4 || num == 6 || num == 9 || num == 11){
+             tian.value = 30 + '天';
+         }else if (num == 2){
+              tian.value = 28 + '天';
+         }
+     }
+
+</script>

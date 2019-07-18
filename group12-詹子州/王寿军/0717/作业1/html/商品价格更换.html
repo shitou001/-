@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+ 
+    <title>商品价格更换</title>
+</head>
+<body>
+    <img src="../images/01.png" alt="">
+   
+    <br>动态图纸￥: <span id="dan">20.9</span>
+    <br> 购买数量：
+    <input type="button" value="-" id="cut">
+    <input type="text" value="1" id="num">
+    <input type="button" value="+" id="add">(库存量6份) 
+    <br>商品总价￥: <span id="total">20.9</span>
+</body>
+<script>
+     /*
+        需求：商品总价的改变
+
+            * 改变数量的时候，总价要跟着变
+                * 给加和减按钮绑定点击事件
+                * 点击按钮的时候获取数量，总价=数量 * 单价
+                * 把计算的结果渲染到页面：innerHTML/innerText:区别在于innerHTML遇到标签会继续渲染
+            
+            * 保留两位小数：数字.toFixed(2)
+    */
+
+    // 找节点
+    var dan = document.getElementById('dan');//单价
+    var cut = document.getElementById('cut');//减按钮
+    var num = document.getElementById('num');//数量
+    var add = document.getElementById('add');//加按
+    var total = document.getElementById('total');//总价
+
+    // 绑定点击事件
+    cut.onclick = function() {
+        var runm = num.value;//获取数量
+        runm--;
+        if(runm <= 1) {
+            runm = 1
+        }
+        num.value = runm;
+        var totaldan = runm * dan.innerHTML;
+        total.innerHTML = '￥' + totaldan.toFixed(2);  
+
+    }
+    add.onclick = function() {
+        var runm = num.value;
+        runm++;
+        if(runm >= 6) {
+            runm = 6
+        }
+        num.value = runm;
+        var totaldan = runm * dan.innerHTML;
+        total.innerHTML = '￥' + totaldan.toFixed(2);
+
+    }
+    //内容发生改变的时候触发的事件  oninput
+    num.oninput = function() {
+        // console.log(111);
+        var runm = num.value;
+        if(runm <= 1) {
+            runm = 1;
+        }else if(runm >= 6) {
+            runm = 6;
+        }
+        num.value = runm;
+        // console.log(runm);
+        var totaldan = runm * dan.innerHTML;
+        total.innerHTML = '￥' + totaldan.toFixed(2);
+    }
+</script>
+</html>

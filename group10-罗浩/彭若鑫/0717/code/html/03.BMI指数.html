@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BMI指数</title>
+    <style>
+      #result{
+          width: 350px;
+      }
+    </style>
+</head>
+
+<!-- 
+    实现思路：
+        1.我要实现怎么样的效果？
+           * 求BMI指数，即根据公式：BMI=体重(kg) / 身高^2(m)来判断一个人的胖瘦程度
+           * 需要两个表单来接收测试者输入的身高和体重，一个按钮在点击的时候来做判断，再需要一个表单来存放测试的结果(过轻、正常、过重、肥胖、非常肥胖)
+
+         2.具体的需求
+              * 先找到所有的节点：var num = document.getElementById('text1');
+              * 给按钮绑定事件：btn.onclik = function(){}
+              * 在点击的功能里面：获取输入的数值(身高和体重)
+                   var tex1 = text1.value; //体重
+                   var tex2 = text2.value; //身高
+              * 根据公式,计算出BMI指数: var bmi = tex1 / (tex2 * tex2);
+              * 判断对应的BMI的值在不同的值区间从而得到对应的结果
+              * 把判断得到的结果显示到一个表单里面 result.value = '结果'；
+            
+           3.编写代码
+              * 注意变量规范：不能用数字开头，也不要用关键字和保留字作为变量名
+              * 边做边去控制台检测所写的代码是否正确或者规范
+ -->
+
+<body>
+    <h2>BMI指数</h2>
+    <input type="text" id="text1" placeholder="请输入您的体重(kg)">
+    <input type="text" id="text2" placeholder="请输入您的身高">
+    <input type="button" value="判断" id="btn">
+    <input type="text" id="result" placeholder="结果会显示在这里哦">
+</body>
+<script>
+    //找节点
+    var text1 = document.getElementById('text1');
+    var text2 = document.getElementById('text2');
+    var btn = document.getElementById('btn');
+    var result = document.getElementById('result');
+    //绑定按钮事件
+    btn.onclick = function (){
+        var tex1 = text1.value; //体重
+        // console.log(tex1);
+        var tex2 = text2.value; //身高
+        // console.log(tex2);
+
+        tex2 = tex2 / 100; // 让身高从里面变成米来运算
+        console.log(tex2);
+        var bmi = tex1 / (tex2 * tex2);
+        console.log(bmi);
+        if(bmi < 18.5){
+            result.value = '您的体重过轻，记得多吃点肉~~~';
+        }else if(bmi >= 18.8 && bmi <= 24.99){
+            result.value = '您的体重正常，无须减肥~~~';
+        }else if(bmi >= 25 && bmi < 28){
+            result.value = '您的体重偏重啦，注意饮食哦~~~';
+        }else if(bmi >= 28 && bmi < 32){
+            result.value = '您已经属于肥胖届了，注意饮食，多运动~~~';
+        }
+        else if(bmi > 32){
+            result.value = '您的体重已经非常肥胖啦，为了您的健康，请多多运动，健康饮食~~~';
+        }
+    }
+</script>
+</html>

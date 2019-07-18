@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>输入月份，显示当月的天数</h1>
+    <input type="text" id="box">
+    <input type="button" value="确定" id="btn">
+    <div id="box1"></div>
+
+</body>
+<script>
+    var box = document.getElementById('box');
+    var btn = document.getElementById('btn');
+    var box1 = document.getElementById('box1');
+
+
+
+    btn.onclick = function () {
+
+        switch (true) {
+            case box.value == 1:
+            case box.value == 3:
+            case box.value == 5:
+            case box.value == 7:
+            case box.value == 8:
+            case box.value == 10:
+            case box.value == 12:
+                
+                box1.innerHTML = '月份有31天';
+                break;
+            case box.value == 2:
+                box1.innerHTML = '月份有28天';
+                break;
+            case box.value == 4:
+            case box.value == 6:
+            case box.value == 9:
+            case box.value == 11:
+                box1.innerHTML = '月份有30天';
+                break;
+
+        }
+    }
+
+
+
+
+
+</script>
+
+
+
+</html>

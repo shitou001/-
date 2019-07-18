@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计算任意数的阶层</title>
+</head>
+
+<body>
+    <h2>计算任意数的阶层</h2>
+    <input type="text" id="text1" placeholder="请输入一个整数：">
+    <input type="button" value="计算" id="btn">
+    <input type="text" id="result">
+</body>
+<script>
+    //找节点
+    var text1 = document.getElementById('text1'); //输入的值
+    var btn = document.getElementById('btn');
+    var result = document.getElementById('result') //输出的结果
+
+    // 绑定按钮事件
+    btn.onclick = function () {
+        var tex1 = text1.value;
+        // if (tex1) { 
+        //     var sum = 0;
+        //     for (var i = 1; i <= tex1; i++) {
+        //         var p = 1;
+
+        //         for (var j = 1; j <= i; j++) {
+        //             p *= j;
+        //         }     
+        //     }
+        //     sum += p;
+        //     result.value = sum;
+        // }
+        var x = 1; //用来存放总数
+        while(tex1 > 0){
+            
+            x *= tex1;
+            // console.log(x);
+            tex1--; //将tex1的值从大到小拿出来
+            // console.log(tex1);
+        }
+        result.value = x;
+    }
+</script>
+
+</html>

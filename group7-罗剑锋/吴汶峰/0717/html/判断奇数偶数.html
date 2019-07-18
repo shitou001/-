@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 一个输入框、一个按钮、一个输出 -->
+    <input type="text" id="num">
+    <input type="button" value="判断"  id="btn">
+    <div id="sum"></div>
+</body>
+<script>
+    // 1找节点
+    var num = document.getElementById('num');
+    var btn = document.getElementById('btn');
+    var sum = document.getElementById('sum');
+    // 2.点击事件
+    btn.onclick = function () {
+        // 首先获取数据
+        var Num = num.value - 0;
+        if ( Num % 2 == 0){
+            sum.innerHTML = '偶数';
+        }else{
+            sum.innerHTML = '奇数';
+        }
+    }
+</script>
+</html>

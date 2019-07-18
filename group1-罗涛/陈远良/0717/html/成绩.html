@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    请输入成绩：<input type="text" id="num">
+    <input type="button" value="点击判断该成绩情况" id="btn">
+    此成绩情况为：<input type="text" id="cj">
+
+
+</body>
+</html>
+<script>
+     var num = document.getElementById('num');
+     var btn = document.getElementById('btn');
+     var num1 = document.getElementById('cj');
+
+     btn.onclick = function () {
+         var sum = num.value - 0;
+         switch(true){
+             case sum > 0 && sum < 60:
+             num1.value = '你的成绩不及格，太菜了！';
+             break;
+
+             case sum >= 60 && sum < 75:
+             num1.value = '你的成绩及格，请继续加油！';
+             break;
+
+             case sum >= 75 && sum < 85:
+             num1.value = '你的成绩良好，还差点就可以吃鸡了！';
+             break;
+
+             case sum >= 85 && sum <= 100:
+             num1.value = '你的成绩优秀，可以吃鸡了！';
+             break;
+
+             default :
+             alert('请输入0-100之间正确的成绩！');
+             break;
+         }
+     }
+
+</script>

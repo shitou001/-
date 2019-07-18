@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <input type="text" id="te1">
+    <input type="button" value="是否" id="btn">
+    <input type="text" id="te2"> -->
+
+</body>
+<script>
+    //绑定节点
+    // var te1 = document.getElementById('te1');
+    // var btn = document.getElementById('btn');
+    // var te2 = document.getElementById('te2');
+    // btn.onclick = function () {
+    //     var val1 = te1.value;
+    // var bai = parseInt(te1.value / 100);
+    // var shi = parseInt((te1.value % 100) / 10);//取余是百分号，为啥给了百分号就是除？？？
+    // var ge = parseFloat((te1.value % 10));
+    //     if (te1.value == bai * bai * bai + shi * shi * shi + ge * ge * ge) { 
+    //         te2.value='水仙数';
+    //     }
+    //     else{te2.value='不是'}
+
+
+    // }
+
+    var num = 100;
+    while (num <= 999) {
+        var bai = parseInt(num / 100);
+        var shi = parseInt((num % 100) / 10);
+        var ge = parseFloat((num % 10));
+        if (num == Math.pow(bai, 3) + Math.pow(shi, 3) + Math.pow(ge, 3)) {
+            document.write('谁仙数' + num);
+        }
+        num++;
+        console.log(num);
+    }
+</script>
+
+</html>

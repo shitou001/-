@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>水仙花数</title>
+</head>
+
+<body>
+    <input type="button" value="按钮" id="bnt">
+</body>
+<script>
+    // 水仙花数的特征
+    // 公式：三位数等于百位的3次方加上十位的3次方加上个位的3次方
+
+    var bnt = document.getElementById("bnt");
+    bnt.onclick = function () {
+        var num = 100;
+
+        var a, b, c;
+        // 十位
+
+        while (num < 999) {
+            num++;
+            console.log(num);
+            a = parseInt(num / 100);
+            // 百位
+            b = parseInt((num % 100) / 10);
+            // 十位
+            c = parseInt(num % 10);
+            // 个位
+            var sum = Math.pow(a, 3) + Math.pow(b, 3) + Math.pow(c, 3);
+            if (num == sum) {
+
+                document.write(num + "<br>");
+            }
+        }
+
+
+
+    }
+
+</script>
+
+</html>

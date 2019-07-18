@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="runnian">
+    <input type="button" value="判断" id="btn">
+    <div id="sum"></div>
+</body>
+<script>
+    // 1.先找节点
+    var num = document.getElementById('runnian');
+    var btn = document.getElementById('btn');
+    var sum = document.getElementById('sum');
+    // 2.添加事件
+    btn.onclick = function () {
+        // 首先获取数据
+        var Num = num.value - 0 ;
+        // 得出结果
+        if( (Num % 400 == 0) || ( Num % 4 == 0 && Num % 100 != 0) ){
+            sum.innerHTML = '闰年'
+        }else{
+            sum.innerHTML = '不是闰年'
+        }
+    }
+
+</script>
+</html>
