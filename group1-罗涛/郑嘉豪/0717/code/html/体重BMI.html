@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>体重BMI指数测量 </p>
+    输入体重：<input type="text" id="weight"><br>
+    输入身高：<input type="text" id="height"><br>
+    <input type="button" value="BMI数值" id="bmi"><br>
+    <input type="text" id="shuzhi">
+</body>
+<script>
+    var weight = document.getElementById('weight');
+    var height = document.getElementById('height')
+    var bmi = document.getElementById('bmi');
+    var shuzhi = document.getElementById('shuzhi')
+
+    bmi.onclick = function () {
+        var tex = (weight.value  /(height.value * height.value))*1;
+        console.log(tex)
+        if (tex < 18.5) {
+            shuzhi.value = "兄弟你很瘦"
+        } else if (tex > 18.5 && tex < 25) {
+            shuzhi.value = '兄弟你不胖不瘦'
+        } else if (tex > 25 && tex < 28) {
+            shuzhi.value = '兄弟你有点小肥'
+        } else if (tex > 28 && tex < 32) {
+            shuzhi.value = '兄弟你胖了'
+        } else if (tex > 32) {
+            shuzhi.value = '兄弟你很胖别吃了'
+        }
+
+    }
+</script>
+
+</html>

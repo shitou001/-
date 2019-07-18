@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 找出所有的水仙花数，三位数，各位立方和等于该数本身。枚举：循环罗列所有数字，去自动的匹配符合条件的 
+        如: 153 = 1^3 + 5^3 + 3^3 
+    * 三位数的生成
+		* 求出这个三位数的个十百位
+		* 个十百位的立方和等于自身，这个数就是水仙花数
+		* Math.pow(s,3) 求立方-->
+</body>
+<script>
+    for (var i = 100; i <= 999; i++) {
+        var baiwei = parseInt(i / 100);
+        var shiwei = parseInt(i % 100 / 10);
+        var gewei = i % 10
+        var sum = Math.pow(baiwei, 3) + Math.pow(shiwei, 3) + Math.pow(gewei, 3);
+        if (sum == i) {
+            document.write('水仙花数是：' + i + '<br>')
+        }
+    }
+</script>
+
+</html>
