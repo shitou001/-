@@ -18,10 +18,6 @@
             text-align: center;
             width: 100px;
         }
-
-        /* #cut:disabled{
-            background: #ccc;
-        } */
     </style>
 </head>
 
@@ -47,25 +43,22 @@
     total = document.getElementById('total');
 
     cut.onclick = function () {
+        // 获取数量值
         var val = num.value;
         var pricex = price.innerHTML;
-        var totalPrice = val * price.innerHTML;
-        total.innerHTML = '￥' + totalPrice.toFixed(2);
-        // var totalx = total.value;
+        // val=val-1,已经进行隐式转换
         val--;
 
         if (val <= 1) {
             val = 1;
-            // 需要去思考？？？
         }
         num.value = val;
-        total.innerHTML = pricex.innerHTML * num.value;
-        //   var totalPrice = val * price.innerHTML;
+        // total.innerHTML = pricex.innerHTML * num.value;
+        var totalPrice = val * pricex; //隐式转换
         total.innerHTML = '￥' + totalPrice.toFixed(2);
     }
     add.onclick = function () {
         var val = num.value;
-        var pricex = price.innerHTML;
         val++;
 
         if (val > 8) {
@@ -75,6 +68,24 @@
         num.value = val;
         // total.innerHTML = pricex.innerHTML * num.value;
         var totalPrice = val * price.innerHTML;
+        // 保留两位小数：toFixed()
+        total.innerHTML = '￥' + totalPrice.toFixed(2);
+    }
+    //内容发生改变的时候触发的条件
+    num.oninput = function () {
+        var val = num.value;
+        var pricex = price.innerHTML;
+        
+        console.log(val);
+        if (val < 1) {
+            val = 1;
+        } else if (val > 8) {
+            val = 8;
+            alert('不能超过8份');
+
+        }
+        num.value=val;
+        var totalPrice = val * pricex; //隐式转换
         total.innerHTML = '￥' + totalPrice.toFixed(2);
     }
 </script>

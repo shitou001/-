@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="" id="tall" placeholder="请输入身高">
+    <input type="text" id="weight" placeholder="请输入体重">
+    <input type="button" value="查看BMI" id="btn">
+    <span id="box"></span>
+</body>
+<script>
+    var tall = document.getElementById('tall');
+    var weight = document.getElementById('weight');
+    var btn = document.getElementById('btn');
+    var box = document.getElementById('box');
+    btn.onclick = function () {
+        var tallx = tall.value*1;
+        var weightx = weight.value*1;
+        var bmi = weightx / (Math.pow(tallx, 2));
+        console.log(tallx, weightx, bmi);
+
+// 如果case里面为区间,把switch改为true,而不是bmi
+        switch (true) {
+            case bmi < 18.5:
+                box.innerHTML = 'BMI:' + bmi.toFixed(2) + ',体重过轻';
+                break;
+            case (bmi >= 18.5 && bmi <= 24.99):
+                box.innerHTML = 'BMI:' + bmi.toFixed(2) + ',体重正常';
+                break;
+            case (bmi >= 25 && bmi <= 28):
+                box.innerHTML = 'BMI:' + bmi.toFixed(2) + ',体重过重';
+                break;
+            case (bmi >= 28 && bmi <= 32):
+                box.innerHTML = 'BMI:' + bmi.toFixed(2) + ',肥胖';
+                break;
+            case (bmi > 32):
+                box.innerHTML = 'BMI:' + bmi.toFixed(2) + ',非常肥胖';
+                break;
+            default:
+                box.innerHTML = 'BMI:' + bmi.toFixed(2) + ',值不正常';
+
+        }
+
+
+    }
+</script>
+
+</html>
