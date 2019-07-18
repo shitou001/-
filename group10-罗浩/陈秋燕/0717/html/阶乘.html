@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="jc" placeholder="请输入阶乘数">
+    <input type="button" value="结果" id="btn">
+    <span id="box"></span>
+</body>
+<script>
+
+    var jc = document.getElementById('jc');
+    var btn = document.getElementById('btn');
+    btn.onclick=function(){
+        var jcx= jc.value-0;
+        var res=1;
+        var i=1;
+        while(i<=jcx){
+            res=res*i;
+            i++;  
+        }
+         box.innerHTML=res;
+    }
+
+</script>
+</html>

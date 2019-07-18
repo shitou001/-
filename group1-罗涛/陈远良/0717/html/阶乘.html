@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    输入一个正整数：<input type="text" id="num">
+    <input type="button" value="计算它的阶乘" id="btn">
+    结果为：<input type="text" id="jieguo">
+
+</body>
+</html>
+<script>
+    var num = document.getElementById('num');
+    var btn = document.getElementById('btn');
+    var num1 = document.getElementById('jieguo');
+
+    btn.onclick = function () {
+        var i = 1;
+        var sum = num.value;
+        var sum1 = 1;
+        while(i <= sum){
+          sum1 = i * sum1;
+          i++;
+           
+          num1.value = sum1;
+        }
+          
+    } 
+
+</script>

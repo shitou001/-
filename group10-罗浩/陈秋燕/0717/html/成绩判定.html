@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h2>输入成绩，进行成绩判定---if</h2>
+    <input type="text" id="score">
+    <input type="button" id="btn" value="查询">
+    <span id="box"></span>
+    <h2>输入成绩，进行成绩判定---switch</h2>
+    <input type="text" id="score2">
+    <input type="button" id="btn2" value="查询">
+    <span id="box2"></span>
+
+</body>
+<script>
+    var score = document.getElementById('score');
+    var btn = document.getElementById('btn');
+    btn.onclick = function () {
+        var scorex = score.value - 0;
+        if (scorex < 0 || scorex > 100) {
+            alert("请输入分数0-100");
+
+
+        } else {
+            if (scorex < 60) {
+                box.innerHTML = '不及格';
+            } else if (scorex >= 60 && scorex < 75) {
+                box.innerHTML = '及格';
+            } else if (scorex >= 75 && scorex <= 85) {
+                box.innerHTML = '良好';
+            } else {
+                box.innerHTML = '优秀';
+            }
+        }
+
+    }
+
+    // switch
+    var score2 = document.getElementById('score2');
+    var btn2 = document.getElementById('btn2');
+    btn2.onclick = function () {
+        var score2x = score2.value - 0;
+        if (score2x < 0 || score2x > 100) {
+            alert("请输入分数0-100");
+        } else {
+            switch (true) {
+                case score2x < 60:
+                    box2.innerHTML = '不及格';
+                    break;
+                case score2x >= 60 && score2x < 75:
+                    box2.innerHTML = '及格';
+                    break;
+                case score2x >= 75 && score2x <= 85:
+                    box2.innerHTML = '良好';
+                    break;
+                default:
+                box2.innerHTML = '优秀';
+                break;
+
+
+            }
+        }
+
+    }
+</script>
+
+</html>

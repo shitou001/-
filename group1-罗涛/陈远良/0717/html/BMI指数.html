@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    请输入身高(M)：<input type="text" id="sg">
+    请输入体重(KG)：<input type="text" id="tz">
+    <input type="button" value="点击计算BMI指数" id="btn">
+    BMI结果：<input type="text" id="jieguo">
+</body>
+</html>
+<script>
+    var num1 = document.getElementById('sg');
+    var num2 = document.getElementById('tz');
+    var btn = document.getElementById('btn');
+    var num3 = document.getElementById('jieguo');
+
+    btn.onclick = function () {
+        var sum1 = num1.value - 0;
+        var sum2 = num2.value - 0;
+        var sum = sum2 / (sum1 * sum1);
+
+        switch(true){
+            case sum < 18.5:
+                num3.value = '过轻';
+                break;
+
+            case sum >= 18.5 && sum < 25:
+                num3.value = '正常';
+                break;
+            
+            case sum >= 25 && sum < 28:
+                num3.value = '过重';
+                break;
+
+            case sum >= 28 && sum < 32:
+                num3.value = '肥胖';
+                break;
+
+            case sum >= 32:
+                num3.value = '非常肥胖';
+                break;
+        }
+    }
+
+</script>

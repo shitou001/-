@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    
+        <img src="../images/搜索04.png" alt="">
+        <br> 购买数量：
+        <input type="button" value="-" id="cut">
+        <input type="text" value="1" id="num">
+        <input type="button" value="+" id="add">(库存量10份)
+        <br> 商品单价：
+        <span id="price">99.9</span>
+        <br> 商品总价：
+        <span id="total">￥99.9</span>
+   
+</body>
+
+</html>
+<script>
+    var cut = document.getElementById('cut');
+    var num = document.getElementById('num');
+    var add = document.getElementById('add');
+    var price = document.getElementById('price');
+    var total = document.getElementById('total');
+
+    cut.onclick = function () {
+        var Nownum = num.value;
+        Nownum--;
+        if (Nownum <= 1) {
+            Nownum = 1;
+        }
+        num.value = Nownum;
+
+        var totalPrice = Nownum * price.innerText;
+        total.innerHTML = '￥' + totalPrice.toFixed(2);
+       
+    }
+    add.onclick = function () {
+        var Nownum = num.value;
+        Nownum++;
+        if (Nownum >= 10) {
+            Nownum = 10;
+        }
+        num.value = Nownum;
+       var totalPrice = Nownum * price.innerText;
+        total.innerHTML = '￥' + totalPrice.toFixed(2);
+
+    }
+     num.oninput = function () {
+        var Nownum = num.value;
+        if (Nownum <= 1) {
+            Nownum = 1;
+        } else if (Nownum >= 10) {
+            Nownum = 10;
+        }
+        num.value = Nownum;
+       var totalPrice = Nownum * price.innerText;
+         total.innerHTML = '￥' + totalPrice.toFixed(2);
+    }
+
+</script>
