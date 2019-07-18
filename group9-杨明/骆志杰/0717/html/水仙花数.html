@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    parseInt
+    /*
+    声明这个变量 三位数 为 i 
+    思路 ： 获取三位数的百位 a = parseInt (i / 100 );
+                           b = parseInt ((i - a*100) / 10);
+                           c = parseInt ((i - a*100) - b *10);
+    b 
+    */
+    var a, b, c;
+    for (i = 100; i < 1000; i++) {
+        a = parseInt(i / 100);
+        b = parseInt((i - a * 100) / 10);
+        c = parseInt((i - a * 100) - b * 10);
+
+        if (i == a * a * a + b * b * b + c * c * c) {
+            document.write(i + '\n');
+        }
+    }
+</script>
+
+</html>
