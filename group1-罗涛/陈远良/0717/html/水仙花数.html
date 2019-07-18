@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    
+</body>
+<script>
+    for (var i = 100; i <= 999; i++) {
+        var bw = parseInt(i / 100);
+        var sw = parseInt(i % 100 / 10);
+        var gw = i % 10
+        var sum = Math.pow(bw, 3) + Math.pow(sw, 3) + Math.pow(gw, 3);
+        if (sum == i) {
+            document.write('水仙花数有：' + i + '<br>')
+        }
+    }
+</script>
+
+</html>
